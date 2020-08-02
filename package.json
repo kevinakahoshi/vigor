@@ -1,0 +1,52 @@
+{
+  "name": "Vigor",
+  "version": "1.0.0",
+  "description": "Fitness tracking and data visualization application",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinakahoshi/vigor.git"
+  },
+  "author": "Kevin Akahoshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinakahoshi/vigor/issues"
+  },
+  "homepage": "https://github.com/kevinakahoshi/vigor#readme",
+  "dependencies": {
+    "@material-ui/core": "4.11.0",
+    "bcrypt": "5.0.0",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-session": "1.17.1",
+    "pg": "8.3.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router-dom": "5.2.0",
+    "session-file-store": "1.4.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.11.0",
+    "@babel/plugin-transform-react-jsx": "7.10.4",
+    "babel-eslint": "10.1.0",
+    "babel-loader": "8.1.0",
+    "eslint": "7.6.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-react": "7.20.5",
+    "eslint-plugin-standard": "4.0.1",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.11",
+    "lodash": "4.17.19",
+    "nodemon": "2.0.4",
+    "npm-run-all": "4.1.5",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-dev-server": "3.11.0"
+  }
+}
