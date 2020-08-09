@@ -17,7 +17,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 ALTER TABLE ONLY public.users DROP CONSTRAINT users_pkey;
-ALTER TABLE public.users ALTER COLUMN userid DROP DEFAULT;
+ALTER TABLE public.users ALTER COLUMN "UserID" DROP DEFAULT;
 DROP SEQUENCE public.users_userid_seq;
 DROP TABLE public.users;
 DROP EXTENSION plpgsql;
@@ -59,11 +59,11 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE public.users (
-    userid integer NOT NULL,
-    firstname character varying(255),
-    lastname character varying(255),
-    email character varying(255),
-    password character varying(255)
+    "UserID" integer NOT NULL,
+    "FirstName" character varying(255),
+    "LastName" character varying(255),
+    "Email" character varying(255),
+    "Password" character varying(255)
 );
 
 
@@ -84,21 +84,21 @@ CREATE SEQUENCE public.users_userid_seq
 -- Name: users_userid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.users_userid_seq OWNED BY public.users.userid;
+ALTER SEQUENCE public.users_userid_seq OWNED BY public.users."UserID";
 
 
 --
--- Name: users userid; Type: DEFAULT; Schema: public; Owner: -
+-- Name: users UserID; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.users ALTER COLUMN userid SET DEFAULT nextval('public.users_userid_seq'::regclass);
+ALTER TABLE ONLY public.users ALTER COLUMN "UserID" SET DEFAULT nextval('public.users_userid_seq'::regclass);
 
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.users (userid, firstname, lastname, email, password) FROM stdin;
+COPY public.users ("UserID", "FirstName", "LastName", "Email", "Password") FROM stdin;
 1	Kevin	Akahoshi	kevin@vigor.com	test
 \.
 
@@ -115,7 +115,7 @@ SELECT pg_catalog.setval('public.users_userid_seq', 1, true);
 --
 
 ALTER TABLE ONLY public.users
-    ADD CONSTRAINT users_pkey PRIMARY KEY (userid);
+    ADD CONSTRAINT users_pkey PRIMARY KEY ("UserID");
 
 
 --
