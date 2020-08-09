@@ -13,6 +13,23 @@ app.use(sessionMiddleware);
 app.use(express.json());
 // app.use(routes);
 
+app.get('/api/users/?:id', (request, response, next) => {
+  let sqlQuery = `
+    SELECT *
+      FROM users
+  `;
+
+  const params = [];
+
+  if (request.params) {
+    const userId = request.params.id;
+    sqlQuery += ' WHERE "UserID" = $1';
+    params.push(userId);
+  }
+
+  db.query(sqlQuery, params).then(result => response.status(200).json(result.rows[0]));
+});
+
 app.post('/api/users', (request, response, next) => {
   const userId = request.body.userId;
 
