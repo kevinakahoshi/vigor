@@ -17,7 +17,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 ALTER TABLE ONLY public.users DROP CONSTRAINT users_pkey;
-ALTER TABLE public.users ALTER COLUMN "UserID" DROP DEFAULT;
+ALTER TABLE public.users ALTER COLUMN "userId" DROP DEFAULT;
 DROP SEQUENCE public.users_userid_seq;
 DROP TABLE public.users;
 DROP EXTENSION plpgsql;
@@ -59,11 +59,11 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE public.users (
-    "UserID" integer NOT NULL,
-    "FirstName" character varying(255),
-    "LastName" character varying(255),
-    "Email" character varying(255),
-    "Password" character varying(255)
+    "userId" integer NOT NULL,
+    "firstName" character varying(255),
+    "lastName" character varying(255),
+    email character varying(255),
+    password character varying(255)
 );
 
 
@@ -84,22 +84,24 @@ CREATE SEQUENCE public.users_userid_seq
 -- Name: users_userid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
 --
 
-ALTER SEQUENCE public.users_userid_seq OWNED BY public.users."UserID";
+ALTER SEQUENCE public.users_userid_seq OWNED BY public.users."userId";
 
 
 --
--- Name: users UserID; Type: DEFAULT; Schema: public; Owner: -
+-- Name: users userId; Type: DEFAULT; Schema: public; Owner: -
 --
 
-ALTER TABLE ONLY public.users ALTER COLUMN "UserID" SET DEFAULT nextval('public.users_userid_seq'::regclass);
+ALTER TABLE ONLY public.users ALTER COLUMN "userId" SET DEFAULT nextval('public.users_userid_seq'::regclass);
 
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
 --
 
-COPY public.users ("UserID", "FirstName", "LastName", "Email", "Password") FROM stdin;
+COPY public.users ("userId", "firstName", "lastName", email, password) FROM stdin;
 1	Kevin	Akahoshi	kevin@vigor.com	test
+2	Dexter	Akahoshi	dexter@vigor.com	meow
+3	Sprinna	Akahoshi	sprinna@vigor.com	$2b$12$blZx2KzVnetrbs6KN4GVgOr9IbzVkS33CTOfaiHj/xBkFAHuwadIO
 \.
 
 
@@ -107,7 +109,7 @@ COPY public.users ("UserID", "FirstName", "LastName", "Email", "Password") FROM 
 -- Name: users_userid_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.users_userid_seq', 1, true);
+SELECT pg_catalog.setval('public.users_userid_seq', 3, true);
 
 
 --
@@ -115,7 +117,7 @@ SELECT pg_catalog.setval('public.users_userid_seq', 1, true);
 --
 
 ALTER TABLE ONLY public.users
-    ADD CONSTRAINT users_pkey PRIMARY KEY ("UserID");
+    ADD CONSTRAINT users_pkey PRIMARY KEY ("userId");
 
 
 --
