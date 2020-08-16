@@ -1,17 +1,29 @@
 const router = require('express').Router();
 const db = require('../../database');
-// const bcrypt = require('bcrypt');
-// const ClientError = require('../../client-error');
+const bcrypt = require('bcrypt');
 
 router.post('/', (request, response, next) => {
   const { firstName, lastName, email, password } = request.body;
-  // const saltRounds = 12;
   const sqlQuery = `
     INSERT INTO users ("FirstName", "LastName", "Email", "Password")
-               values ($1, $2, $3, $4)
+    values ($1, $2, $3, $4)
   `;
-  const params = [firstName, lastName, email, password];
-  db.query(sqlQuery, params).then(result => response.status(201).json('Created New User Successfully'));
+  const saltRounds = 12;
+
+  bcrypt.hash(password, saltRounds, (error, hash) => {
+    const params = [
+      firstName,
+      lastName,
+      email,
+      hash
+    ];
+    db.query(sqlQuery, params)
+      .then(result => response.status(201).json('New User Created Successfully'))
+      .catch(error => next(error));
+    if (error) {
+      console.error(error);
+    }
+  });
 });
 
 module.exports = router;

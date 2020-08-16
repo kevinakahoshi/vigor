@@ -1,5 +1,5 @@
 require('dotenv/config');
-const express = require('express').express();
+const express = require('express');
 const routes = require('./routes');
 const ClientError = require('./client-error');
 const staticMiddleware = require('./static-middleware');
