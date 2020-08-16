@@ -1,6 +1,7 @@
-const express = require('express');
+const router = require('express').Router();
+
+// Routes
 const users = require('./users');
-const router = express.Router();
 
 router.use('/api/users', users);
 
