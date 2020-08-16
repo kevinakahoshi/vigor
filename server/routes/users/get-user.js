@@ -1,8 +1,7 @@
-const express = require('express');
+const router = require('express').Router();
 const db = require('../../database');
-const router = express.Router();
 
-const getUser = router.get('/', (request, response, next) => {
+router.get('/?:id', (request, response, next) => {
   let sqlQuery = `
     SELECT *
       FROM users
@@ -19,4 +18,18 @@ const getUser = router.get('/', (request, response, next) => {
   db.query(sqlQuery, params).then(result => response.status(200).json(result.rows[0]));
 });
 
-module.exports = getUser;
+router.post('/', (request, response, next) => {
+  const userId = request.body.userId;
+
+  const sqlQuery = `
+    SELECT *
+      FROM users
+     WHERE "UserID" = $1
+  `;
+
+  const params = [userId];
+
+  db.query(sqlQuery, params).then(result => response.status(200).json(result.rows[0]));
+});
+
+module.exports = router;
