@@ -10,11 +10,12 @@ router.post('/', (request, response, next) => {
 
   db.query(sqlQuery, params)
     .then(result => {
-      if (result) {
+      if (result.rows.length) {
         const hashedPassword = result.rows[0].password;
         bcrypt.compare(password, hashedPassword)
           .then(match => {
             if (!match) {
+              response.status(400).json('Incorrect email or password');
               next(new ClientError('Incorrect email or password', 400));
             }
             delete result.rows[0].password;
