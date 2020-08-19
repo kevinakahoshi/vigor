@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 router.post('/', (request, response, next) => {
   const { firstName, lastName, email, password } = request.body;
   const sqlQuery = `
-    INSERT INTO users ("FirstName", "LastName", "Email", "Password")
+    INSERT INTO users ("firstName", "lastName", "email", "password")
     values ($1, $2, $3, $4)
   `;
   const saltRounds = 12;

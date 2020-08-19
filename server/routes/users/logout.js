@@ -1,12 +1,11 @@
 const router = require('express').Router();
-const ClientError = require('../../client-error');
 
 router.post('/', (request, response, next) => {
-  if (request.session) {
-    delete request.session;
+  if (request.session.user) {
+    delete request.session.user;
     response.status(202).json('User logged out successfully');
   } else {
-    next(new ClientError('No user is currently logged in', 404));
+    response.status(404).json('No user is currently logged in');
   }
 });
 
