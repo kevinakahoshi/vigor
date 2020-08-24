@@ -14,7 +14,8 @@ router.post('/', (request, response, next) => {
   ];
 
   db.query(sqlQuery, params)
-    .then(measurements => response.status(200).json(measurements.rows));
+    .then(measurements => response.status(200).json(measurements.rows))
+    .catch(error => console.error(error));
 });
 
 module.exports = router;
