@@ -2,6 +2,25 @@ const router = require('express').Router();
 const db = require('../../database');
 
 router.post('/', (request, response, next) => {
+  const measurementTypes = [
+    'arms',
+    'bodyFat',
+    'chest',
+    'hips',
+    'thighs',
+    'userId',
+    'waist',
+    'weight'
+  ];
+
+  for (const measurement of measurementTypes) {
+    if (request.body[measurement] === undefined ||
+      request.body[measurement] === null ||
+      !request.body[measurement]) {
+      response.status(400).json('Missing measurements');
+    }
+  }
+
   const {
     arms,
     bodyFat,
@@ -31,7 +50,11 @@ router.post('/', (request, response, next) => {
 
   db.query(sqlQuery, params)
     .then(result => {
-      response.status(200).json('Measurement created successfully');
+      if (result) {
+        response.status(200).json('Measurement created successfully');
+      } else {
+        response.status(500).json('An unexpected error occurred');
+      }
     })
     .catch(error => console.error(error));
 });
