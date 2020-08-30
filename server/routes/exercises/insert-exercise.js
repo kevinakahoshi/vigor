@@ -26,7 +26,8 @@ router.post('/', (request, response, next) => {
 
   const sqlQuery = `
     INSERT INTO exercises (amount, "createdAt", exercise, unit, "userId")
-    VALUES($1, CURRENT_TIMESTAMP, $2, $3, $4)
+         VALUES ($1, CURRENT_TIMESTAMP, $2, $3, $4)
+      RETURNING *
   `;
 
   const params = [
@@ -39,7 +40,7 @@ router.post('/', (request, response, next) => {
   db.query(sqlQuery, params)
     .then(result => {
       if (result) {
-        response.status(200).json('Exercise logged successfully');
+        response.status(200).json(result.rows[0]);
       } else {
         response.status(500).json('An unexpected error occurred');
       }

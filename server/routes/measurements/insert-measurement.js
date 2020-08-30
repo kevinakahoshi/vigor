@@ -34,7 +34,8 @@ router.post('/', (request, response, next) => {
 
   const sqlQuery = `
     INSERT INTO measurements (arms, "bodyFat", chest, "createdAt", hips, thighs, "userId", waist, weight)
-    VALUES ($1, $2, $3, CURRENT_TIMESTAMP, $4, $5, $6, $7, $8)
+         VALUES ($1, $2, $3, CURRENT_TIMESTAMP, $4, $5, $6, $7, $8)
+      RETURNING *
   `;
 
   const params = [
@@ -51,7 +52,7 @@ router.post('/', (request, response, next) => {
   db.query(sqlQuery, params)
     .then(result => {
       if (result) {
-        response.status(200).json('Measurement created successfully');
+        response.status(200).json(result.rows[0]);
       } else {
         response.status(500).json('An unexpected error occurred');
       }

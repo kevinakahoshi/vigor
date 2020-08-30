@@ -15,17 +15,15 @@ router.post('/', (request, response, next) => {
   const params = [userId];
 
   db.query(sqlQuery, params)
-    .then(result => {
+    .then(exercises => {
       const output = {};
-
-      for (const row in result.rows) {
-        const exerciseName = result.rows[row].exercise;
+      for (const row in exercises.rows) {
+        const exerciseName = exercises.rows[row].exercise;
         if (output[exerciseName] === undefined) {
           output[exerciseName] = [];
         }
-        output[exerciseName].push(result.rows[row]);
+        output[exerciseName].push(exercises.rows[row]);
       }
-
       response.status(200).json(output);
     });
 });
