@@ -4,6 +4,7 @@
 
 ### Technologies Used
 
+- React.js
 - Node.js
 - Express
 - PostgreSQL

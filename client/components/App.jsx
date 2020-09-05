@@ -1,24 +1,24 @@
 import React from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
-const lightTheme = createMuiTheme({
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        body: {
-          fontFamily: 'Arial'
-        }
-      }
-    }
+// Views
+import Home from '../views/Home';
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Roboto'
+    ]
   }
 });
 
 const App = () => {
+
   return (
     <ThemeProvider
-      theme={lightTheme}
+      theme={theme}
     >
-      <h1>Rendered</h1>
+      <Home />
     </ThemeProvider>
   );
 };
