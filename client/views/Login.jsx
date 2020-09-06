@@ -7,20 +7,20 @@ import {
   Link
 } from 'react-router-dom';
 
-const Home = () => {
+const Login = () => {
   return (
     <>
       <Typography
         variant={'h1'}>
-        Home
+        Login
       </Typography>
       <Button
         component={Link}
-        to="/login">
-        Login
+        to="/">
+        Home
       </Button>
     </>
   );
 };
 
-export default Home;
+export default Login;
