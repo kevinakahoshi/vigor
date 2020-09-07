@@ -6,6 +6,7 @@
 
 - React.js
 - React Router
+- Material UI
 - Node.js
 - Express
 - PostgreSQL
