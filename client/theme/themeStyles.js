@@ -16,7 +16,7 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 const themeStyles = createMuiTheme({
   typography: {
     fontFamily: [
-      'Roboto'
+      'Dosis'
     ]
   },
   overrides: {
