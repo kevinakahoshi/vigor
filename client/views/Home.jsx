@@ -1,19 +1,28 @@
 import React from 'react';
+import {
+  Box,
+  makeStyles
+} from '@material-ui/core';
 
 // Components
 import HomeNavBar from '../components/Home/HomeNavBar';
+import IntroText from '../components/Home/IntroText';
 
-// Utilities
-import imagePath from '../utilities/imagePath';
-
-const vigorLogoWhite = imagePath('Vigor-Logo-White.svg');
+const homeStyles = makeStyles(theme => ({
+  root: {
+    minHeight: '100vh'
+  }
+}));
 
 const Home = () => {
+  const styles = homeStyles();
+
   return (
-    <>
-      <HomeNavBar
-        vigorLogoWhite={vigorLogoWhite} />
-    </>
+    <Box
+      className={styles.root}>
+      <HomeNavBar />
+      <IntroText />
+    </Box>
   );
 };
 
