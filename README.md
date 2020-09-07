@@ -5,6 +5,7 @@
 ### Technologies Used
 
 - React.js
+- React Router
 - Node.js
 - Express
 - PostgreSQL

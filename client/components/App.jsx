@@ -16,6 +16,18 @@ import {
 import Home from '../views/Home';
 import Login from '../views/Login';
 
+// Font Assets
+// import Dosis from './assets/fonts/Dosis.ttf';
+
+// const dosis = {
+//   fontFamily: 'Dosis',
+//   fontStyle: 'normal',
+//   fontDisplay: 'swap',
+//   src: `
+//     url(${Dosis}) format('truetype)
+//   `
+// };
+
 // TODO: Update the font to match the wireframe
 const theme = createMuiTheme({
   typography: {
@@ -30,12 +42,12 @@ const theme = createMuiTheme({
           minHeight: '100%'
         },
         body: {
-          minHeight: '100%',
           backgroundImage: 'url(/assets/images/brand-assets/poly-background.svg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed'
+          backgroundAttachment: 'fixed',
+          minHeight: '100%'
         }
       }
     }
