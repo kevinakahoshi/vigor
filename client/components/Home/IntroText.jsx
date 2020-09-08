@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {
+  useEffect,
+  useState
+} from 'react';
 import {
   Box,
   Container,
@@ -49,6 +52,28 @@ const textStyles = makeStyles(theme => ({
 
 const IntroText = () => {
   const styles = textStyles();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const descriptionWords = [
+    'Motivator',
+    'Tracker',
+    'Accountability App'
+  ];
+
+  const cycleWords = () => {
+    if (currentIndex === descriptionWords.length - 1) {
+      setCurrentIndex(0);
+    } else {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      cycleWords();
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, [currentIndex]);
 
   return (
     <Box
@@ -64,7 +89,7 @@ const IntroText = () => {
         <Typography
           className={styles.subheading}
           variant="h2">
-          Tracker.  Accountability Partner.
+          { descriptionWords[currentIndex] }.
         </Typography>
         <VigorLogoWhite
           classes={styles.vigorLogo} />

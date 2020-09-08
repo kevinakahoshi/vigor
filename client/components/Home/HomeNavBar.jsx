@@ -14,7 +14,8 @@ const navStyles = makeStyles(theme => ({
     display: 'grid',
     gridTemplateColumns: '1fr auto',
     position: 'fixed',
-    width: '100%'
+    width: '100%',
+    zIndex: 1
   },
   vigorIcon: {
     width: 'auto',
