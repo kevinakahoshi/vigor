@@ -17,9 +17,10 @@ const navStyles = makeStyles(theme => ({
     width: '100%',
     zIndex: 1
   },
-  vigorIcon: {
+  vigorLogo: {
     width: 'auto',
-    height: '100%'
+    height: '100%',
+    opacity: 1
   }
 }
 ));
@@ -31,7 +32,7 @@ const HomeNavBar = () => {
     <Box
       className={styles.navBar}>
       <VigorLogoWhite
-        classes={styles.vigorIcon} />
+        classes={styles.vigorLogo} />
       <LoginSignUpButtons />
     </Box>
   );
