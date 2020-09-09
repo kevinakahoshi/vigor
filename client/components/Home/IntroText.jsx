@@ -1,21 +1,14 @@
-import React, {
-  useEffect,
-  useState
-} from 'react';
+import React from 'react';
 import {
   Box,
   Container,
   makeStyles,
   Typography
 } from '@material-ui/core';
-import {
-  animated,
-  config,
-  useTransition
-} from 'react-spring';
 
 // Components
 import VigorLogoWhite from '../Miscellaneous/VigorLogoWhite';
+import WordCarousel from './WordCarousel';
 
 // Utilities
 // import imagePath from '../../utilities/imagePath';
@@ -38,20 +31,9 @@ const textStyles = makeStyles(theme => ({
     textTransform: 'uppercase',
     textAlign: 'center'
   },
-  subheading: {
-    color: '#ffffff',
-    fontSize: '1.75rem',
-    fontWeight: 400,
-    textAlign: 'center'
-  },
-  fadeWrapper: {
-    position: 'relative'
-  },
-  fadeElement: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%'
+  carouselWrapper: {
+    marginTop: '1rem',
+    minHeight: '33px'
   },
   vigorLogo: {
     position: 'absolute',
@@ -66,35 +48,6 @@ const textStyles = makeStyles(theme => ({
 
 const IntroText = () => {
   const styles = textStyles();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const descriptionWords = [
-    'Motivator',
-    'Fitness Tracker',
-    'Accountability App'
-  ];
-
-  const cycleWords = () => {
-    if (currentIndex === descriptionWords.length - 1) {
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
-
-  const transitions = useTransition(descriptionWords[currentIndex], word => word, {
-    from: { opacity: 0 },
-    enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    config: config.molasses
-  });
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      cycleWords();
-    }, 3000);
-
-    return () => clearInterval(timer);
-  }, [currentIndex]);
 
   return (
     <Box
@@ -108,19 +61,8 @@ const IntroText = () => {
           Vigor
         </Typography>
         <Box
-          className={styles.fadeWrapper}>
-          { transitions.map(({ item, props, key }) =>
-            <animated.div
-              className={styles.fadeElement}
-              key={key}
-              style={props}>
-              <Typography
-                className={styles.subheading}
-                variant="h2">
-                { item }
-              </Typography>
-            </animated.div>
-          )}
+          className={styles.carouselWrapper}>
+          <WordCarousel />
         </Box>
         <VigorLogoWhite
           classes={styles.vigorLogo} />
