@@ -8,6 +8,11 @@ import {
   makeStyles,
   Typography
 } from '@material-ui/core';
+import {
+  animated,
+  config,
+  useTransition
+} from 'react-spring';
 
 // Components
 import VigorLogoWhite from '../Miscellaneous/VigorLogoWhite';
@@ -39,6 +44,15 @@ const textStyles = makeStyles(theme => ({
     fontWeight: 400,
     textAlign: 'center'
   },
+  fadeWrapper: {
+    position: 'relative'
+  },
+  fadeElement: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%'
+  },
   vigorLogo: {
     position: 'absolute',
     height: '100%',
@@ -55,7 +69,7 @@ const IntroText = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const descriptionWords = [
     'Motivator',
-    'Tracker',
+    'Fitness Tracker',
     'Accountability App'
   ];
 
@@ -67,10 +81,17 @@ const IntroText = () => {
     }
   };
 
+  const transitions = useTransition(descriptionWords[currentIndex], word => word, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    config: config.molasses
+  });
+
   useEffect(() => {
     const timer = setInterval(() => {
       cycleWords();
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(timer);
   }, [currentIndex]);
@@ -86,11 +107,21 @@ const IntroText = () => {
           variant="h1">
           Vigor
         </Typography>
-        <Typography
-          className={styles.subheading}
-          variant="h2">
-          { descriptionWords[currentIndex] }.
-        </Typography>
+        <Box
+          className={styles.fadeWrapper}>
+          { transitions.map(({ item, props, key }) =>
+            <animated.div
+              className={styles.fadeElement}
+              key={key}
+              style={props}>
+              <Typography
+                className={styles.subheading}
+                variant="h2">
+                { item }
+              </Typography>
+            </animated.div>
+          )}
+        </Box>
         <VigorLogoWhite
           classes={styles.vigorLogo} />
       </Container>
