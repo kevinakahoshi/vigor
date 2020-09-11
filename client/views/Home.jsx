@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Box,
+  Container,
   makeStyles
 } from '@material-ui/core';
 
@@ -10,7 +10,8 @@ import IntroText from '../components/Home/IntroText';
 
 const homeStyles = makeStyles(theme => ({
   root: {
-    minHeight: '100vh'
+    height: '100%',
+    display: 'flex'
   }
 }));
 
@@ -18,11 +19,14 @@ const Home = () => {
   const styles = homeStyles();
 
   return (
-    <Box
-      className={styles.root}>
+    <>
       <HomeNavBar />
-      <IntroText />
-    </Box>
+      <Container
+        className={styles.root}
+        maxWidth="sm">
+        <IntroText />
+      </Container>
+    </>
   );
 };
 
