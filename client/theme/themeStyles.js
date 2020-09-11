@@ -22,16 +22,15 @@ const themeStyles = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        html: {
-          minHeight: '100%'
-        },
         body: {
           backgroundImage: 'url(/assets/images/brand-assets/poly-background.svg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-          minHeight: '100%'
+          backgroundAttachment: 'fixed'
+        },
+        'div#root': {
+          height: 'var(--app-height)'
         }
       }
     }

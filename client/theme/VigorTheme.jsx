@@ -12,10 +12,9 @@ import themeStyles from './themeStyles';
 const VigorTheme = ({ children }) => {
   return (
     <ThemeProvider
-      theme={themeStyles}
-    >
+      theme={themeStyles}>
       <CssBaseline />
-      { children}
+      { children }
     </ThemeProvider>
   );
 };

@@ -27,7 +27,7 @@ const fadeStyles = makeStyles(theme => ({
   fadeElement: {
     position: 'absolute',
     color: '#ffffff',
-    fontSize: '1.75rem',
+    fontSize: '2rem',
     fontWeight: 400,
     textAlign: 'center'
   }
