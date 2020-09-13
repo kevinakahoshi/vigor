@@ -5,22 +5,36 @@ import {
 } from '@material-ui/core';
 
 // Components
-import LoginSignUpButtons from './LoginSignUpButtons';
+import NavLoginSignUpButtons from './NavLoginSignUpButtons';
 import VigorLogoWhite from '../Miscellaneous/VigorLogoWhite';
 
 const navStyles = makeStyles(theme => ({
   navBar: {
-    padding: '1.5rem',
     display: 'grid',
     gridTemplateColumns: '1fr auto',
     position: 'fixed',
     width: '100%',
-    zIndex: 1
+    zIndex: 1,
+    [theme.breakpoints.up('sm')]: {
+      padding: '1.5rem'
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: '1rem'
+    }
   },
   vigorLogo: {
     width: 'auto',
     height: '100%',
+    minHeight: '42px',
     opacity: 1
+  },
+  buttonWrapper: {
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    },
+    [theme.breakpoints.between('xs', 'sm')]: {
+      display: 'none'
+    }
   }
 }
 ));
@@ -33,7 +47,10 @@ const HomeNavBar = () => {
       className={styles.navBar}>
       <VigorLogoWhite
         classes={styles.vigorLogo} />
-      <LoginSignUpButtons />
+      <Box
+        className={styles.buttonWrapper}>
+        <NavLoginSignUpButtons />
+      </Box>
     </Box>
   );
 };

@@ -8,38 +8,42 @@ import {
 } from 'react-router-dom';
 
 // Components
-import VigorLinkButton from '../../theme/linkButtonStyles';
 import VigorSecondaryButton from '../../theme/secondaryButtonStyles';
 
 const buttonWrapper = makeStyles(theme => ({
   buttonWrapper: {
     display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gridGap: '1rem'
+    gridGap: '1rem',
+    [theme.breakpoints.between('xssm', 'sm')]: {
+      gridTemplateColumns: '1fr 1fr'
+    },
+    [theme.breakpoints.between('xs', 'xssm')]: {
+      gridTemplateColumns: '1fr'
+    }
   }
 }
 ));
 
-const LoginSignUpButtons = () => {
+const NavLoginSignUpButtons = () => {
   const styles = buttonWrapper();
 
   return (
     <Box
       className={styles.buttonWrapper}>
-      <VigorLinkButton
+      <VigorSecondaryButton
         component={Link}
         to="/sign-up"
         size="large">
-      Sign Up
-      </VigorLinkButton>
+        Sign Up
+      </VigorSecondaryButton>
       <VigorSecondaryButton
         component={Link}
         to="/login"
         size="large">
-      Login
+        Login
       </VigorSecondaryButton>
     </Box>
   );
 };
 
-export default LoginSignUpButtons;
+export default NavLoginSignUpButtons;
