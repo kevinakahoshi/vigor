@@ -14,6 +14,16 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 
 // TODO: Update the font to match the wireframe
 const themeStyles = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      xssm: 350,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920
+    }
+  },
   typography: {
     fontFamily: [
       'Dosis'

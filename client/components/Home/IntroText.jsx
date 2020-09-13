@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 
 // Components
+import IntroLoginSignUpButtons from './IntroLoginSignUpButtons';
 import VigorLogoWhite from '../Miscellaneous/VigorLogoWhite';
 import WordCarousel from './WordCarousel';
 
@@ -17,9 +18,11 @@ import WordCarousel from './WordCarousel';
 
 const textStyles = makeStyles(theme => ({
   container: {
-    padding: '1rem',
-    position: 'relative',
+    padding: '1rem 0rem',
     margin: 'auto'
+  },
+  textWrapper: {
+    position: 'relative'
   },
   heading: {
     color: '#ffffff',
@@ -32,12 +35,22 @@ const textStyles = makeStyles(theme => ({
     minHeight: '38px'
   },
   vigorLogo: {
-    position: 'absolute',
     height: '100%',
     width: 'auto',
     opacity: '.25',
+    pointerEvents: 'none',
+    position: 'absolute',
     left: 0,
     top: 0
+  },
+  loginSignup: {
+    [theme.breakpoints.up('sm')]: {
+      display: 'none'
+    },
+    [theme.breakpoints.between('xs', 'sm')]: {
+      display: 'block',
+      marginTop: '1rem'
+    }
   }
 }
 ));
@@ -50,17 +63,24 @@ const IntroText = () => {
       item
       className={styles.container}
       xs={12}>
-      <Typography
-        className={styles.heading}
-        variant="h1">
-        Vigor
-      </Typography>
       <Box
-        className={styles.carouselWrapper}>
-        <WordCarousel />
+        className={styles.textWrapper}>
+        <Typography
+          className={styles.heading}
+          variant="h1">
+          Vigor
+        </Typography>
+        <Box
+          className={styles.carouselWrapper}>
+          <WordCarousel />
+        </Box>
+        <VigorLogoWhite
+          classes={styles.vigorLogo} />
       </Box>
-      <VigorLogoWhite
-        classes={styles.vigorLogo} />
+      <Box
+        className={styles.loginSignup}>
+        <IntroLoginSignUpButtons />
+      </Box>
     </Grid>
   );
 };
