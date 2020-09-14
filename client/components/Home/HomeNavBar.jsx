@@ -25,8 +25,7 @@ const navStyles = makeStyles(theme => ({
   vigorLogo: {
     width: 'auto',
     height: '100%',
-    minHeight: '42px',
-    opacity: 1
+    minHeight: '42px'
   },
   buttonWrapper: {
     [theme.breakpoints.up('sm')]: {
@@ -46,7 +45,8 @@ const HomeNavBar = () => {
     <Box
       className={styles.navBar}>
       <VigorLogoWhite
-        classes={styles.vigorLogo} />
+        classes={styles.vigorLogo}
+        finalOpacity={1} />
       <Box
         className={styles.buttonWrapper}>
         <NavLoginSignUpButtons />
