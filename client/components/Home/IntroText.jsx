@@ -18,10 +18,10 @@ import WordCarousel from './WordCarousel';
 
 const textStyles = makeStyles(theme => ({
   container: {
-    padding: '1rem 0rem',
     margin: 'auto'
   },
   textWrapper: {
+    padding: '1rem',
     position: 'relative'
   },
   heading: {
@@ -37,7 +37,6 @@ const textStyles = makeStyles(theme => ({
   vigorLogo: {
     height: '100%',
     width: 'auto',
-    opacity: '.25',
     pointerEvents: 'none',
     position: 'absolute',
     left: 0,
@@ -75,6 +74,7 @@ const IntroText = () => {
           <WordCarousel />
         </Box>
         <VigorLogoWhite
+          finalOpacity={0.25}
           classes={styles.vigorLogo} />
       </Box>
       <Box

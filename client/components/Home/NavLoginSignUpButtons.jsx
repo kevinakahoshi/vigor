@@ -33,8 +33,7 @@ const NavLoginSignUpButtons = () => {
       Sign Up
       </VigorLinkButton>
       <VigorSecondaryButton
-        component={Link}
-        to="/login"
+        onClick={() => alert('Login Modal')}
         size="large">
       Login
       </VigorSecondaryButton>
