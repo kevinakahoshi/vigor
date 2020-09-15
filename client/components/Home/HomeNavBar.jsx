@@ -16,10 +16,10 @@ const navStyles = makeStyles(theme => ({
     width: '100%',
     zIndex: 1,
     [theme.breakpoints.up('sm')]: {
-      padding: '1.5rem'
+      padding: theme.spacing(3)
     },
     [theme.breakpoints.down('xs')]: {
-      padding: '1rem'
+      padding: theme.spacing(2)
     }
   },
   vigorLogo: {

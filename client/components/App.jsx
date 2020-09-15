@@ -13,12 +13,7 @@ import SignUp from '../views/SignUp';
 // Theme
 import VigorTheme from '../theme/VigorTheme';
 
-// Transitions
-// import componentTransitions from '../transitions/componentTransitions';
-
 const App = () => {
-  // const fade = componentTransitions();
-
   return (
     <VigorTheme>
       <BrowserRouter>
