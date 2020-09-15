@@ -7,11 +7,7 @@ import {
 
 // Components
 import LoginForm from './LoginForm';
-
-// Utilities
-import imagePath from '../../utilities/imagePath';
-
-const colorLogo = imagePath('Vigor-Logo.svg');
+import VigorLogo from '../Miscellaneous/VigorLogo';
 
 const modalContent = makeStyles(theme => ({
   paper: {
@@ -41,9 +37,9 @@ const LoginModalContent = () => {
     <Paper
       elevation={0}
       className={styles.paper}>
-      <img
-        className={styles.logo}
-        src={colorLogo} />
+      <VigorLogo
+        classes={styles.logo}
+        finalOpacity={1} />
       <Typography
         className={styles.text}
         variant="h3">
