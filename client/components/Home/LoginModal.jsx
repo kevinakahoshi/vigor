@@ -22,7 +22,7 @@ const LoginModal = ({ children }) => {
 
   return (
     <Modal
-      open={true}
+      open={false}
       className={styles.modal}>
       { children }
     </Modal>
