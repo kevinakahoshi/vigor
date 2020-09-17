@@ -27,7 +27,7 @@ const formStyles = makeStyles(theme => ({
   }
 }));
 
-const LoginForm = () => {
+const SignUpForm = () => {
   const styles = formStyles();
 
   return (
@@ -66,4 +66,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignUpForm;
