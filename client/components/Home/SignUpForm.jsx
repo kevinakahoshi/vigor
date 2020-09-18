@@ -20,7 +20,7 @@ const formStyles = makeStyles(theme => ({
   formGroup: {
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1.5)
+      paddingLeft: theme.spacing(1.5)
     }
   },
   textField: {
@@ -34,38 +34,41 @@ const SignUpForm = () => {
   const styles = formStyles();
 
   return (
-    <FormGroup
-      className={styles.formGroup}>
-      <FormControl>
-        <TextField
-          aria-describedby="Email Address"
-          className={styles.textField}
-          color="primary"
-          fullWidth={true}
-          id="email-textfield"
-          margin="dense"
-          name="email"
-          placeholder="Email"
-          variant="outlined" />
-        <TextField
-          aria-describedby="Password"
-          className={styles.textField}
-          color="primary"
-          fullWidth={true}
-          id="password-textField"
-          margin="dense"
-          name="password"
-          placeholder="Password"
-          type="password"
-          variant="outlined" />
-        <Box
-          className={styles.buttonWrapper}>
-          <VigorPrimaryButton>
+    <form>
+      <FormGroup
+        className={styles.formGroup}>
+        <FormControl>
+          <TextField
+            aria-describedby="Email Address"
+            className={styles.textField}
+            color="primary"
+            fullWidth={true}
+            id="email-textfield"
+            margin="dense"
+            name="email"
+            placeholder="Email"
+            variant="outlined" />
+          <TextField
+            aria-describedby="Password"
+            autoComplete="off"
+            className={styles.textField}
+            color="primary"
+            fullWidth={true}
+            id="password-textField"
+            margin="dense"
+            name="password"
+            placeholder="Password"
+            type="password"
+            variant="outlined" />
+          <Box
+            className={styles.buttonWrapper}>
+            <VigorPrimaryButton>
             Submit
-          </VigorPrimaryButton>
-        </Box>
-      </FormControl>
-    </FormGroup>
+            </VigorPrimaryButton>
+          </Box>
+        </FormControl>
+      </FormGroup>
+    </form>
   );
 };
 
