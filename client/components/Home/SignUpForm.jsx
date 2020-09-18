@@ -18,7 +18,10 @@ const formStyles = makeStyles(theme => ({
     }
   },
   formGroup: {
-    width: '100%'
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1.5)
+    }
   },
   textField: {
     '& input': {
