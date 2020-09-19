@@ -3,6 +3,10 @@ import {
   makeStyles,
   Modal
 } from '@material-ui/core';
+import {
+  animated,
+  useSpring
+} from 'react-spring';
 
 const modalStyles = makeStyles(theme => ({
   modal: {
@@ -20,12 +24,24 @@ const modalStyles = makeStyles(theme => ({
 const LoginModal = ({ children }) => {
   const styles = modalStyles();
 
+  const fadeStyles = useSpring({
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    }
+  });
+
   return (
-    <Modal
-      open={false}
-      className={styles.modal}>
-      { children }
-    </Modal>
+    <animated.div
+      style={fadeStyles}>
+      <Modal
+        open={true}
+        className={styles.modal}>
+        { children }
+      </Modal>
+    </animated.div>
   );
 };
 

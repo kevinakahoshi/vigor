@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 
 // Components
+import ErrorMessage from '../Miscellaneous/ErrorMessage';
 import SignUpFeatures from './SignUpFeatures';
 import SignUpRequirements from './SignUpRequirements';
 import VigorLogo from '../Miscellaneous/VigorLogo';
@@ -19,15 +20,15 @@ const signUpStyles = makeStyles(theme => ({
   },
   infoSubBox: {
     borderRadius: theme.spacing(0.5),
-    boxShadow: '0rem .25rem .5rem rgba(0, 0, 0, .25)'
+    boxShadow: '0rem .25rem .5rem rgba(0, 0, 0, .25)',
+    [theme.breakpoints.between('xs', 'sm')]: {
+      display: 'none'
+    }
   },
   infoFeatures: {
     padding: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
       display: 'block'
-    },
-    [theme.breakpoints.between('xs', 'sm')]: {
-      display: 'none'
     }
   },
   infoValidation: {
@@ -68,6 +69,8 @@ const SignUpInfo = () => {
         variant='h3'>
           Sign Up
       </Typography>
+      <ErrorMessage
+        message={'Hello Please'} />
       <Grid
         className={styles.infoSubBox}
         container>

@@ -30,8 +30,13 @@ const pageStyles = makeStyles(theme => ({
     background: '#ffffff',
     borderRadius: theme.spacing(0.5),
     boxShadow: '0rem .25rem .5rem rgba(0, 0, 0, .25)',
-    padding: theme.spacing(2),
-    margin: 'auto'
+    margin: 'auto',
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(2)
+    },
+    [theme.breakpoints.between('xs', 'sm')]: {
+      padding: theme.spacing(1)
+    }
   },
   info: {
     [theme.breakpoints.up('sm')]: {
@@ -39,6 +44,8 @@ const pageStyles = makeStyles(theme => ({
     }
   },
   formWrapper: {
+    display: 'flex',
+    alignItems: 'center',
     [theme.breakpoints.up('sm')]: {
       borderLeft: '1px solid #cccccc'
     }
