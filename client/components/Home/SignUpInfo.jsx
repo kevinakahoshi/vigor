@@ -21,6 +21,13 @@ const signUpStyles = makeStyles(theme => ({
     borderRadius: theme.spacing(0.5),
     boxShadow: '0rem .25rem .5rem rgba(0, 0, 0, .25)'
   },
+  infoFeatures: {
+    padding: theme.spacing(2)
+  },
+  infoValidation: {
+    padding: theme.spacing(2),
+    display: 'grid'
+  },
   logo: {
     display: 'block',
     height: 'auto',
@@ -55,19 +62,22 @@ const SignUpInfo = () => {
       </Typography>
       <Grid
         className={styles.infoSubBox}
-        container
-        spacing={3}>
+        container>
         <Grid
+          className={styles.infoFeatures}
           item
-          xs={6}>
+          sm={6}
+          xs={12}>
           <ul
             className={styles.unorderedList}>
             <SignUpFeatures />
           </ul>
         </Grid>
         <Grid
+          className={styles.infoValidation}
           item
-          xs={6}>
+          sm={6}
+          xs={12}>
           <SignUpRequirements />
         </Grid>
       </Grid>
