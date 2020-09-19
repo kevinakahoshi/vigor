@@ -7,8 +7,8 @@ import {
 } from '@material-ui/core';
 
 // Components
-import SignUpInfo from '../components/Home/SignUpInfo';
-import SignUpForm from '../components/Home/SignUpForm';
+import SignUpInfo from '../components/SignUp/SignUpInfo';
+import SignUpForm from '../components/SignUp/SignUpForm';
 
 const pageStyles = makeStyles(theme => ({
   box: {

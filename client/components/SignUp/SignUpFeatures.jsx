@@ -4,9 +4,9 @@ import {
 } from '@material-ui/core';
 
 const features = [
-  'Track your progress with your exercises',
-  'Track your progress with your weight',
-  'View your progress over time'
+  'Track progress with your frequency',
+  'Track progress with your weight',
+  'View progress over time'
 ];
 
 const SignUpFeatures = () => {

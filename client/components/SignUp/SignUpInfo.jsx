@@ -22,7 +22,13 @@ const signUpStyles = makeStyles(theme => ({
     boxShadow: '0rem .25rem .5rem rgba(0, 0, 0, .25)'
   },
   infoFeatures: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    },
+    [theme.breakpoints.between('xs', 'sm')]: {
+      display: 'none'
+    }
   },
   infoValidation: {
     padding: theme.spacing(2),
@@ -42,7 +48,9 @@ const signUpStyles = makeStyles(theme => ({
   },
   unorderedList: {
     margin: 0,
-    paddingInlineStart: '2em'
+    display: 'grid',
+    gridGap: theme.spacing(0.5),
+    paddingInlineStart: `${theme.spacing(3.5)}px`
   }
 }));
 
