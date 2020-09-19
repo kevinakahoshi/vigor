@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  forwardRef
+} from 'react';
 import {
   makeStyles,
   Paper,
@@ -50,4 +52,4 @@ const LoginModalContent = () => {
   );
 };
 
-export default LoginModalContent;
+export default forwardRef(LoginModalContent);

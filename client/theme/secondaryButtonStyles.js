@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 
 const VigorSecondaryButton = withStyles({
   root: {
+    fontSize: '1.25rem',
     padding: '.5rem 3rem',
     border: 0,
     backgroundImage: 'linear-gradient(#ffffff, #ffffff)',

@@ -43,6 +43,22 @@ const themeStyles = createMuiTheme({
           height: 'var(--app-height)'
         }
       }
+    },
+    MuiTextField: {
+      root: {
+        '& .MuiOutlinedInput-root': {
+          outlineWidth: '1px',
+          '& input': {
+            fontSize: '1.25rem'
+          },
+          '&.Mui-focused fieldset': {
+
+          },
+          '&.Mui-error.Mui-focused fieldset': {
+            borderColor: '#f44336'
+          }
+        }
+      }
     }
   }
 });
