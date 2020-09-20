@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useState
+} from 'react';
 import {
   Box,
   makeStyles
@@ -8,6 +10,8 @@ import {
 } from 'react-router-dom';
 
 // Components
+import LoginModal from './LoginModal';
+import LoginModalContent from './LoginModalContent';
 import VigorLinkButtonWhite from '../../theme/whiteLinkButtonStyles';
 import VigorSecondaryButton from '../../theme/secondaryButtonStyles';
 
@@ -21,6 +25,7 @@ const buttonWrapper = makeStyles(theme => ({
 ));
 
 const NavLoginSignUpButtons = () => {
+  const [open, setOpen] = useState(false);
   const styles = buttonWrapper();
 
   return (
@@ -30,13 +35,18 @@ const NavLoginSignUpButtons = () => {
         component={Link}
         to="/sign-up"
         size="large">
-      Sign Up
+          Sign Up
       </VigorLinkButtonWhite>
       <VigorSecondaryButton
-        onClick={() => alert('Login Modal')}
+        onClick={() => setOpen(true)}
         size="large">
-      Login
+          Login
       </VigorSecondaryButton>
+      <LoginModal
+        open={open}
+        setOpen={setOpen}>
+        <LoginModalContent />
+      </LoginModal>
     </Box>
   );
 };

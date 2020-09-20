@@ -7,8 +7,6 @@ import {
 // Components
 import HomeNavBar from '../components/Home/HomeNavBar';
 import IntroText from '../components/Home/IntroText';
-import LoginModal from '../components/Home/LoginModal';
-import LoginModalContent from '../components/Home/LoginModalContent';
 
 const homeStyles = makeStyles(theme => ({
   root: {
@@ -27,9 +25,6 @@ const Home = () => {
         className={styles.root}
         maxWidth="sm">
         <IntroText />
-        <LoginModal>
-          <LoginModalContent />
-        </LoginModal>
       </Container>
     </>
   );
