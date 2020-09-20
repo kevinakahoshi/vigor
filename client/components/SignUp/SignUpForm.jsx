@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useState
+} from 'react';
 import {
   Box,
   FormControl,
@@ -6,24 +8,32 @@ import {
   makeStyles,
   TextField
 } from '@material-ui/core';
+import {
+  Link
+} from 'react-router-dom';
 
 // Theme Specific
+import VigorLinkButtonGrey from '../../theme/greyLinkButtonStyles';
 import VigorPrimaryButton from '../../theme/primaryButtonStyles';
+import VigorProgressButton from '../Miscellaneous/VigorProgressButton';
 
 const formStyles = makeStyles(theme => ({
+  formGroup: {
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: theme.spacing(1.5)
+    }
+  },
   form: {
+    width: '100%'
+  },
+  formControl: {
     width: '100%'
   },
   buttonWrapper: {
     marginTop: '8px',
     '& button': {
       width: '100%'
-    }
-  },
-  formGroup: {
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      paddingLeft: theme.spacing(1.5)
     }
   },
   textField: {
@@ -33,89 +43,108 @@ const formStyles = makeStyles(theme => ({
     '& input': {
       textAlign: 'center'
     }
+  },
+  backButton: {
+    width: '100%',
+    marginTop: theme.spacing(1.5)
   }
 }));
 
 const SignUpForm = () => {
+  const [showProgress, setShowProgress] = useState(false);
   const styles = formStyles();
 
   return (
-    <form
-      className={styles.form}
-      onSubmit={() => {
-        event.preventDefault();
-      }}>
+    <>
       <FormGroup
         className={styles.formGroup}>
-        <FormControl>
-          <TextField
-            error={false}
-            aria-describedby="First Name"
-            className={styles.textField}
-            color="primary"
-            fullWidth={true}
-            id="first-name-textfield"
-            margin="dense"
-            name="firstName"
-            placeholder="First Name"
-            variant="outlined" />
-          <TextField
-            error={false}
-            aria-describedby="Last Name"
-            className={styles.textField}
-            color="primary"
-            fullWidth={true}
-            id="last-name-textfield"
-            margin="dense"
-            name="lastName"
-            placeholder="Last Name"
-            variant="outlined" />
-          <TextField
-            error={false}
-            aria-describedby="Email Address"
-            className={styles.textField}
-            color="primary"
-            fullWidth={true}
-            id="email-textfield"
-            margin="dense"
-            name="email"
-            placeholder="Email"
-            variant="outlined" />
-          <TextField
-            error={false}
-            aria-describedby="Password"
-            autoComplete="off"
-            className={styles.textField}
-            color="primary"
-            fullWidth={true}
-            id="password-textField"
-            margin="dense"
-            name="password"
-            placeholder="Password"
-            type="password"
-            variant="outlined" />
-          <TextField
-            error={false}
-            aria-describedby="Re-Enter Password"
-            autoComplete="off"
-            className={styles.textField}
-            color="primary"
-            fullWidth={true}
-            id="re-enter-password-textField"
-            margin="dense"
-            name="reenterPassword"
-            placeholder="Re-Enter Password"
-            type="password"
-            variant="outlined" />
-          <Box
-            className={styles.buttonWrapper}>
-            <VigorPrimaryButton>
-            Submit
-            </VigorPrimaryButton>
-          </Box>
-        </FormControl>
+        <form
+          className={styles.form}
+          onSubmit={() => {
+            event.preventDefault();
+            setShowProgress(!showProgress);
+          }}>
+          <FormControl
+            className={styles.formControl}>
+            <TextField
+              error={false}
+              aria-describedby="First Name"
+              className={styles.textField}
+              color="primary"
+              fullWidth={true}
+              id="first-name-textfield"
+              margin="dense"
+              name="firstName"
+              placeholder="First Name"
+              variant="outlined" />
+            <TextField
+              error={false}
+              aria-describedby="Last Name"
+              className={styles.textField}
+              color="primary"
+              fullWidth={true}
+              id="last-name-textfield"
+              margin="dense"
+              name="lastName"
+              placeholder="Last Name"
+              variant="outlined" />
+            <TextField
+              error={false}
+              aria-describedby="Email Address"
+              className={styles.textField}
+              color="primary"
+              fullWidth={true}
+              id="email-textfield"
+              margin="dense"
+              name="email"
+              placeholder="Email"
+              variant="outlined" />
+            <TextField
+              error={false}
+              aria-describedby="Password"
+              autoComplete="off"
+              className={styles.textField}
+              color="primary"
+              fullWidth={true}
+              id="password-textField"
+              margin="dense"
+              name="password"
+              placeholder="Password"
+              type="password"
+              variant="outlined" />
+            <TextField
+              error={false}
+              aria-describedby="Re-Enter Password"
+              autoComplete="off"
+              className={styles.textField}
+              color="primary"
+              fullWidth={true}
+              id="re-enter-password-textField"
+              margin="dense"
+              name="reenterPassword"
+              placeholder="Re-Enter Password"
+              type="password"
+              variant="outlined" />
+            <Box
+              className={styles.buttonWrapper}>
+              { showProgress
+                ? <VigorProgressButton />
+                : <VigorPrimaryButton
+                  type="submit">
+                      Submit
+                </VigorPrimaryButton> }
+            </Box>
+          </FormControl>
+        </form>
+        <VigorLinkButtonGrey
+          className={styles.backButton}
+          component={Link}
+          to="/"
+          size="large">
+          Back
+        </VigorLinkButtonGrey>
       </FormGroup>
-    </form>
+    </>
   );
 };
 

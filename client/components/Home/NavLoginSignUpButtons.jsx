@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 // Components
-import VigorLinkButton from '../../theme/linkButtonStyles';
+import VigorLinkButtonWhite from '../../theme/whiteLinkButtonStyles';
 import VigorSecondaryButton from '../../theme/secondaryButtonStyles';
 
 const buttonWrapper = makeStyles(theme => ({
@@ -26,12 +26,12 @@ const NavLoginSignUpButtons = () => {
   return (
     <Box
       className={styles.buttonWrapper}>
-      <VigorLinkButton
+      <VigorLinkButtonWhite
         component={Link}
         to="/sign-up"
         size="large">
       Sign Up
-      </VigorLinkButton>
+      </VigorLinkButtonWhite>
       <VigorSecondaryButton
         onClick={() => alert('Login Modal')}
         size="large">
