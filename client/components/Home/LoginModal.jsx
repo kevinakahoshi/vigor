@@ -16,7 +16,7 @@ const modalStyles = makeStyles(theme => ({
       padding: theme.spacing(5)
     },
     [theme.breakpoints.between('xs', 'sm')]: {
-      padding: theme.spacing(2.5)
+      padding: theme.spacing(2)
     }
   }
 }));

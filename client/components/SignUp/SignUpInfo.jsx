@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core';
 
 // Components
-import ErrorMessage from '../Miscellaneous/ErrorMessage';
+// import ErrorMessage from '../Miscellaneous/ErrorMessage';
 import SignUpFeatures from './SignUpFeatures';
 import SignUpRequirements from './SignUpRequirements';
 import VigorLogo from '../Miscellaneous/VigorLogo';
@@ -69,8 +69,8 @@ const SignUpInfo = () => {
         variant='h3'>
           Sign Up
       </Typography>
-      <ErrorMessage
-        message={'Hello Please'} />
+      {/* <ErrorMessage
+        message={'Hello Please'} /> */}
       <Grid
         className={styles.infoSubBox}
         container>

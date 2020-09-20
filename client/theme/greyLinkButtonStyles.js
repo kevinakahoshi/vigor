@@ -3,13 +3,13 @@ import {
 } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
-const VigorLinkButton = withStyles({
+const VigorLinkButtonGrey = withStyles({
   root: {
     fontSize: '1.25rem',
     padding: '.5rem 3rem',
     border: 0,
-    color: '#ffffff'
+    color: '#cccccc'
   }
 })(Button);
 
-export default VigorLinkButton;
+export default VigorLinkButtonGrey;

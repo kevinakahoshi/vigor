@@ -46,6 +46,8 @@ const pageStyles = makeStyles(theme => ({
   formWrapper: {
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
     [theme.breakpoints.up('sm')]: {
       borderLeft: '1px solid #cccccc'
     }
