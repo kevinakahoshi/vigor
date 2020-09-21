@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 // Components
-import VigorSecondaryButton from '../../theme/secondaryButtonStyles';
+import VigorSecondaryButton from '../../theme/custom-styles/secondaryButtonStyles';
 
 const buttonWrapper = makeStyles(theme => ({
   buttonWrapper: {

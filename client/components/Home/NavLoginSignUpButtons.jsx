@@ -12,8 +12,8 @@ import {
 // Components
 import LoginModal from './LoginModal';
 import LoginModalContent from './LoginModalContent';
-import VigorLinkButtonWhite from '../../theme/whiteLinkButtonStyles';
-import VigorSecondaryButton from '../../theme/secondaryButtonStyles';
+import VigorLinkButtonWhite from '../../theme/custom-styles/whiteLinkButtonStyles';
+import VigorSecondaryButton from '../../theme/custom-styles/secondaryButtonStyles';
 
 const buttonWrapper = makeStyles(theme => ({
   buttonWrapper: {

@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 
 // Theme Specific
-import VigorPrimaryButton from '../../theme/primaryButtonStyles';
+import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
 
 const formStyles = makeStyles(theme => ({
   buttonWrapper: {
