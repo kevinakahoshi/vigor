@@ -13,8 +13,8 @@ import {
 } from 'react-router-dom';
 
 // Theme Specific
-import VigorLinkButtonGrey from '../../theme/greyLinkButtonStyles';
-import VigorPrimaryButton from '../../theme/primaryButtonStyles';
+import VigorLinkButtonGrey from '../../theme/custom-styles/greyLinkButtonStyles';
+import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
 import VigorProgressButton from '../Miscellaneous/VigorProgressButton';
 
 const formStyles = makeStyles(theme => ({

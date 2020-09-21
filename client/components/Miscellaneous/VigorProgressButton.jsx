@@ -5,7 +5,7 @@ import {
 } from '@material-ui/core';
 
 // Components
-import VigorPrimaryButton from '../../theme/primaryButtonStyles';
+import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
 
 const progressStyles = makeStyles(theme => ({
   button: {

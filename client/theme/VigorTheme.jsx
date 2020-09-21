@@ -7,7 +7,7 @@ import {
 } from '@material-ui/core';
 
 // Basline Theme
-import themeStyles from './themeStyles';
+import themeStyles from './custom-styles/themeStyles';
 
 const VigorTheme = ({ children }) => {
   return (
