@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useState
+} from 'react';
 import {
   Box,
   FormControl,
@@ -9,6 +11,10 @@ import {
 
 // Theme Specific
 import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
+import VigorProgressButton from '../Miscellaneous/VigorProgressButton';
+
+// Fetch
+// import loginUser from '../../utilities/fetch/loginUser';
 
 const formStyles = makeStyles(theme => ({
   buttonWrapper: {
@@ -31,10 +37,51 @@ const formStyles = makeStyles(theme => ({
 }));
 
 const LoginForm = () => {
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [loading, setLoading] = useState(false);
   const styles = formStyles();
+
+  const handleChange = event => {
+    switch (event.target.name) {
+      case 'email':
+        setEmail(event.target.value);
+        break;
+      case 'password':
+        setPassword(event.target.value);
+        break;
+    }
+  };
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    setLoading(true);
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email,
+        password
+      })
+    };
+    const response = await fetch('/api/users/login', options);
+    setLoading(false);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    } else {
+      const user = await response.json();
+      alert(`${user.firstName} ${user.lastName}`);
+    }
+  };
 
   return (
     <form
+      onChange={handleChange}
+      onSubmit={handleSubmit}
       className={styles.form}>
       <FormGroup
         className={styles.formGroup}>
@@ -64,9 +111,12 @@ const LoginForm = () => {
             variant="outlined" />
           <Box
             className={styles.buttonWrapper}>
-            <VigorPrimaryButton>
-              Submit
-            </VigorPrimaryButton>
+            { loading
+              ? <VigorProgressButton />
+              : <VigorPrimaryButton
+                type="submit">
+                  Submit
+              </VigorPrimaryButton> }
           </Box>
         </FormControl>
       </FormGroup>
