@@ -98,6 +98,7 @@
   "homepage": "https://github.com/kevinakahoshi/vigor#readme",
   "dependencies": {
     "@material-ui/core": "4.11.0",
+    "@reduxjs/toolkit": "1.4.0",
     "bcrypt": "5.0.0",
     "dotenv": "8.2.0",
     "express": "4.17.1",
@@ -107,6 +108,7 @@
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
     "react-spring": "8.0.27",
+    "redux": "4.0.5",
     "session-file-store": "1.4.0"
   },
   "devDependencies": {
