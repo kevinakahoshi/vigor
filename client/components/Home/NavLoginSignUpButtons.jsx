@@ -9,6 +9,13 @@ import {
   Link
 } from 'react-router-dom';
 
+import {
+  useDispatch
+} from 'react-redux';
+
+// Redux Actions
+import actions from '../../actions/index';
+
 // Components
 import LoginModal from './LoginModal';
 import LoginModalContent from './LoginModalContent';
@@ -26,7 +33,19 @@ const buttonWrapper = makeStyles(theme => ({
 
 const NavLoginSignUpButtons = () => {
   const [open, setOpen] = useState(false);
+
+  const dispatch = useDispatch();
   const styles = buttonWrapper();
+
+  const handleClick = async () => {
+    const response = await fetch('/api/users/get-user');
+    const user = await response.json();
+    if (user) {
+      dispatch(actions.userActions.setUser(user));
+    } else {
+      setOpen(true);
+    }
+  };
 
   return (
     <Box
@@ -38,7 +57,7 @@ const NavLoginSignUpButtons = () => {
           Sign Up
       </VigorLinkButtonWhite>
       <VigorSecondaryButton
-        onClick={() => setOpen(true)}
+        onClick={handleClick}
         size="large">
           Login
       </VigorSecondaryButton>

@@ -9,6 +9,13 @@ import {
   TextField
 } from '@material-ui/core';
 
+import {
+  useDispatch
+} from 'react-redux';
+
+// Redux Actions
+import actions from '../../actions/index';
+
 // Theme Specific
 import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
 import VigorProgressButton from '../Miscellaneous/VigorProgressButton';
@@ -40,6 +47,8 @@ const LoginForm = () => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const dispatch = useDispatch();
   const styles = formStyles();
 
   const handleChange = event => {
@@ -74,7 +83,7 @@ const LoginForm = () => {
       throw new Error(`HTTP error: ${response.status}`);
     } else {
       const user = await response.json();
-      alert(`${user.firstName} ${user.lastName}`);
+      dispatch(actions.userActions.setUser(user));
     }
   };
 
