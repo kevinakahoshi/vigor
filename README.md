@@ -7,6 +7,7 @@
 - React.js
 - React Router
 - React Spring
+- React Redux
 - Material UI
 - Node.js
 - Express

@@ -15,7 +15,7 @@ import {
 // Theme Specific
 import VigorLinkButtonGrey from '../../theme/custom-styles/greyLinkButtonStyles';
 import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
-import VigorProgressButton from '../Miscellaneous/VigorProgressButton';
+import VigorPrimaryProgressButton from '../Miscellaneous/VigorPrimaryProgressButton';
 
 const formStyles = makeStyles(theme => ({
   formGroup: {
@@ -128,7 +128,7 @@ const SignUpForm = () => {
             <Box
               className={styles.buttonWrapper}>
               { showProgress
-                ? <VigorProgressButton />
+                ? <VigorPrimaryProgressButton />
                 : <VigorPrimaryButton
                   type="submit">
                       Submit
