@@ -41,18 +41,32 @@ const themeStyles = createMuiTheme({
         },
         'div#root': {
           height: 'var(--app-height)'
+        },
+        'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus': {
+          WebkitBoxShadow: '0 0 0px 1000px #fff inset'
+        },
+        'input:-webkit-autofill::first-line': {
+          transition: '.3s all',
+          fontSize: '1.25rem',
+          fontFamily: 'Dosis'
         }
       }
     },
     MuiTextField: {
       root: {
         '& .MuiOutlinedInput-root': {
-          outlineWidth: '1px',
+          outlineWidth: '2px',
           '& input': {
             fontSize: '1.25rem'
           },
+          '& fieldset': {
+            borderWidth: '2px'
+          },
+          '&:not(.Mui-focused):hover .MuiOutlinedInput-notchedOutline': {
+            borderColor: 'rgb(0 0 0 / 0.35)'
+          },
           '&.Mui-focused fieldset': {
-
+            borderColor: '#4BBCC0'
           },
           '&.Mui-error.Mui-focused fieldset': {
             borderColor: '#f44336'

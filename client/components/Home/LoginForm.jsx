@@ -18,7 +18,7 @@ import actions from '../../actions/index';
 
 // Theme Specific
 import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
-import VigorProgressButton from '../Miscellaneous/VigorProgressButton';
+import VigorPrimaryProgressButton from '../Miscellaneous/VigorPrimaryProgressButton';
 
 // Fetch
 // import loginUser from '../../utilities/fetch/loginUser';
@@ -121,7 +121,7 @@ const LoginForm = () => {
           <Box
             className={styles.buttonWrapper}>
             { loading
-              ? <VigorProgressButton />
+              ? <VigorPrimaryProgressButton />
               : <VigorPrimaryButton
                 type="submit">
                   Submit

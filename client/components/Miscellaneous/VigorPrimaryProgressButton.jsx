@@ -21,7 +21,7 @@ const progressStyles = makeStyles(theme => ({
   }
 }));
 
-const VigorProgressButton = () => {
+const VigorPrimaryProgressButton = () => {
   const styles = progressStyles();
 
   return (
@@ -37,4 +37,4 @@ const VigorProgressButton = () => {
   );
 };
 
-export default VigorProgressButton;
+export default VigorPrimaryProgressButton;
