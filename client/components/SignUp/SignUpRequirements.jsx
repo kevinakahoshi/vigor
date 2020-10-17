@@ -38,7 +38,7 @@ const SignUpRequirements = () => {
   const styles = requirementStyles();
 
   // TODO: Manage the validation through global state
-  const valid = true;
+  const valid = false;
 
   return requirements.map(text => (
     <Box
