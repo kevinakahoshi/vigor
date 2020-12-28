@@ -1,18 +1,15 @@
 import React from 'react';
-import {
-  Container,
-  makeStyles
-} from '@material-ui/core';
+import { Container, makeStyles } from '@material-ui/core';
 
 // Components
 import HomeNavBar from '../components/Home/HomeNavBar';
 import IntroText from '../components/Home/IntroText';
 
-const homeStyles = makeStyles(theme => ({
+const homeStyles = makeStyles((theme) => ({
   root: {
     height: '100%',
-    display: 'flex'
-  }
+    display: 'flex',
+  },
 }));
 
 const Home = () => {
@@ -21,9 +18,7 @@ const Home = () => {
   return (
     <>
       <HomeNavBar />
-      <Container
-        className={styles.root}
-        maxWidth="sm">
+      <Container className={styles.root} maxWidth="sm">
         <IntroText />
       </Container>
     </>

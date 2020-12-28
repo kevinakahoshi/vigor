@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  animated,
-  useSpring
-} from 'react-spring';
+import { animated, useSpring } from 'react-spring';
 
 // Utilities
 import imagePath from '../../utilities/imagePath';
@@ -14,14 +11,14 @@ const VigorLogoWhite = ({ classes, finalOpacity }) => {
     config: {
       mass: 1,
       tension: 500,
-      friction: 50
+      friction: 50,
     },
     from: {
-      opacity: 0
+      opacity: 0,
     },
     to: {
-      opacity: finalOpacity
-    }
+      opacity: finalOpacity,
+    },
   });
 
   return (
@@ -30,7 +27,8 @@ const VigorLogoWhite = ({ classes, finalOpacity }) => {
       className={classes}
       style={style}
       alt="Vigor Logo"
-      title="Vigor: Fitness Tracking and Data Visualization" />
+      title="Vigor: Fitness Tracking and Data Visualization"
+    />
   );
 };
 

@@ -8,8 +8,8 @@ const VigorLinkButtonWhite = withStyles({
     fontSize: '1.25rem',
     padding: '.5rem 3rem',
     border: 0,
-    color: '#ffffff'
-  }
+    color: '#ffffff',
+  },
 })(Button);
 
 export default VigorLinkButtonWhite;

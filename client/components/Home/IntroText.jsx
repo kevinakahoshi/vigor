@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Grid,
-  makeStyles,
-  Typography
-} from '@material-ui/core';
+import { Box, Grid, makeStyles, Typography } from '@material-ui/core';
 
 // Components
 import IntroLoginSignUpButtons from './IntroLoginSignUpButtons';
@@ -16,23 +11,23 @@ import WordCarousel from './WordCarousel';
 
 // const backgroundLogo = imagePath('Vigor-Logo-White.svg');
 
-const textStyles = makeStyles(theme => ({
+const textStyles = makeStyles((theme) => ({
   container: {
-    margin: 'auto'
+    margin: 'auto',
   },
   textWrapper: {
     padding: '1rem',
-    position: 'relative'
+    position: 'relative',
   },
   heading: {
     color: '#ffffff',
     fontWeight: 400,
     textTransform: 'uppercase',
     textAlign: 'center',
-    fontSize: '7.5rem'
+    fontSize: '7.5rem',
   },
   carouselWrapper: {
-    minHeight: '38px'
+    minHeight: '38px',
   },
   vigorLogo: {
     height: '100%',
@@ -40,45 +35,34 @@ const textStyles = makeStyles(theme => ({
     pointerEvents: 'none',
     position: 'absolute',
     left: 0,
-    top: 0
+    top: 0,
   },
   loginSignup: {
     [theme.breakpoints.up('sm')]: {
-      display: 'none'
+      display: 'none',
     },
     [theme.breakpoints.between('xs', 'sm')]: {
       display: 'block',
-      marginTop: '1rem'
-    }
-  }
-}
-));
+      marginTop: '1rem',
+    },
+  },
+}));
 
 const IntroText = () => {
   const styles = textStyles();
 
   return (
-    <Grid
-      item
-      className={styles.container}
-      xs={12}>
-      <Box
-        className={styles.textWrapper}>
-        <Typography
-          className={styles.heading}
-          variant="h1">
+    <Grid item className={styles.container} xs={12}>
+      <Box className={styles.textWrapper}>
+        <Typography className={styles.heading} variant="h1">
           Vigor
         </Typography>
-        <Box
-          className={styles.carouselWrapper}>
+        <Box className={styles.carouselWrapper}>
           <WordCarousel />
         </Box>
-        <VigorLogoWhite
-          finalOpacity={0.25}
-          classes={styles.vigorLogo} />
+        <VigorLogoWhite finalOpacity={0.25} classes={styles.vigorLogo} />
       </Box>
-      <Box
-        className={styles.loginSignup}>
+      <Box className={styles.loginSignup}>
         <IntroLoginSignUpButtons />
       </Box>
     </Grid>

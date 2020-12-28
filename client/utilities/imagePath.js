@@ -1,3 +1,3 @@
-const imagePath = fileName => `/assets/images/brand-assets/${fileName}`;
+const imagePath = (fileName) => `/assets/images/brand-assets/${fileName}`;
 
 export default imagePath;
