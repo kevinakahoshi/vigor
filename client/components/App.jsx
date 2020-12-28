@@ -1,15 +1,7 @@
-import React, {
-  useEffect
-} from 'react';
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import {
-  useDispatch
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import actions from '../actions/index';
 
@@ -40,21 +32,9 @@ const App = () => {
     <VigorTheme>
       <BrowserRouter>
         <Switch>
-          <Route
-            exact path="/"
-            render={props =>
-              <Home />
-            }/>
-          <Route
-            exact path="/login"
-            render={props =>
-              <Login />
-            } />
-          <Route
-            exact path="/sign-up"
-            render={props =>
-              <SignUp />
-            } />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/sign-up" component={SignUp} />
         </Switch>
       </BrowserRouter>
     </VigorTheme>

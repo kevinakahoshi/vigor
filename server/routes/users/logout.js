@@ -7,6 +7,7 @@ router.post('/', (request, response, next) => {
   } else {
     response.status(404).json('No user is currently logged in');
   }
+  next();
 });
 
 module.exports = router;

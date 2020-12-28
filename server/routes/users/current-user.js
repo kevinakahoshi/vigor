@@ -6,6 +6,7 @@ router.get('/', (request, response, next) => {
   } else {
     response.status(404).json('Bad request');
   }
+  next();
 });
 
 module.exports = router;

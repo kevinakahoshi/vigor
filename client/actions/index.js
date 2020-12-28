@@ -1,7 +1,7 @@
 import userActions from './userActions';
 
 const actions = {
-  userActions
+  userActions,
 };
 
 export default actions;

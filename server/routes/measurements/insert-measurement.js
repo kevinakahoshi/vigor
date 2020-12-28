@@ -10,16 +10,18 @@ router.post('/', (request, response, next) => {
     'thighs',
     'userId',
     'waist',
-    'weight'
+    'weight',
   ];
 
-  for (const measurement of measurementTypes) {
-    if (request.body[measurement] === undefined ||
+  measurementTypes.forEach((measurement) => {
+    if (
+      request.body[measurement] === undefined ||
       request.body[measurement] === null ||
-      !request.body[measurement]) {
+      !request.body[measurement]
+    ) {
       response.status(400).json('Missing measurements');
     }
-  }
+  });
 
   const {
     arms,
@@ -29,7 +31,7 @@ router.post('/', (request, response, next) => {
     thighs,
     userId,
     waist,
-    weight
+    weight,
   } = request.body;
 
   const sqlQuery = `
@@ -38,26 +40,19 @@ router.post('/', (request, response, next) => {
       RETURNING *
   `;
 
-  const params = [
-    arms,
-    bodyFat,
-    chest,
-    hips,
-    thighs,
-    userId,
-    waist,
-    weight
-  ];
+  const params = [arms, bodyFat, chest, hips, thighs, userId, waist, weight];
 
   db.query(sqlQuery, params)
-    .then(result => {
+    .then((result) => {
       if (result) {
         response.status(200).json(result.rows[0]);
       } else {
         response.status(500).json('An unexpected error occurred');
       }
     })
-    .catch(error => console.error(error));
+    .catch((error) => console.error(error));
+
+  next();
 });
 
 module.exports = router;

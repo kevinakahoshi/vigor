@@ -1,17 +1,13 @@
-import React, {
-  useState
-} from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   FormControl,
   FormGroup,
   makeStyles,
-  TextField
+  TextField,
 } from '@material-ui/core';
 
-import {
-  useDispatch
-} from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 // Redux Actions
 import actions from '../../actions/index';
@@ -23,24 +19,24 @@ import VigorPrimaryProgressButton from '../Miscellaneous/VigorPrimaryProgressBut
 // Fetch
 // import loginUser from '../../utilities/fetch/loginUser';
 
-const formStyles = makeStyles(theme => ({
+const formStyles = makeStyles((theme) => ({
   buttonWrapper: {
     marginTop: '8px',
     '& button': {
-      width: '100%'
-    }
+      width: '100%',
+    },
   },
   form: {
-    width: '100%'
+    width: '100%',
   },
   formGroup: {
-    width: '100%'
+    width: '100%',
   },
   textField: {
     '& input': {
-      textAlign: 'center'
-    }
-  }
+      textAlign: 'center',
+    },
+  },
 }));
 
 const LoginForm = () => {
@@ -51,7 +47,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const styles = formStyles();
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     switch (event.target.name) {
       case 'email':
         setEmail(event.target.value);
@@ -59,22 +55,24 @@ const LoginForm = () => {
       case 'password':
         setPassword(event.target.value);
         break;
+      default:
+        break;
     }
   };
 
-  const handleSubmit = async event => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
 
     const options = {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         email,
-        password
-      })
+        password,
+      }),
     };
     const response = await fetch('/api/users/login', options);
     setLoading(false);
@@ -91,41 +89,41 @@ const LoginForm = () => {
     <form
       onChange={handleChange}
       onSubmit={handleSubmit}
-      className={styles.form}>
-      <FormGroup
-        className={styles.formGroup}>
+      className={styles.form}
+    >
+      <FormGroup className={styles.formGroup}>
         <FormControl>
           <TextField
             aria-describedby="Email Address"
             autoComplete="username"
             className={styles.textField}
             color="primary"
-            fullWidth={true}
+            fullWidth
             id="email-textfield"
             margin="dense"
             name="email"
             placeholder="Email"
-            variant="outlined" />
+            variant="outlined"
+          />
           <TextField
             aria-describedby="Password"
             autoComplete="new-password"
             className={styles.textField}
             color="primary"
-            fullWidth={true}
+            fullWidth
             id="password-textField"
             margin="dense"
             name="password"
             placeholder="Password"
             type="password"
-            variant="outlined" />
-          <Box
-            className={styles.buttonWrapper}>
-            { loading
-              ? <VigorPrimaryProgressButton />
-              : <VigorPrimaryButton
-                type="submit">
-                  Submit
-              </VigorPrimaryButton> }
+            variant="outlined"
+          />
+          <Box className={styles.buttonWrapper}>
+            {loading ? (
+              <VigorPrimaryProgressButton />
+            ) : (
+              <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
+            )}
           </Box>
         </FormControl>
       </FormGroup>

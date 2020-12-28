@@ -4,13 +4,13 @@ const currentUser = (state = {}, action) => {
       return {
         ...state,
         user: action.payload,
-        loggedIn: true
+        loggedIn: true,
       };
     case 'LOG_OUT':
       return {
         ...state,
         user: {},
-        loggedIn: false
+        loggedIn: false,
       };
     default:
       return state;

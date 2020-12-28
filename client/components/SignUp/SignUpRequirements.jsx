@@ -1,29 +1,25 @@
 import React from 'react';
-import {
-  Box,
-  makeStyles,
-  Typography
-} from '@material-ui/core';
+import { Box, makeStyles, Typography } from '@material-ui/core';
 
 // Components
 import SignUpValidationCircle from './SignUpValidationCircle';
 
-const requirementStyles = makeStyles(theme => ({
+const requirementStyles = makeStyles((theme) => ({
   requirement: {
     display: 'grid',
     gridTemplateColumns: 'auto 1fr',
     gridGap: theme.spacing(1),
     '&.invalid': {
-      opacity: 0.25
+      opacity: 0.25,
     },
     '&.valid': {
-      opacity: 1
-    }
+      opacity: 1,
+    },
   },
   text: {
     display: 'flex',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 }));
 
 const requirements = [
@@ -31,7 +27,7 @@ const requirements = [
   '1+ Letter',
   '1+ Number',
   '1+ Special Character',
-  'Password Match'
+  'Password Match',
 ];
 
 const SignUpRequirements = () => {
@@ -40,16 +36,13 @@ const SignUpRequirements = () => {
   // TODO: Manage the validation through global state
   const valid = false;
 
-  return requirements.map(text => (
+  return requirements.map((text) => (
     <Box
       className={`${styles.requirement} ${valid ? 'valid' : 'invalid'}`}
-      key={text}>
-      <SignUpValidationCircle
-        valid={valid} />
-      <Typography
-        className={styles.text}>
-        {text}
-      </Typography>
+      key={text}
+    >
+      <SignUpValidationCircle valid={valid} />
+      <Typography className={styles.text}>{text}</Typography>
     </Box>
   ));
 };
