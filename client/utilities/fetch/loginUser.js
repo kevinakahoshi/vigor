@@ -1,7 +1,4 @@
-const loginUser = ({
-  email,
-  password
-}) => {
+const loginUser = ({ email, password }) => {
   const options = {
     method: 'POST',
     headers: {

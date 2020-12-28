@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const db = require('../../database');
 const bcrypt = require('bcrypt');
+const db = require('../../database');
 
 router.post('/', (request, response, next) => {
   const { email, password } = request.body;
@@ -8,23 +8,27 @@ router.post('/', (request, response, next) => {
   const params = [email];
 
   db.query(sqlQuery, params)
-    .then(result => {
+    .then((result) => {
       if (result.rows.length) {
         const hashedPassword = result.rows[0].password;
-        bcrypt.compare(password, hashedPassword)
-          .then(match => {
-            if (!match) {
-              response.status(400).json('Incorrect email or password');
-            }
-            delete result.rows[0].password;
-            request.session.user = result.rows[0];
-            response.status(200).json(result.rows[0]);
-          });
+        bcrypt.compare(password, hashedPassword).then((match) => {
+          if (!match) {
+            response.status(400).json('Incorrect email or password');
+          }
+          const user = {
+            userId: result.rows[0].userId,
+            firstName: result.rows[0].firstName,
+            lastName: result.rows[0].lastName,
+            email: result.rows[0].email,
+          };
+          request.session.user = user;
+          response.status(200).json(result.rows[0]);
+        });
       } else {
         response.status(404).json('Incorrect email or password');
       }
     })
-    .catch(error => next(error));
+    .catch((error) => next(error));
 });
 
 module.exports = router;

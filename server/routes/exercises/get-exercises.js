@@ -8,24 +8,25 @@ router.post('/', (request, response, next) => {
         SELECT *
           FROM exercises
          WHERE "userId" = $1
-      ORDER BY exercise
-           ASC
+      ORDER BY exercise ASC, "exerciseId" ASC
   `;
 
   const params = [userId];
 
-  db.query(sqlQuery, params)
-    .then(exercises => {
-      const output = {};
-      for (const row in exercises.rows) {
-        const exerciseName = exercises.rows[row].exercise;
-        if (output[exerciseName] === undefined) {
-          output[exerciseName] = [];
-        }
-        output[exerciseName].push(exercises.rows[row]);
+  db.query(sqlQuery, params).then(({ rows }) => {
+    const output = {};
+
+    Object.keys(rows).forEach((row) => {
+      const exerciseName = rows[row].exercise;
+      if (output[exerciseName] === undefined) {
+        output[exerciseName] = [];
       }
-      response.status(200).json(output);
+      output[exerciseName].push(rows[row]);
     });
+
+    response.status(200).json(output);
+    next();
+  });
 });
 
 module.exports = router;

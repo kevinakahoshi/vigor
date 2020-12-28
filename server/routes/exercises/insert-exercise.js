@@ -2,27 +2,19 @@ const router = require('express').Router();
 const db = require('../../database');
 
 router.post('/', (request, response, next) => {
-  const exerciseInfo = [
-    'exercise',
-    'amount',
-    'unit',
-    'userId'
-  ];
+  const exerciseInfo = ['exercise', 'amount', 'unit', 'userId'];
 
-  for (const dataPoint of exerciseInfo) {
-    if (request.body[dataPoint] === undefined ||
+  exerciseInfo.forEach((dataPoint) => {
+    if (
+      request.body[dataPoint] === undefined ||
       request.body[dataPoint] === null ||
-      !request.body[dataPoint]) {
+      !request.body[dataPoint]
+    ) {
       response.status(400).json('Missing information about exercise');
     }
-  }
+  });
 
-  const {
-    amount,
-    exercise,
-    unit,
-    userId
-  } = request.body;
+  const { amount, exercise, unit, userId } = request.body;
 
   const sqlQuery = `
     INSERT INTO exercises (amount, "createdAt", exercise, unit, "userId")
@@ -30,22 +22,18 @@ router.post('/', (request, response, next) => {
       RETURNING *
   `;
 
-  const params = [
-    amount,
-    exercise,
-    unit,
-    userId
-  ];
+  const params = [amount, exercise, unit, userId];
 
   db.query(sqlQuery, params)
-    .then(result => {
+    .then((result) => {
       if (result) {
         response.status(200).json(result.rows[0]);
+        next();
       } else {
         response.status(500).json('An unexpected error occurred');
       }
     })
-    .catch(error => console.error(error));
+    .catch((error) => console.error(error));
 });
 
 module.exports = router;

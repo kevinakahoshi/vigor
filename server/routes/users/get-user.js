@@ -7,6 +7,7 @@ router.get('/', (request, response, next) => {
   } else {
     response.status(404).json('');
   }
+  next();
 });
 
 module.exports = router;

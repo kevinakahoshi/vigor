@@ -31,7 +31,8 @@ const themeStyles = createMuiTheme({
     MuiCssBaseline: {
       '@global': {
         body: {
-          backgroundImage: 'url(/assets/images/brand-assets/poly-background.svg)',
+          backgroundImage:
+            'url(/assets/images/brand-assets/poly-background.svg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
