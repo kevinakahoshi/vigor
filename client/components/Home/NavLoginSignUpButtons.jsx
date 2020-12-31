@@ -46,7 +46,7 @@ const NavLoginSignUpButtons = () => {
         Login
       </VigorSecondaryButton>
       <LoginModal open={open} setOpen={setOpen}>
-        <LoginModalContent />
+        <LoginModalContent setOpen={setOpen} />
       </LoginModal>
     </Box>
   );

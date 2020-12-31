@@ -39,7 +39,7 @@ const formStyles = makeStyles((theme) => ({
   },
 }));
 
-const LoginForm = () => {
+const LoginForm = ({ setOpen }) => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -82,6 +82,7 @@ const LoginForm = () => {
     } else {
       const user = await response.json();
       dispatch(actions.userActions.setUser(user));
+      setOpen(false);
     }
   };
 

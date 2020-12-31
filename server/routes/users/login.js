@@ -22,7 +22,7 @@ router.post('/', (request, response, next) => {
             email: result.rows[0].email,
           };
           request.session.user = user;
-          response.status(200).json(result.rows[0]);
+          response.status(200).json(user);
         });
       } else {
         response.status(404).json('Incorrect email or password');
