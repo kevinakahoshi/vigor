@@ -17,8 +17,10 @@ const modalStyles = makeStyles((theme) => ({
 const LoginModal = ({ children, open, setOpen }) => {
   const styles = modalStyles();
 
+  const onClose = () => setOpen(() => false);
+
   return (
-    <Modal className={styles.modal} open={open} onClose={() => setOpen(false)}>
+    <Modal className={styles.modal} open={open} onClose={onClose}>
       {children}
     </Modal>
   );

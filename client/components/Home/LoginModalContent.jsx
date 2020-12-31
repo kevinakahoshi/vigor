@@ -26,7 +26,7 @@ const modalContent = makeStyles((theme) => ({
   },
 }));
 
-const LoginModalContent = () => {
+const LoginModalContent = ({ setOpen }) => {
   const styles = modalContent();
 
   return (
@@ -35,7 +35,7 @@ const LoginModalContent = () => {
       <Typography className={styles.text} variant="h3">
         Login
       </Typography>
-      <LoginForm />
+      <LoginForm setOpen={setOpen} />
     </Paper>
   );
 };
