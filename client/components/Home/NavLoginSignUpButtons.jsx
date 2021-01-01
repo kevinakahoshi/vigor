@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { createRef, useState } from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
@@ -23,6 +23,7 @@ const buttonWrapper = makeStyles(() => ({
 
 const NavLoginSignUpButtons = () => {
   const [open, setOpen] = useState(false);
+  const modalRef = createRef();
 
   const dispatch = useDispatch();
   const styles = buttonWrapper();
@@ -46,7 +47,7 @@ const NavLoginSignUpButtons = () => {
         Login
       </VigorSecondaryButton>
       <LoginModal open={open} setOpen={setOpen}>
-        <LoginModalContent setOpen={setOpen} />
+        <LoginModalContent setOpen={setOpen} ref={modalRef} />
       </LoginModal>
     </Box>
   );
