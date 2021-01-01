@@ -40,4 +40,6 @@ const LoginModalContent = ({ setOpen }) => {
   );
 };
 
-export default forwardRef(LoginModalContent);
+export default forwardRef(({ setOpen }, ref) => (
+  <LoginModalContent setOpen={setOpen} innerRef={ref} />
+));

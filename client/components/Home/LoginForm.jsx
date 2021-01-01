@@ -48,12 +48,13 @@ const LoginForm = ({ setOpen }) => {
   const styles = formStyles();
 
   const handleChange = (event) => {
+    event.persist();
     switch (event.target.name) {
       case 'email':
-        setEmail(event.target.value);
+        setEmail(() => event.target.value);
         break;
       case 'password':
-        setPassword(event.target.value);
+        setPassword(() => event.target.value);
         break;
       default:
         break;
@@ -75,14 +76,14 @@ const LoginForm = ({ setOpen }) => {
       }),
     };
     const response = await fetch('/api/users/login', options);
-    setLoading(false);
+    setLoading(() => false);
 
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
     } else {
       const user = await response.json();
       dispatch(actions.userActions.setUser(user));
-      setOpen(false);
+      setOpen(() => false);
     }
   };
 
