@@ -25,6 +25,7 @@ const App = () => {
   };
 
   useEffect(() => {
+    // dispatch(actions.userActions.logInUser());
     onLoad();
   }, []);
 
