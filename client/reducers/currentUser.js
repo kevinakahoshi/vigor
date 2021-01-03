@@ -6,6 +6,12 @@ const currentUser = (state = {}, action) => {
         user: action.payload,
         loggedIn: true,
       };
+    case 'GET_USER':
+      return {
+        ...state,
+        USER: action.payload,
+        loggedIn: true,
+      };
     case 'LOG_OUT':
       return {
         ...state,
