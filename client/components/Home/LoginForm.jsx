@@ -49,6 +49,7 @@ const LoginForm = ({ setOpen }) => {
 
   const handleChange = (event) => {
     event.persist();
+
     switch (event.target.name) {
       case 'email':
         setEmail(() => event.target.value);
@@ -75,6 +76,7 @@ const LoginForm = ({ setOpen }) => {
         password,
       }),
     };
+
     const response = await fetch('/api/users/login', options);
     setLoading(() => false);
 

@@ -1,15 +1,23 @@
-const currentUser = (state = {}, action) => {
+const currentUser = (
+  state = {
+    loggedIn: false,
+    user: {},
+  },
+  action
+) => {
   switch (action.type) {
     case 'SET_USER':
+      console.log(action);
       return {
         ...state,
         user: action.payload,
         loggedIn: true,
+        error: null,
       };
     case 'GET_USER':
       return {
         ...state,
-        USER: action.payload,
+        user: action.payload,
         loggedIn: true,
       };
     case 'LOG_OUT':
@@ -17,6 +25,11 @@ const currentUser = (state = {}, action) => {
         ...state,
         user: {},
         loggedIn: false,
+      };
+    case 'FAILED_FETCH':
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;
