@@ -1,13 +1,8 @@
-const currentUser = (
-  state = {
-    loggedIn: false,
-    user: {},
-  },
-  action
-) => {
+import initialState from '../store/initialState';
+
+const currentUser = (state = initialState, action) => {
   switch (action.type) {
     case 'SET_USER':
-      console.log(action);
       return {
         ...state,
         user: action.payload,

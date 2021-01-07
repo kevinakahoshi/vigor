@@ -8,6 +8,7 @@
 - React Router
 - React Spring
 - React Redux
+- Redux Thunk
 - Material UI
 - Node.js
 - Express
