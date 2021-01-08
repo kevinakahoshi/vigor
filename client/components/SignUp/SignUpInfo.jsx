@@ -40,7 +40,7 @@ const signUpStyles = makeStyles((theme) => ({
     display: 'block',
     height: 'auto',
     margin: 'auto',
-    maxWidth: '35%',
+    maxWidth: '50%',
   },
   signUpText: {
     textAlign: 'center',

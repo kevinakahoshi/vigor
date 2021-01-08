@@ -43,9 +43,6 @@ const VigorLogoWhite = ({ classes, finalOpacity }) => {
       alt="Vigor Logo"
       title="Vigor: Fitness Tracking and Data Visualization"
     >
-      <style>
-        {`.st1{fill:#f4f4f4}.st2{fill:#fff}.st4{fill:#fefefe}.st7{fill:#f8f8f8}`}
-      </style>
       <g id="Left">
         <path id="_x39_" fill="#fcfcfc" d="M865.2 1500l173.2-300H692z" />
         <path
