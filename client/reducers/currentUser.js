@@ -1,18 +1,18 @@
 import initialState from '../store/initialState';
 
-const currentUser = (state = initialState, action) => {
-  switch (action.type) {
+const currentUser = (state = initialState, { type, payload }) => {
+  switch (type) {
     case 'SET_USER':
       return {
         ...state,
-        user: action.payload,
+        user: payload,
         loggedIn: true,
         error: null,
       };
     case 'GET_USER':
       return {
         ...state,
-        user: action.payload,
+        user: payload,
         loggedIn: true,
       };
     case 'LOG_OUT':
@@ -24,7 +24,7 @@ const currentUser = (state = initialState, action) => {
     case 'FAILED_FETCH':
       return {
         ...state,
-        error: action.payload,
+        error: payload,
       };
     default:
       return state;

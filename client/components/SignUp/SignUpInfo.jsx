@@ -9,9 +9,15 @@ import VigorLogo from '../Miscellaneous/VigorLogo';
 
 const signUpStyles = makeStyles((theme) => ({
   infoBox: {
+    height: '100%',
+    display: 'grid',
+    gridTemplateRows: '1fr auto auto',
     [theme.breakpoints.up('sm')]: {
       paddingRight: theme.spacing(1.5),
     },
+  },
+  infoLogoWrapper: {
+    height: '100%',
   },
   infoSubBox: {
     borderRadius: theme.spacing(0.5),
@@ -55,7 +61,9 @@ const SignUpInfo = () => {
 
   return (
     <Box className={styles.infoBox}>
-      <VigorLogo classes={styles.logo} finalOpacity={1} />
+      <Box className={styles.infoLogoWrapper}>
+        <VigorLogo classes={styles.logo} finalOpacity={1} />
+      </Box>
       <Typography className={styles.signUpText} variant="h3">
         Sign Up
       </Typography>

@@ -1,4 +1,7 @@
-export const SET_USER = 'SET_USER';
-export const GET_USER = 'GET_USER';
-export const LOG_OUT = 'LOG_OUT';
-export const FAILED_FETCH = 'FAILED_FETCH';
+const SET_USER = 'SET_USER';
+const GET_USER = 'GET_USER';
+const LOG_OUT = 'LOG_OUT';
+const LOGIN_FAILURE = 'LOGIN_FAILURE';
+const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+
+export { SET_USER, GET_USER, LOG_OUT, LOGIN_FAILURE, LOGIN_SUCCESS };
