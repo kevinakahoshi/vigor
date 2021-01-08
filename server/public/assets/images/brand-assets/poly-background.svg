@@ -1,458 +1,306 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 2929.8 1709" style="enable-background:new 0 0 2929.8 1709;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#4DB4A8;}
-	.st1{fill:#4BB1A7;}
-	.st2{fill:#52BCAA;}
-	.st3{fill:#4FB7A9;}
-	.st4{fill:#50B9A9;}
-	.st5{fill:#4FB8A9;}
-	.st6{fill:#4CB3A7;}
-	.st7{fill:#45A7A4;}
-	.st8{fill:#47ABA5;}
-	.st9{fill:#4AB0A7;}
-	.st10{fill:#47AAA5;}
-	.st11{fill:#48ADA6;}
-	.st12{fill:#52BEAA;}
-	.st13{fill:#40A0A2;}
-	.st14{fill:#53BFAB;}
-	.st15{fill:#54C1AB;}
-	.st16{fill:#55C2AC;}
-	.st17{fill:#41A2A3;}
-	.st18{fill:#55C3AC;}
-	.st19{fill:#57C7AD;}
-	.st20{fill:#42A3A3;}
-	.st21{fill:#58C7AD;}
-	.st22{fill:#3F9EA1;}
-	.st23{fill:#3E9DA1;}
-	.st24{fill:#4DB5A8;}
-	.st25{fill:#55C2AB;}
-	.st26{fill:#56C5AC;}
-	.st27{fill:#57C6AC;}
-	.st28{fill:#51BBAA;}
-	.st29{fill:#5ACCAE;}
-	.st30{fill:#3C9AA0;}
-	.st31{fill:#44A5A4;}
-	.st32{fill:#54C0AB;}
-	.st33{fill:#5CD0AF;}
-	.st34{fill:#5BCDAE;}
-	.st35{fill:#59CAAE;}
-	.st36{fill:#46A9A5;}
-	.st37{fill:#37939E;}
-	.st38{fill:#39969F;}
-	.st39{fill:#3D9CA1;}
-	.st40{fill:#39959F;}
-	.st41{fill:#42A2A3;}
-	.st42{fill:#57C6AD;}
-	.st43{fill:#59C9AD;}
-	.st44{fill:#5ACBAE;}
-	.st45{fill:#51BBA9;}
-	.st46{fill:#409FA2;}
-	.st47{fill:#3B99A0;}
-	.st48{fill:#4CB2A7;}
-	.st49{fill:#4AAFA6;}
-	.st50{fill:#3F9FA2;}
-	.st51{fill:#5DD1B0;}
-	.st52{fill:#35909D;}
-	.st53{fill:#37949E;}
-	.st54{fill:#34909D;}
-	.st55{fill:#5ED4B0;}
-	.st56{fill:#56C4AC;}
-	.st57{fill:#50BAA9;}
-	.st58{fill:#5BCEAF;}
-	.st59{fill:#4EB6A8;}
-	.st60{fill:#38959F;}
-	.st61{fill:#41A2A2;}
-	.st62{fill:#38949E;}
-	.st63{fill:#338F9D;}
-	.st64{fill:#44A6A4;}
-	.st65{fill:#5DD2B0;}
-	.st66{fill:#308B9C;}
-	.st67{fill:#44A7A4;}
-	.st68{fill:#45A8A4;}
-	.st69{fill:#48ABA5;}
-	.st70{fill:#60D6B1;}
-	.st71{fill:#60D8B1;}
-	.st72{fill:#61D9B2;}
-	.st73{fill:#338E9D;}
-	.st74{fill:#308A9B;}
-	.st75{fill:#318C9C;}
-	.st76{fill:#2D879B;}
-	.st77{fill:#36929E;}
-	.st78{fill:#48ACA5;}
-	.st79{fill:#4AB0A6;}
-	.st80{fill:#2E899B;}
-	.st81{fill:#4BB0A7;}
-	.st82{fill:#3B98A0;}
-	.st83{fill:#62DAB2;}
-	.st84{fill:#5ED3B0;}
-	.st85{fill:#43A4A3;}
-	.st86{fill:#2A849A;}
-	.st87{fill:#2A8399;}
-	.st88{fill:#298299;}
-	.st89{fill:#3A979F;}
-	.st90{fill:#2C869A;}
-	.st91{fill:#63DCB2;}
-	.st92{fill:#61D8B1;}
-	.st93{fill:#5BCCAE;}
-	.st94{fill:#338E9C;}
-	.st95{fill:#3C99A0;}
-	.st96{fill:#49ADA6;}
-	.st97{fill:#35919E;}
-	.st98{fill:#65E1B4;}
-	.st99{fill:#257F98;}
-	.st100{fill:#2E889B;}
-	.st101{fill:#3A98A0;}
-	.st102{fill:#348F9D;}
-	.st103{fill:#2B859A;}
-	.st104{fill:#2F899B;}
-	.st105{fill:#41A1A2;}
-	.st106{fill:#3D9BA0;}
-	.st107{fill:#3A989F;}
-	.st108{fill:#52BDAA;}
-	.st109{fill:#64DFB3;}
-	.st110{fill:#237D97;}
-	.st111{fill:#267F98;}
-	.st112{fill:#1D7896;}
-	.st113{fill:#288299;}
-	.st114{fill:#217C97;}
-	.st115{fill:#49AEA6;}
-	.st116{fill:#4BB2A7;}
-	.st117{fill:#65E0B3;}
-	.st118{fill:#66E2B4;}
-	.st119{fill:#1D7795;}
-	.st120{fill:#2B849A;}
-	.st121{fill:#1B7695;}
-	.st122{fill:#5ED2B0;}
-	.st123{fill:#66E3B4;}
-	.st124{fill:#62DBB2;}
-	.st125{fill:#36919E;}
-	.st126{fill:#268098;}
-	.st127{fill:#217B97;}
-	.st128{fill:#1F7A96;}
-	.st129{fill:#197595;}
-	.st130{fill:#227C97;}
-	.st131{fill:#1F7996;}
-	.st132{fill:#207B96;}
-	.st133{fill:#328D9C;}
-	.st134{fill:#157394;}
-	.st135{fill:#147294;}
-	.st136{fill:#278198;}
-	.st137{fill:#127193;}
-	.st138{fill:#107093;}
-	.st139{fill:#2A8499;}
-	.st140{fill:#187494;}
-	.st141{fill:#137193;}
-	.st142{fill:#0D6E92;}
-	.st143{fill:#0C6E92;}
-	.st144{fill:#0A6D92;}
-</style>
-<path shape-rendering="crispEdges" class="st0" d="M1720.4,539l-198.6-32.6l53.6,238.2L1720.4,539z"/>
-<path shape-rendering="crispEdges" class="st1" d="M1521.8,506.4l-157.4,72.9l211,165.3L1521.8,506.4z"/>
-<path shape-rendering="crispEdges" class="st2" d="M1720.4,539l49.4-111.5l-248.1-63.7L1720.4,539z"/>
-<path shape-rendering="crispEdges" class="st3" d="M1521.8,506.4l-0.1-142.6l-208.1,53.1L1521.8,506.4z"/>
-<path shape-rendering="crispEdges" class="st4" d="M1720.4,539l-198.7-175.2l0.1,142.6L1720.4,539z"/>
-<path shape-rendering="crispEdges" class="st5" d="M2029.3,587.5l-210.2,237.9l165.1-34L2029.3,587.5z"/>
-<path shape-rendering="crispEdges" class="st6" d="M1575.4,744.6l243.7,80.8L1720.4,539L1575.4,744.6z"/>
-<path shape-rendering="crispEdges" class="st6" d="M1521.8,506.4l-208.2-89.5l50.8,162.4L1521.8,506.4z"/>
-<path shape-rendering="crispEdges" class="st7" d="M1575.4,744.6L1302.7,827l262.1,172.1L1575.4,744.6z"/>
-<path shape-rendering="crispEdges" class="st8" d="M1364.4,579.3L1302.7,827l272.7-82.4L1364.4,579.3z"/>
-<path shape-rendering="crispEdges" class="st9" d="M1313.6,416.9L1160,507.6l204.4,71.7L1313.6,416.9z"/>
-<path shape-rendering="crispEdges" class="st8" d="M1575.4,744.6l-10.6,254.5l254.3-173.7L1575.4,744.6z"/>
-<path shape-rendering="crispEdges" class="st4" d="M1720.4,539l98.7,286.4l210.2-237.9L1720.4,539z"/>
-<path shape-rendering="crispEdges" class="st10" d="M1564.8,999.1l234.2-10.6l20.1-163.1L1564.8,999.1z"/>
-<path shape-rendering="crispEdges" class="st11" d="M1819.1,825.4L1799,988.5l129.4,31.7L1819.1,825.4z"/>
-<path shape-rendering="crispEdges" class="st12" d="M1720.4,539l308.9,48.5l-259.5-160L1720.4,539z"/>
-<path shape-rendering="crispEdges" class="st13" d="M1302.7,827l-95.1-61.4l-72.2,236.5L1302.7,827z"/>
-<path shape-rendering="crispEdges" class="st7" d="M1364.4,579.3l-156.8,186.3l95.1,61.4L1364.4,579.3z"/>
-<path shape-rendering="crispEdges" class="st14" d="M1521.7,363.8l41.7-179.5L1329.5,225L1521.7,363.8z"/>
-<path shape-rendering="crispEdges" class="st15" d="M1769.8,427.5l-48.7-249.8l-199.4,186.1L1769.8,427.5z"/>
-<path shape-rendering="crispEdges" class="st16" d="M2029.3,587.5l-19.1-185.8l-240.4,25.8L2029.3,587.5z"/>
-<path shape-rendering="crispEdges" class="st17" d="M1302.7,827l16.4,129.6l245.7,42.5L1302.7,827z"/>
-<path shape-rendering="crispEdges" class="st18" d="M1521.7,363.8l199.4-186.1l-157.7,6.6L1521.7,363.8z"/>
-<path shape-rendering="crispEdges" class="st19" d="M1769.8,427.5l240.4-25.8L1947,194.5L1769.8,427.5z"/>
-<path shape-rendering="crispEdges" class="st10" d="M1364.4,579.3L1160,507.6l47.6,258L1364.4,579.3z"/>
-<path shape-rendering="crispEdges" class="st4" d="M1521.7,363.8L1329.5,225l-15.9,191.9L1521.7,363.8z"/>
-<path shape-rendering="crispEdges" class="st4" d="M1313.6,416.9l15.9-191.9l-134.8-31.4L1313.6,416.9z"/>
-<path shape-rendering="crispEdges" class="st9" d="M1313.6,416.9l-162.3,7l8.7,83.7L1313.6,416.9z"/>
-<path shape-rendering="crispEdges" class="st1" d="M1819.1,825.4l109.3,194.8l55.8-228.8L1819.1,825.4z"/>
-<path shape-rendering="crispEdges" class="st20" d="M1564.8,999.1l-7,172.7L1799,988.5L1564.8,999.1z"/>
-<path shape-rendering="crispEdges" class="st21" d="M1769.8,427.5l177.2-233l-225.9-16.8L1769.8,427.5z"/>
-<path shape-rendering="crispEdges" class="st17" d="M1799,988.5l-241.2,183.3L1779,1211L1799,988.5z"/>
-<path shape-rendering="crispEdges" class="st22" d="M1319.1,956.6l6.2,165.4l239.5-122.9L1319.1,956.6z"/>
-<path shape-rendering="crispEdges" class="st23" d="M1564.8,999.1L1325.3,1122l232.5,49.8L1564.8,999.1z"/>
-<path shape-rendering="crispEdges" class="st22" d="M1302.7,827l-167.3,175.1l183.7-45.5L1302.7,827z"/>
-<path shape-rendering="crispEdges" class="st24" d="M1313.6,416.9l-118.9-223.3l-43.4,230.3L1313.6,416.9z"/>
-<path shape-rendering="crispEdges" class="st25" d="M1563.4,184.3L1562.5-39l-235.7,59.6L1563.4,184.3z"/>
-<path shape-rendering="crispEdges" class="st26" d="M1721.1,177.7L1562.5-39l0.9,223.3L1721.1,177.7z"/>
-<path shape-rendering="crispEdges" class="st27" d="M2029.3,587.5l152.4-160.6l-171.5-25.2L2029.3,587.5z"/>
-<path shape-rendering="crispEdges" class="st28" d="M1984.2,791.4l212.7,17.6l-167.6-221.5L1984.2,791.4z"/>
-<path shape-rendering="crispEdges" class="st6" d="M1928.4,1020.2l275.1-84.9l-219.3-143.9L1928.4,1020.2z"/>
-<path shape-rendering="crispEdges" class="st29" d="M2010.2,401.7l171.5,25.2l-73.5-223.2L2010.2,401.7z"/>
-<path shape-rendering="crispEdges" class="st26" d="M2029.3,587.5l182.1-14l-29.7-146.6L2029.3,587.5z"/>
-<path shape-rendering="crispEdges" class="st30" d="M1319.1,956.6l-183.7,45.5l189.9,119.9L1319.1,956.6z"/>
-<path shape-rendering="crispEdges" class="st31" d="M1160,507.6L984.7,707.8l222.9,57.8L1160,507.6z"/>
-<path shape-rendering="crispEdges" class="st8" d="M1151.3,423.9L949,596.7l211-89.1L1151.3,423.9z"/>
-<path shape-rendering="crispEdges" class="st32" d="M2029.3,587.5L2196.9,809l14.5-235.5L2029.3,587.5z"/>
-<path shape-rendering="crispEdges" class="st31" d="M1928.4,1020.2L1779,1211l179.3,3.8L1928.4,1020.2z"/>
-<path shape-rendering="crispEdges" class="st7" d="M1799,988.5l-20,222.5l149.4-190.8L1799,988.5z"/>
-<path shape-rendering="crispEdges" class="st22" d="M1207.6,765.6l-222.9-57.8l-12.6,214L1207.6,765.6z"/>
-<path shape-rendering="crispEdges" class="st24" d="M1194.7,193.6l-201.9-7.4l158.5,237.7L1194.7,193.6z"/>
-<path shape-rendering="crispEdges" class="st33" d="M1947,194.5l161.2,9.2l-99.3-244.6L1947,194.5z"/>
-<path shape-rendering="crispEdges" class="st34" d="M2010.2,401.7l98-198l-161.2-9.2L2010.2,401.7z"/>
-<path shape-rendering="crispEdges" class="st14" d="M1329.5,225l233.9-40.7L1326.8,20.6L1329.5,225z"/>
-<path shape-rendering="crispEdges" class="st35" d="M1947,194.5L1731.4-83.9l-10.3,261.6L1947,194.5z"/>
-<path shape-rendering="crispEdges" class="st2" d="M1329.5,225l-2.7-204.4l-132.1,173L1329.5,225z"/>
-<path shape-rendering="crispEdges" class="st31" d="M1160,507.6l-211,89.1l35.7,111.1L1160,507.6z"/>
-<path shape-rendering="crispEdges" class="st28" d="M2196.9,809l6.6,126.3l183.4-143.8L2196.9,809z"/>
-<path shape-rendering="crispEdges" class="st5" d="M1984.2,791.4l219.3,143.9l-6.6-126.3L1984.2,791.4z"/>
-<path shape-rendering="crispEdges" class="st36" d="M1928.4,1020.2l29.9,194.6l160.6-34.8L1928.4,1020.2z"/>
-<path shape-rendering="crispEdges" class="st37" d="M1325.3,1122l-112.6,73.2l90.1,151.5L1325.3,1122z"/>
-<path shape-rendering="crispEdges" class="st38" d="M1135.4,1002.1l77.3,193.1l112.6-73.2L1135.4,1002.1z"/>
-<path shape-rendering="crispEdges" class="st39" d="M1207.6,765.6L972.1,921.8l163.3,80.3L1207.6,765.6z"/>
-<path shape-rendering="crispEdges" class="st38" d="M1557.8,1171.8l-232.5-49.8l-22.5,224.7L1557.8,1171.8z"/>
-<path shape-rendering="crispEdges" class="st40" d="M1135.4,1002.1l-163.3-80.3l55,212.3L1135.4,1002.1z"/>
-<path shape-rendering="crispEdges" class="st41" d="M949,596.7l-201.8-175l-41.1,175H949z"/>
-<path shape-rendering="crispEdges" class="st15" d="M1562.5-39l168.9-44.9l-603.9-5.8L1562.5-39z"/>
-<path shape-rendering="crispEdges" class="st42" d="M1721.1,177.7l10.3-261.6L1562.5-39L1721.1,177.7z"/>
-<path shape-rendering="crispEdges" class="st43" d="M2211.4,573.5l106.3,56.2l102.6-214.9L2211.4,573.5z"/>
-<path shape-rendering="crispEdges" class="st25" d="M2196.9,809l120.8-179.3l-106.3-56.2L2196.9,809z"/>
-<path shape-rendering="crispEdges" class="st44" d="M2181.7,426.9l29.7,146.6l208.9-158.7L2181.7,426.9z"/>
-<path shape-rendering="crispEdges" class="st8" d="M1151.3,423.9l-207.2-76.2l4.9,249L1151.3,423.9z"/>
-<path shape-rendering="crispEdges" class="st45" d="M1326.8,20.6L1127.5-89.7l67.2,283.3L1326.8,20.6z"/>
-<path shape-rendering="crispEdges" class="st46" d="M1779,1211l-68.3,127.8l247.6-124L1779,1211z"/>
-<path shape-rendering="crispEdges" class="st23" d="M1557.8,1171.8l152.9,167L1779,1211L1557.8,1171.8z"/>
-<path shape-rendering="crispEdges" class="st1" d="M1151.3,423.9L992.8,186.2l-48.7,161.5L1151.3,423.9z"/>
-<path shape-rendering="crispEdges" class="st47" d="M1557.8,1171.8l9.7,199.1l143.2-32.1L1557.8,1171.8z"/>
-<path shape-rendering="crispEdges" class="st48" d="M2203.5,935.3l-84.6,244.7l232.4-173.7L2203.5,935.3z"/>
-<path shape-rendering="crispEdges" class="st49" d="M1928.4,1020.2l190.5,159.8l84.6-244.7L1928.4,1020.2z"/>
-<path shape-rendering="crispEdges" class="st50" d="M1710.7,1338.8l315.5,90.5l-67.9-214.5L1710.7,1338.8z"/>
-<path shape-rendering="crispEdges" class="st29" d="M1947,194.5l61.9-235.4l-277.5-43L1947,194.5z"/>
-<path shape-rendering="crispEdges" class="st51" d="M2181.7,426.9L2308,166l-199.8,37.7L2181.7,426.9z"/>
-<path shape-rendering="crispEdges" class="st52" d="M1212.7,1195.2l-185.6-61.1l200.9,192.5L1212.7,1195.2z"/>
-<path shape-rendering="crispEdges" class="st53" d="M1135.4,1002.1l-108.3,132l185.6,61.1L1135.4,1002.1z"/>
-<path shape-rendering="crispEdges" class="st40" d="M1557.8,1171.8l-255,174.9l264.7,24.2L1557.8,1171.8z"/>
-<path shape-rendering="crispEdges" class="st32" d="M2196.9,809l190-17.5l-69.2-161.8L2196.9,809z"/>
-<path shape-rendering="crispEdges" class="st54" d="M1212.7,1195.2l15.3,131.4l74.8,20.1L1212.7,1195.2z"/>
-<path shape-rendering="crispEdges" class="st55" d="M2108.2,203.7L2308,166L2148.9-68.8L2108.2,203.7z"/>
-<path shape-rendering="crispEdges" class="st56" d="M2386.9,791.5l151.2-35.1l-220.4-126.7L2386.9,791.5z"/>
-<path shape-rendering="crispEdges" class="st51" d="M2181.7,426.9l238.6-12.1L2308,166L2181.7,426.9z"/>
-<path shape-rendering="crispEdges" class="st57" d="M2203.5,935.3l147.8,71l35.6-214.8L2203.5,935.3z"/>
-<path shape-rendering="crispEdges" class="st5" d="M1194.7,193.6l-67.2-283.3L992.8,186.2L1194.7,193.6z"/>
-<path shape-rendering="crispEdges" class="st12" d="M1562.5-39l-435-50.7l199.3,110.3L1562.5-39z"/>
-<path shape-rendering="crispEdges" class="st51" d="M2108.2,203.7l40.7-272.5l-140,27.9L2108.2,203.7z"/>
-<path shape-rendering="crispEdges" class="st58" d="M2008.9-40.9l140-27.9l-417.5-15.1L2008.9-40.9z"/>
-<path shape-rendering="crispEdges" class="st1" d="M992.8,186.2l-243.6-15.6l194.9,177.1L992.8,186.2z"/>
-<path shape-rendering="crispEdges" class="st59" d="M1127.5-89.7L979.3-51.5l13.5,237.7L1127.5-89.7z"/>
-<path shape-rendering="crispEdges" class="st7" d="M944.1,347.7l-196.9,74l201.8,175L944.1,347.7z"/>
-<path shape-rendering="crispEdges" class="st23" d="M706.2,786L949,596.7H706.1L706.2,786z"/>
-<path shape-rendering="crispEdges" class="st22" d="M706.2,786l278.5-78.2L949,596.7L706.2,786z"/>
-<path shape-rendering="crispEdges" class="st30" d="M972.1,921.8l12.6-214L706.2,786L972.1,921.8z"/>
-<path shape-rendering="crispEdges" class="st48" d="M992.8,186.2L979.3-51.5L729.2,25.2L992.8,186.2z"/>
-<path shape-rendering="crispEdges" class="st60" d="M972.1,921.8L706.2,786L700,928.4L972.1,921.8z"/>
-<path shape-rendering="crispEdges" class="st61" d="M1958.3,1214.8l67.9,214.5l131.3-40.6L1958.3,1214.8z"/>
-<path shape-rendering="crispEdges" class="st62" d="M1567.5,1370.9l42.9,206.5l100.3-238.6L1567.5,1370.9z"/>
-<path shape-rendering="crispEdges" class="st63" d="M1302.8,1346.7l86.3,240l178.4-215.8L1302.8,1346.7z"/>
-<path shape-rendering="crispEdges" class="st64" d="M2118.9,1180l-160.6,34.8l199.2,173.9L2118.9,1180z"/>
-<path shape-rendering="crispEdges" class="st65" d="M2420.3,414.8L2533,548.3l34-138L2420.3,414.8z"/>
-<path shape-rendering="crispEdges" class="st29" d="M2317.7,629.7l215.3-81.4l-112.7-133.5L2317.7,629.7z"/>
-<path shape-rendering="crispEdges" class="st24" d="M2351.3,1006.3l39.6,126.4l111.6,23.4L2351.3,1006.3z"/>
-<path shape-rendering="crispEdges" class="st47" d="M1710.7,1338.8l81.8,183.8l233.7-93.3L1710.7,1338.8z"/>
-<path shape-rendering="crispEdges" class="st66" d="M1228,1326.6l-68.2,237.3l143-217.2L1228,1326.6z"/>
-<path shape-rendering="crispEdges" class="st2" d="M2386.9,791.5l-35.6,214.8l254.4,6.9L2386.9,791.5z"/>
-<path shape-rendering="crispEdges" class="st1" d="M2118.9,1180l272-47.3l-39.6-126.4L2118.9,1180z"/>
-<path shape-rendering="crispEdges" class="st43" d="M2317.7,629.7l220.4,126.7l-5.1-208.1L2317.7,629.7z"/>
-<path shape-rendering="crispEdges" class="st67" d="M2118.9,1180l38.6,208.7l148.7-4.4L2118.9,1180z"/>
-<path shape-rendering="crispEdges" class="st47" d="M1792.5,1522.6l207.7,16.3l26-109.6L1792.5,1522.6z"/>
-<path shape-rendering="crispEdges" class="st52" d="M972.1,921.8L700,928.4l67.3,236.1L972.1,921.8z"/>
-<path shape-rendering="crispEdges" class="st50" d="M706.1,596.7l-76.8-181.5l-83.9,109.1L706.1,596.7z"/>
-<path shape-rendering="crispEdges" class="st52" d="M1027.1,1134.1l-55-212.3l-204.8,242.7L1027.1,1134.1z"/>
-<path shape-rendering="crispEdges" class="st68" d="M747.2,421.7l2-251.1L629.3,415.2L747.2,421.7z"/>
-<path shape-rendering="crispEdges" class="st69" d="M944.1,347.7L749.2,170.6l-2,251.1L944.1,347.7z"/>
-<path shape-rendering="crispEdges" class="st53" d="M1710.7,1338.8l-100.3,238.6l182.1-54.8L1710.7,1338.8z"/>
-<path shape-rendering="crispEdges" class="st70" d="M2308,166l68.5-140.3l-227.6-94.5L2308,166z"/>
-<path shape-rendering="crispEdges" class="st71" d="M2420.3,414.8l146.7-4.5l22.1-279.2L2420.3,414.8z"/>
-<path shape-rendering="crispEdges" class="st72" d="M2308,166l112.3,248.8l168.8-283.7L2308,166z"/>
-<path shape-rendering="crispEdges" class="st58" d="M2538.1,756.4l193.1-216.6l-198.2,8.5L2538.1,756.4z"/>
-<path shape-rendering="crispEdges" class="st17" d="M747.2,421.7l-117.9-6.5l76.8,181.5L747.2,421.7z"/>
-<path shape-rendering="crispEdges" class="st30" d="M546.3,711.4l159.8-114.7l-160.7-72.4L546.3,711.4z"/>
-<path shape-rendering="crispEdges" class="st73" d="M1567.5,1370.9l-178.4,215.8l221.3-9.3L1567.5,1370.9z"/>
-<path shape-rendering="crispEdges" class="st74" d="M1027.1,1134.1l-259.8,30.4l151.3,202.6L1027.1,1134.1z"/>
-<path shape-rendering="crispEdges" class="st75" d="M1228,1326.6l-200.9-192.5l-108.5,233L1228,1326.6z"/>
-<path shape-rendering="crispEdges" class="st39" d="M2026.2,1429.3l-26,109.6l209.3,17.2L2026.2,1429.3z"/>
-<path shape-rendering="crispEdges" class="st37" d="M1610.4,1577.4l205.5,156.4l-23.4-211.2L1610.4,1577.4z"/>
-<path shape-rendering="crispEdges" class="st76" d="M1228,1326.6l-309.4,40.5l241.2,196.8L1228,1326.6z"/>
-<path shape-rendering="crispEdges" class="st75" d="M700,928.4l-74.4-7l0.5,261.7L700,928.4z"/>
-<path shape-rendering="crispEdges" class="st77" d="M706.2,786l-80.6,135.4l74.4,7L706.2,786z"/>
-<path shape-rendering="crispEdges" class="st78" d="M2118.9,1180l187.3,204.3l84.7-251.6L2118.9,1180z"/>
-<path shape-rendering="crispEdges" class="st46" d="M2026.2,1429.3l183.3,126.8l-52-167.4L2026.2,1429.3z"/>
-<path shape-rendering="crispEdges" class="st79" d="M2390.9,1132.7l-84.7,251.6l196.3-228.2L2390.9,1132.7z"/>
-<path shape-rendering="crispEdges" class="st5" d="M2351.3,1006.3l151.2,149.8l103.2-142.9L2351.3,1006.3z"/>
-<path shape-rendering="crispEdges" class="st80" d="M1302.8,1346.7l-143,217.2l229.3,22.8L1302.8,1346.7z"/>
-<path shape-rendering="crispEdges" class="st11" d="M749.2,170.6l-20-145.4L580.3,205.5L749.2,170.6z"/>
-<path shape-rendering="crispEdges" class="st81" d="M992.8,186.2l-263.6-161l20,145.4L992.8,186.2z"/>
-<path shape-rendering="crispEdges" class="st82" d="M706.2,786l-0.1-189.3L546.3,711.4L706.2,786z"/>
-<path shape-rendering="crispEdges" class="st36" d="M749.2,170.6l-168.9,34.9l49,209.7L749.2,170.6z"/>
-<path shape-rendering="crispEdges" class="st37" d="M706.2,786l-159.9-74.6l79.3,210L706.2,786z"/>
-<path shape-rendering="crispEdges" class="st26" d="M2538.1,756.4l67.6,256.8l135.2-248.7L2538.1,756.4z"/>
-<path shape-rendering="crispEdges" class="st15" d="M2386.9,791.5l218.8,221.7l-67.6-256.8L2386.9,791.5z"/>
-<path shape-rendering="crispEdges" class="st83" d="M2308,166l281.1-34.9L2376.5,25.7L2308,166z"/>
-<path shape-rendering="crispEdges" class="st84" d="M2533,548.3l198.2-8.5L2567,410.3L2533,548.3z"/>
-<path shape-rendering="crispEdges" class="st85" d="M629.3,415.2l-49-209.7L354.8,343.3L629.3,415.2z"/>
-<path shape-rendering="crispEdges" class="st41" d="M2306.2,1384.3l-96.7,171.8l130.6-54.5L2306.2,1384.3z"/>
-<path shape-rendering="crispEdges" class="st41" d="M2157.5,1388.7l52,167.4l96.7-171.8L2157.5,1388.7z"/>
-<path shape-rendering="crispEdges" class="st38" d="M1792.5,1522.6l23.4,211.2l184.3-194.9L1792.5,1522.6z"/>
-<path shape-rendering="crispEdges" class="st75" d="M1389.1,1586.7l-8.5,152.8l229.8-162.1L1389.1,1586.7z"/>
-<path shape-rendering="crispEdges" class="st71" d="M2567,410.3l164.2,129.5l8.7-209L2567,410.3z"/>
-<path shape-rendering="crispEdges" class="st74" d="M700,928.4l-73.9,254.7l141.2-18.6L700,928.4z"/>
-<path shape-rendering="crispEdges" class="st37" d="M546.3,711.4L382.6,587.8l-33.1,145.4L546.3,711.4z"/>
-<path shape-rendering="crispEdges" class="st86" d="M767.3,1164.5l-141.2,18.6l104.1,229.3L767.3,1164.5z"/>
-<path shape-rendering="crispEdges" class="st86" d="M918.6,1367.1l-151.3-202.6l-37.1,247.9L918.6,1367.1z"/>
-<path shape-rendering="crispEdges" class="st87" d="M1159.8,1563.9l-144.6,19.7l175.9,167.7L1159.8,1563.9z"/>
-<path shape-rendering="crispEdges" class="st88" d="M918.6,1367.1l96.6,216.5l144.6-19.7L918.6,1367.1z"/>
-<path shape-rendering="crispEdges" class="st89" d="M2000.2,1538.9l-184.3,194.9l109,69.1L2000.2,1538.9z"/>
-<path shape-rendering="crispEdges" class="st90" d="M1159.8,1563.9l31.3,187.4l198-164.6L1159.8,1563.9z"/>
-<path shape-rendering="crispEdges" class="st91" d="M2589.1,131.1L2518-79.6L2376.5,25.7L2589.1,131.1z"/>
-<path shape-rendering="crispEdges" class="st91" d="M2567,410.3l172.9-79.5l-150.8-199.7L2567,410.3z"/>
-<path shape-rendering="crispEdges" class="st92" d="M2376.5,25.7L2518-79.6l-369.1,10.8L2376.5,25.7z"/>
-<path shape-rendering="crispEdges" class="st84" d="M2148.9-68.8L2518-79.6l-786.6-4.3L2148.9-68.8z"/>
-<path shape-rendering="crispEdges" class="st35" d="M1731.4-83.9l786.6,4.3L1127.5-89.7L1731.4-83.9z"/>
-<path shape-rendering="crispEdges" class="st93" d="M2538.1,756.4l202.8,8.1l-9.7-224.7L2538.1,756.4z"/>
-<path shape-rendering="crispEdges" class="st94" d="M1610.4,1577.4l-229.8,162.1l241.6,27.4L1610.4,1577.4z"/>
-<path shape-rendering="crispEdges" class="st7" d="M2306.2,1384.3l33.9,117.3l177.3-101.1L2306.2,1384.3z"/>
-<path shape-rendering="crispEdges" class="st95" d="M2000.2,1538.9l-75.3,264l179-31.4L2000.2,1538.9z"/>
-<path shape-rendering="crispEdges" class="st96" d="M2502.5,1156.1l-196.3,228.2l211.2,16.2L2502.5,1156.1z"/>
-<path shape-rendering="crispEdges" class="st97" d="M1610.4,1577.4l11.8,189.5l193.7-33.1L1610.4,1577.4z"/>
-<path shape-rendering="crispEdges" class="st98" d="M2589.1,131.1l150.8,199.7l-25.5-213.6L2589.1,131.1z"/>
-<path shape-rendering="crispEdges" class="st33" d="M2740.9,764.5l192.5-138.7l-202.2-86L2740.9,764.5z"/>
-<path shape-rendering="crispEdges" class="st99" d="M918.6,1367.1l-188.4,45.3l29.4,169.3L918.6,1367.1z"/>
-<path shape-rendering="crispEdges" class="st18" d="M2605.7,1013.2l118.6,2.7l16.6-251.4L2605.7,1013.2z"/>
-<path shape-rendering="crispEdges" class="st57" d="M2502.5,1156.1l264.4,11.3l-161.2-154.2L2502.5,1156.1z"/>
-<path shape-rendering="crispEdges" class="st1" d="M2502.5,1156.1l14.9,244.4l232-12L2502.5,1156.1z"/>
-<path shape-rendering="crispEdges" class="st100" d="M1389.1,1586.7l-198,164.6l189.5-11.8L1389.1,1586.7z"/>
-<path shape-rendering="crispEdges" class="st99" d="M918.6,1367.1l-159,214.6l255.6,1.9L918.6,1367.1z"/>
-<path shape-rendering="crispEdges" class="st74" d="M1380.6,1739.5l-189.5,11.8l431.1,15.6L1380.6,1739.5z"/>
-<path shape-rendering="crispEdges" class="st98" d="M2589.1,131.1l125.3-13.9l17.1-128.4L2589.1,131.1z"/>
-<path shape-rendering="crispEdges" class="st101" d="M545.4,524.3l-162.8,63.5l163.7,123.6L545.4,524.3z"/>
-<path shape-rendering="crispEdges" class="st46" d="M629.3,415.2l-274.5-71.9l190.6,181L629.3,415.2z"/>
-<path shape-rendering="crispEdges" class="st102" d="M625.6,921.4l-79.3-210L425.8,940.6L625.6,921.4z"/>
-<path shape-rendering="crispEdges" class="st103" d="M626.1,1183.1L425.8,940.6L384.7,1129L626.1,1183.1z"/>
-<path shape-rendering="crispEdges" class="st104" d="M625.6,921.4l-199.8,19.2l200.3,242.5L625.6,921.4z"/>
-<path shape-rendering="crispEdges" class="st39" d="M2209.5,1556.1l-209.3-17.2l103.7,232.6L2209.5,1556.1z"/>
-<path shape-rendering="crispEdges" class="st53" d="M1622.2,1766.9l302.7,36l-109-69.1L1622.2,1766.9z"/>
-<path shape-rendering="crispEdges" class="st63" d="M1191.1,1751.3l733.8,51.6l-302.7-36L1191.1,1751.3z"/>
-<path shape-rendering="crispEdges" class="st50" d="M2376,1760.7l-166.5-204.6l-105.6,215.4L2376,1760.7z"/>
-<path shape-rendering="crispEdges" class="st105" d="M2340.1,1501.6l-130.6,54.5l166.5,204.6L2340.1,1501.6z"/>
-<path shape-rendering="crispEdges" class="st102" d="M546.3,711.4l-196.8,21.8l76.3,207.4L546.3,711.4z"/>
-<path shape-rendering="crispEdges" class="st106" d="M545.4,524.3l-190.6-181l27.8,244.5L545.4,524.3z"/>
-<path shape-rendering="crispEdges" class="st8" d="M729.2,25.2L504.6-83.4l75.7,288.9L729.2,25.2z"/>
-<path shape-rendering="crispEdges" class="st107" d="M382.6,587.8l-27.8-244.5L152.7,523.6L382.6,587.8z"/>
-<path shape-rendering="crispEdges" class="st12" d="M2605.7,1013.2l161.2,154.2l-42.6-151.5L2605.7,1013.2z"/>
-<path shape-rendering="crispEdges" class="st108" d="M2724.3,1015.9l42.6,151.5l225.1-1.7L2724.3,1015.9z"/>
-<path shape-rendering="crispEdges" class="st21" d="M2740.9,764.5l-16.6,251.4l221.9-197L2740.9,764.5z"/>
-<path shape-rendering="crispEdges" class="st109" d="M2589.1,131.1l142.4-142.3L2518-79.6L2589.1,131.1z"/>
-<path shape-rendering="crispEdges" class="st83" d="M2739.9,330.8l-8.7,209l173.2-204.9L2739.9,330.8z"/>
-<path shape-rendering="crispEdges" class="st70" d="M2731.2,539.8l202.2,86l-29-290.9L2731.2,539.8z"/>
-<path shape-rendering="crispEdges" class="st110" d="M1015.2,1583.6l-255.6-1.9l27.9,120.6L1015.2,1583.6z"/>
-<path shape-rendering="crispEdges" class="st111" d="M626.1,1183.1l-52.5,219l156.6,10.3L626.1,1183.1z"/>
-<path shape-rendering="crispEdges" class="st112" d="M303.8,1804.2l667.9-58l-348.5,12.5L303.8,1804.2z"/>
-<path shape-rendering="crispEdges" class="st113" d="M1015.2,1583.6l-43.5,162.6l219.4,5.1L1015.2,1583.6z"/>
-<path shape-rendering="crispEdges" class="st114" d="M730.2,1412.4l-156.6-10.3l186,179.6L730.2,1412.4z"/>
-<path shape-rendering="crispEdges" class="st74" d="M349.5,733.2l-129.6-5.8l-47,200.5L349.5,733.2z"/>
-<path shape-rendering="crispEdges" class="st68" d="M580.3,205.5L504.6-83.4L393.5,130.8L580.3,205.5z"/>
-<path shape-rendering="crispEdges" class="st115" d="M979.3-51.5L504.6-83.4L729.2,25.2L979.3-51.5z"/>
-<path shape-rendering="crispEdges" class="st116" d="M1127.5-89.7l-622.9,6.3l474.7,31.9L1127.5-89.7z"/>
-<path shape-rendering="crispEdges" class="st31" d="M580.3,205.5l-186.8-74.7l-38.7,212.5L580.3,205.5z"/>
-<path shape-rendering="crispEdges" class="st99" d="M626.1,1183.1L384.7,1129l-3.4,246.9L626.1,1183.1z"/>
-<path shape-rendering="crispEdges" class="st117" d="M2714.4,117.2l25.5,213.6l164.5,4.1L2714.4,117.2z"/>
-<path shape-rendering="crispEdges" class="st118" d="M2714.4,117.2l190,217.7l92.5-139.2L2714.4,117.2z"/>
-<path shape-rendering="crispEdges" class="st96" d="M2517.4,1400.5l97.6,111.6l134.4-123.6L2517.4,1400.5z"/>
-<path shape-rendering="crispEdges" class="st68" d="M2340.1,1501.6l274.9,10.5l-97.6-111.6L2340.1,1501.6z"/>
-<path shape-rendering="crispEdges" class="st7" d="M504.6-83.4l-75.5,25.5l-35.6,188.7L504.6-83.4z"/>
-<path shape-rendering="crispEdges" class="st29" d="M2740.9,764.5l205.3,54.4l-12.8-193.1L2740.9,764.5z"/>
-<path shape-rendering="crispEdges" class="st59" d="M2502.5,1156.1l246.9,232.4l17.5-221.1L2502.5,1156.1z"/>
-<path shape-rendering="crispEdges" class="st99" d="M1015.2,1583.6l-227.7,118.7l184.2,43.9L1015.2,1583.6z"/>
-<path shape-rendering="crispEdges" class="st119" d="M573.6,1402.1L550,1618.5l209.6-36.8L573.6,1402.1z"/>
-<path shape-rendering="crispEdges" class="st24" d="M2766.9,1167.4l-17.5,221.1l195,14.2L2766.9,1167.4z"/>
-<path shape-rendering="crispEdges" class="st64" d="M2615,1512.1l-239,248.6l146.8,31.4L2615,1512.1z"/>
-<path shape-rendering="crispEdges" class="st85" d="M2340.1,1501.6l35.9,259.1l239-248.6L2340.1,1501.6z"/>
-<path shape-rendering="crispEdges" class="st22" d="M1924.9,1802.9l597.9-10.8l-418.9-20.6L1924.9,1802.9z"/>
-<path shape-rendering="crispEdges" class="st104" d="M425.8,940.6l-76.3-207.4L172.9,927.9L425.8,940.6z"/>
-<path shape-rendering="crispEdges" class="st52" d="M382.6,587.8L219.9,727.4l129.6,5.8L382.6,587.8z"/>
-<path shape-rendering="crispEdges" class="st41" d="M393.5,130.8L226.8,201l128,142.3L393.5,130.8z"/>
-<path shape-rendering="crispEdges" class="st85" d="M429.1-57.9L202.6-12l190.9,142.8L429.1-57.9z"/>
-<path shape-rendering="crispEdges" class="st22" d="M354.8,343.3L226.8,201l-49.9,127.5L354.8,343.3z"/>
-<path shape-rendering="crispEdges" class="st110" d="M626.1,1183.1l-244.8,192.8l192.3,26.2L626.1,1183.1z"/>
-<path shape-rendering="crispEdges" class="st120" d="M425.8,940.6l-252.9-12.7L384.7,1129L425.8,940.6z"/>
-<path shape-rendering="crispEdges" class="st121" d="M573.6,1402.1l-192.3-26.2l26.6,222.8L573.6,1402.1z"/>
-<path shape-rendering="crispEdges" class="st35" d="M2946.2,818.9l68.2,130l-81-323.1L2946.2,818.9z"/>
-<path shape-rendering="crispEdges" class="st56" d="M2724.3,1015.9l290.1-67l-68.2-130L2724.3,1015.9z"/>
-<path shape-rendering="crispEdges" class="st122" d="M2933.4,625.8l81,323.1l-17.5-753.2L2933.4,625.8z"/>
-<path shape-rendering="crispEdges" class="st123" d="M2714.4,117.2l282.5,78.5L2929.7,0L2714.4,117.2z"/>
-<path shape-rendering="crispEdges" class="st124" d="M2933.4,625.8l63.5-430.1l-92.5,139.2L2933.4,625.8z"/>
-<path shape-rendering="crispEdges" class="st52" d="M-30,776.5l182.7-252.9l-163.4-14L-30,776.5z"/>
-<path shape-rendering="crispEdges" class="st125" d="M382.6,587.8l-229.9-64.2l67.2,203.8L382.6,587.8z"/>
-<path shape-rendering="crispEdges" class="st47" d="M354.8,343.3l-177.9-14.8l-24.2,195.1L354.8,343.3z"/>
-<path shape-rendering="crispEdges" class="st123" d="M2731.5-11.2L2929.7,0L2518-79.6L2731.5-11.2z"/>
-<path shape-rendering="crispEdges" class="st123" d="M2714.4,117.2L2929.7,0l-198.2-11.2L2714.4,117.2z"/>
-<path shape-rendering="crispEdges" class="st112" d="M759.6,1581.7L550,1618.5l73.2,140.2L759.6,1581.7z"/>
-<path shape-rendering="crispEdges" class="st126" d="M384.7,1129L172.9,927.9l-31.4,192.8L384.7,1129z"/>
-<path shape-rendering="crispEdges" class="st32" d="M2724.3,1015.9l267.7,149.8l22.4-216.8L2724.3,1015.9z"/>
-<path shape-rendering="crispEdges" class="st36" d="M2615,1512.1l-92.2,280l200.3,28.9L2615,1512.1z"/>
-<path shape-rendering="crispEdges" class="st11" d="M2749.4,1388.5L2615,1512.1l180.1,76.9L2749.4,1388.5z"/>
-<path shape-rendering="crispEdges" class="st105" d="M2103.9,1771.5l418.9,20.6l-146.8-31.4L2103.9,1771.5z"/>
-<path shape-rendering="crispEdges" class="st127" d="M787.5,1702.3l-164.3,56.4l348.5-12.5L787.5,1702.3z"/>
-<path shape-rendering="crispEdges" class="st128" d="M759.6,1581.7l-136.4,177l164.3-56.4L759.6,1581.7z"/>
-<path shape-rendering="crispEdges" class="st129" d="M573.6,1402.1l-165.7,196.6l142.1,19.8L573.6,1402.1z"/>
-<path shape-rendering="crispEdges" class="st130" d="M1191.1,1751.3l-219.4-5.1l-667.9,58L1191.1,1751.3z"/>
-<path shape-rendering="crispEdges" class="st22" d="M176.9,328.5L226.8,201l-203.1-7.1L176.9,328.5z"/>
-<path shape-rendering="crispEdges" class="st13" d="M226.8,201L202.6-12L23.7,193.9L226.8,201z"/>
-<path shape-rendering="crispEdges" class="st41" d="M393.5,130.8L202.6-12l24.2,213L393.5,130.8z"/>
-<path shape-rendering="crispEdges" class="st20" d="M504.6-83.4l-559.8,5.5l484.3,20L504.6-83.4z"/>
-<path shape-rendering="crispEdges" class="st49" d="M2749.4,1388.5l45.7,200.5l149.3-186.3L2749.4,1388.5z"/>
-<path shape-rendering="crispEdges" class="st131" d="M381.3,1375.9l3.4-246.9L165,1346.3L381.3,1375.9z"/>
-<path shape-rendering="crispEdges" class="st132" d="M384.7,1129l-243.2-8.3l23.5,225.6L384.7,1129z"/>
-<path shape-rendering="crispEdges" class="st133" d="M219.9,727.4l-67.2-203.8L-30,776.5L219.9,727.4z"/>
-<path shape-rendering="crispEdges" class="st134" d="M550,1618.5l-142.1-19.8l-104.1,205.5L550,1618.5z"/>
-<path shape-rendering="crispEdges" class="st5" d="M2766.9,1167.4l177.5,235.3l47.6-237L2766.9,1167.4z"/>
-<path shape-rendering="crispEdges" class="st135" d="M381.3,1375.9L165,1346.3l28.9,248L381.3,1375.9z"/>
-<path shape-rendering="crispEdges" class="st100" d="M172.9,927.9l47-200.5L-30,776.5L172.9,927.9z"/>
-<path shape-rendering="crispEdges" class="st89" d="M176.9,328.5l-208.1,79l183.9,116.1L176.9,328.5z"/>
-<path shape-rendering="crispEdges" class="st103" d="M-51.5,968l224.4-40.1L-30,776.5L-51.5,968z"/>
-<path shape-rendering="crispEdges" class="st39" d="M176.9,328.5L23.7,193.9l-54.9,213.6L176.9,328.5z"/>
-<path shape-rendering="crispEdges" class="st136" d="M141.5,1120.7l31.4-192.8L-51.5,968L141.5,1120.7z"/>
-<path shape-rendering="crispEdges" class="st78" d="M2795.1,1589l-72,232l235.1-22.2L2795.1,1589z"/>
-<path shape-rendering="crispEdges" class="st8" d="M2615,1512.1l108.1,308.9l72-232L2615,1512.1z"/>
-<path shape-rendering="crispEdges" class="st20" d="M1924.9,1802.9l798.2,18.1l-200.3-28.9L1924.9,1802.9z"/>
-<path shape-rendering="crispEdges" class="st77" d="M-10.7,509.6l-20.5-102.1l1.2,369L-10.7,509.6z"/>
-<path shape-rendering="crispEdges" class="st60" d="M152.7,523.6L-31.2,407.5l20.5,102.1L152.7,523.6z"/>
-<path shape-rendering="crispEdges" class="st110" d="M141.5,1120.7L-51.5,968l16.6,257.3L141.5,1120.7z"/>
-<path shape-rendering="crispEdges" class="st75" d="M-31.2,407.5L-51.5,968L-30,776.5L-31.2,407.5z"/>
-<path shape-rendering="crispEdges" class="st48" d="M2944.4,1402.7l84.8,160.1l-37.2-397.1L2944.4,1402.7z"/>
-<path shape-rendering="crispEdges" class="st11" d="M2795.1,1589l234.1-26.2l-84.8-160.1L2795.1,1589z"/>
-<path shape-rendering="crispEdges" class="st5" d="M2992,1165.7l37.2,397.1l-14.8-613.9L2992,1165.7z"/>
-<path shape-rendering="crispEdges" class="st27" d="M3014.4,948.9l14.8,613.9l-32.3-1367.1L3014.4,948.9z"/>
-<path shape-rendering="crispEdges" class="st137" d="M381.3,1375.9l-187.4,218.4l214,4.4L381.3,1375.9z"/>
-<path shape-rendering="crispEdges" class="st112" d="M141.5,1120.7l-176.4,104.6l199.9,121L141.5,1120.7z"/>
-<path shape-rendering="crispEdges" class="st138" d="M407.9,1598.7l-214-4.4l109.9,209.9L407.9,1598.7z"/>
-<path shape-rendering="crispEdges" class="st129" d="M165,1346.3l-199.9-121l-63.9,154.3L165,1346.3z"/>
-<path shape-rendering="crispEdges" class="st139" d="M1191.1,1751.3l-887.3,52.9l1621.1-1.3L1191.1,1751.3z"/>
-<path shape-rendering="crispEdges" class="st140" d="M550,1618.5l-246.2,185.7l319.4-45.5L550,1618.5z"/>
-<path shape-rendering="crispEdges" class="st141" d="M165,1346.3l-263.8,33.3l-1.8,171.2L165,1346.3z"/>
-<path shape-rendering="crispEdges" class="st127" d="M1924.9,1802.9l-1621.1,1.3l-155.3,10.9L1924.9,1802.9z"/>
-<path shape-rendering="crispEdges" class="st78" d="M2795.1,1589l163.1,209.8l71-236L2795.1,1589z"/>
-<path shape-rendering="crispEdges" class="st13" d="M23.7,193.9L-55.2-77.9l24,485.4L23.7,193.9z"/>
-<path shape-rendering="crispEdges" class="st13" d="M202.6-12L-55.2-77.9l78.9,271.8L202.6-12z"/>
-<path shape-rendering="crispEdges" class="st13" d="M429.1-57.9l-484.3-20L202.6-12L429.1-57.9z"/>
-<path shape-rendering="crispEdges" class="st36" d="M1127.5-89.7L-55.2-77.9l559.8-5.5L1127.5-89.7z"/>
-<path shape-rendering="crispEdges" class="st89" d="M-31.2,407.5l-24-485.4L-51.5,968L-31.2,407.5z"/>
-<path shape-rendering="crispEdges" class="st128" d="M-51.5,968l-47.3,411.6l63.9-154.3L-51.5,968z"/>
-<path shape-rendering="crispEdges" class="st74" d="M-55.2-77.9l-43.6,1457.5L-51.5,968L-55.2-77.9z"/>
-<path shape-rendering="crispEdges" class="st142" d="M193.9,1594.3l-28.9-248l-265.6,204.5L193.9,1594.3z"/>
-<path shape-rendering="crispEdges" class="st143" d="M193.9,1594.3l-45.4,220.8l155.3-10.9L193.9,1594.3z"/>
-<path shape-rendering="crispEdges" class="st102" d="M1924.9,1802.9l-1776.4,12.2l2574.6,5.9L1924.9,1802.9z"/>
-<path shape-rendering="crispEdges" class="st144" d="M193.9,1594.3l-294.5-43.5L26,1755.7L193.9,1594.3z"/>
-<path shape-rendering="crispEdges" class="st144" d="M193.9,1594.3L26,1755.7l122.5,59.4L193.9,1594.3z"/>
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 2929.8 1709" xml:space="preserve">
+    <style>
+        .st1{fill:#4bb1a7}.st2{fill:#52bcaa}.st4{fill:#50b9a9}.st5{fill:#4fb8a9}.st6{fill:#4cb3a7}.st7{fill:#45a7a4}.st8{fill:#47aba5}.st9{fill:#4ab0a7}.st10{fill:#47aaa5}.st11{fill:#48ada6}.st12{fill:#52beaa}.st13{fill:#40a0a2}.st14{fill:#53bfab}.st15{fill:#54c1ab}.st17{fill:#41a2a3}.st18{fill:#55c3ac}.st20{fill:#42a3a3}.st21{fill:#58c7ad}.st22{fill:#3f9ea1}.st23{fill:#3e9da1}.st24{fill:#4db5a8}.st25{fill:#55c2ab}.st26{fill:#56c5ac}.st27{fill:#57c6ac}.st28{fill:#51bbaa}.st29{fill:#5accae}.st30{fill:#3c9aa0}.st31{fill:#44a5a4}.st32{fill:#54c0ab}.st33{fill:#5cd0af}.st35{fill:#59caae}.st36{fill:#46a9a5}.st37{fill:#37939e}.st38{fill:#39969f}.st39{fill:#3d9ca1}.st40{fill:#39959f}.st41{fill:#42a2a3}.st43{fill:#59c9ad}.st46{fill:#409fa2}.st47{fill:#3b99a0}.st48{fill:#4cb2a7}.st49{fill:#4aafa6}.st50{fill:#3f9fa2}.st51{fill:#5dd1b0}.st52{fill:#35909d}.st53{fill:#37949e}.st56{fill:#56c4ac}.st57{fill:#50baa9}.st58{fill:#5bceaf}.st59{fill:#4eb6a8}.st60{fill:#38959f}.st63{fill:#338f9d}.st64{fill:#44a6a4}.st68{fill:#45a8a4}.st70{fill:#60d6b1}.st71{fill:#60d8b1}.st74{fill:#308a9b}.st75{fill:#318c9c}.st77{fill:#36929e}.st78{fill:#48aca5}.st83{fill:#62dab2}.st84{fill:#5ed3b0}.st85{fill:#43a4a3}.st86{fill:#2a849a}.st89{fill:#3a979f}.st91{fill:#63dcb2}.st96{fill:#49ada6}.st98{fill:#65e1b4}.st99{fill:#257f98}.st100{fill:#2e889b}.st102{fill:#348f9d}.st103{fill:#2b859a}.st104{fill:#2f899b}.st105{fill:#41a1a2}.st110{fill:#237d97}.st112{fill:#1d7896}.st123{fill:#66e3b4}.st127{fill:#217b97}.st128{fill:#1f7a96}.st129{fill:#197595}.st144{fill:#0a6d92}
+    </style>
+    <path shape-rendering="crispEdges" d="M1720.4 539l-198.6-32.6 53.6 238.2 145-205.6z" fill="#4db4a8"/>
+    <path shape-rendering="crispEdges" class="st1" d="M1521.8 506.4l-157.4 72.9 211 165.3-53.6-238.2z"/>
+    <path shape-rendering="crispEdges" class="st2" d="M1720.4 539l49.4-111.5-248.1-63.7L1720.4 539z"/>
+    <path shape-rendering="crispEdges" d="M1521.8 506.4l-.1-142.6-208.1 53.1 208.2 89.5z" fill="#4fb7a9"/>
+    <path shape-rendering="crispEdges" class="st4" d="M1720.4 539l-198.7-175.2.1 142.6 198.6 32.6z"/>
+    <path shape-rendering="crispEdges" class="st5" d="M2029.3 587.5l-210.2 237.9 165.1-34 45.1-203.9z"/>
+    <path shape-rendering="crispEdges" class="st6" d="M1575.4 744.6l243.7 80.8-98.7-286.4-145 205.6zM1521.8 506.4l-208.2-89.5 50.8 162.4 157.4-72.9z"/>
+    <path shape-rendering="crispEdges" class="st7" d="M1575.4 744.6L1302.7 827l262.1 172.1 10.6-254.5z"/>
+    <path shape-rendering="crispEdges" class="st8" d="M1364.4 579.3L1302.7 827l272.7-82.4-211-165.3z"/>
+    <path shape-rendering="crispEdges" class="st9" d="M1313.6 416.9L1160 507.6l204.4 71.7-50.8-162.4z"/>
+    <path shape-rendering="crispEdges" class="st8" d="M1575.4 744.6l-10.6 254.5 254.3-173.7-243.7-80.8z"/>
+    <path shape-rendering="crispEdges" class="st4" d="M1720.4 539l98.7 286.4 210.2-237.9-308.9-48.5z"/>
+    <path shape-rendering="crispEdges" class="st10" d="M1564.8 999.1l234.2-10.6 20.1-163.1-254.3 173.7z"/>
+    <path shape-rendering="crispEdges" class="st11" d="M1819.1 825.4L1799 988.5l129.4 31.7-109.3-194.8z"/>
+    <path shape-rendering="crispEdges" class="st12" d="M1720.4 539l308.9 48.5-259.5-160-49.4 111.5z"/>
+    <path shape-rendering="crispEdges" class="st13" d="M1302.7 827l-95.1-61.4-72.2 236.5L1302.7 827z"/>
+    <path shape-rendering="crispEdges" class="st7" d="M1364.4 579.3l-156.8 186.3 95.1 61.4 61.7-247.7z"/>
+    <path shape-rendering="crispEdges" class="st14" d="M1521.7 363.8l41.7-179.5-233.9 40.7 192.2 138.8z"/>
+    <path shape-rendering="crispEdges" class="st15" d="M1769.8 427.5l-48.7-249.8-199.4 186.1 248.1 63.7z"/>
+    <path shape-rendering="crispEdges" d="M2029.3 587.5l-19.1-185.8-240.4 25.8 259.5 160z" fill="#55c2ac"/>
+    <path shape-rendering="crispEdges" class="st17" d="M1302.7 827l16.4 129.6 245.7 42.5L1302.7 827z"/>
+    <path shape-rendering="crispEdges" class="st18" d="M1521.7 363.8l199.4-186.1-157.7 6.6-41.7 179.5z"/>
+    <path shape-rendering="crispEdges" d="M1769.8 427.5l240.4-25.8-63.2-207.2-177.2 233z" fill="#57c7ad"/>
+    <path shape-rendering="crispEdges" class="st10" d="M1364.4 579.3L1160 507.6l47.6 258 156.8-186.3z"/>
+    <path shape-rendering="crispEdges" class="st4" d="M1521.7 363.8L1329.5 225l-15.9 191.9 208.1-53.1z"/>
+    <path shape-rendering="crispEdges" class="st4" d="M1313.6 416.9l15.9-191.9-134.8-31.4 118.9 223.3z"/>
+    <path shape-rendering="crispEdges" class="st9" d="M1313.6 416.9l-162.3 7 8.7 83.7 153.6-90.7z"/>
+    <path shape-rendering="crispEdges" class="st1" d="M1819.1 825.4l109.3 194.8 55.8-228.8-165.1 34z"/>
+    <path shape-rendering="crispEdges" class="st20" d="M1564.8 999.1l-7 172.7L1799 988.5l-234.2 10.6z"/>
+    <path shape-rendering="crispEdges" class="st21" d="M1769.8 427.5l177.2-233-225.9-16.8 48.7 249.8z"/>
+    <path shape-rendering="crispEdges" class="st17" d="M1799 988.5l-241.2 183.3L1779 1211l20-222.5z"/>
+    <path shape-rendering="crispEdges" class="st22" d="M1319.1 956.6l6.2 165.4 239.5-122.9-245.7-42.5z"/>
+    <path shape-rendering="crispEdges" class="st23" d="M1564.8 999.1L1325.3 1122l232.5 49.8 7-172.7z"/>
+    <path shape-rendering="crispEdges" class="st22" d="M1302.7 827l-167.3 175.1 183.7-45.5-16.4-129.6z"/>
+    <path shape-rendering="crispEdges" class="st24" d="M1313.6 416.9l-118.9-223.3-43.4 230.3 162.3-7z"/>
+    <path shape-rendering="crispEdges" class="st25" d="M1563.4 184.3l-.9-223.3-235.7 59.6 236.6 163.7z"/>
+    <path shape-rendering="crispEdges" class="st26" d="M1721.1 177.7L1562.5-39l.9 223.3 157.7-6.6z"/>
+    <path shape-rendering="crispEdges" class="st27" d="M2029.3 587.5l152.4-160.6-171.5-25.2 19.1 185.8z"/>
+    <path shape-rendering="crispEdges" class="st28" d="M1984.2 791.4l212.7 17.6-167.6-221.5-45.1 203.9z"/>
+    <path shape-rendering="crispEdges" class="st6" d="M1928.4 1020.2l275.1-84.9-219.3-143.9-55.8 228.8z"/>
+    <path shape-rendering="crispEdges" class="st29" d="M2010.2 401.7l171.5 25.2-73.5-223.2-98 198z"/>
+    <path shape-rendering="crispEdges" class="st26" d="M2029.3 587.5l182.1-14-29.7-146.6-152.4 160.6z"/>
+    <path shape-rendering="crispEdges" class="st30" d="M1319.1 956.6l-183.7 45.5 189.9 119.9-6.2-165.4z"/>
+    <path shape-rendering="crispEdges" class="st31" d="M1160 507.6L984.7 707.8l222.9 57.8-47.6-258z"/>
+    <path shape-rendering="crispEdges" class="st8" d="M1151.3 423.9L949 596.7l211-89.1-8.7-83.7z"/>
+    <path shape-rendering="crispEdges" class="st32" d="M2029.3 587.5L2196.9 809l14.5-235.5-182.1 14z"/>
+    <path shape-rendering="crispEdges" class="st31" d="M1928.4 1020.2L1779 1211l179.3 3.8-29.9-194.6z"/>
+    <path shape-rendering="crispEdges" class="st7" d="M1799 988.5l-20 222.5 149.4-190.8-129.4-31.7z"/>
+    <path shape-rendering="crispEdges" class="st22" d="M1207.6 765.6l-222.9-57.8-12.6 214 235.5-156.2z"/>
+    <path shape-rendering="crispEdges" class="st24" d="M1194.7 193.6l-201.9-7.4 158.5 237.7 43.4-230.3z"/>
+    <path shape-rendering="crispEdges" class="st33" d="M1947 194.5l161.2 9.2-99.3-244.6-61.9 235.4z"/>
+    <path shape-rendering="crispEdges" d="M2010.2 401.7l98-198-161.2-9.2 63.2 207.2z" fill="#5bcdae"/>
+    <path shape-rendering="crispEdges" class="st14" d="M1329.5 225l233.9-40.7-236.6-163.7 2.7 204.4z"/>
+    <path shape-rendering="crispEdges" class="st35" d="M1947 194.5L1731.4-83.9l-10.3 261.6 225.9 16.8z"/>
+    <path shape-rendering="crispEdges" class="st2" d="M1329.5 225l-2.7-204.4-132.1 173 134.8 31.4z"/>
+    <path shape-rendering="crispEdges" class="st31" d="M1160 507.6l-211 89.1 35.7 111.1L1160 507.6z"/>
+    <path shape-rendering="crispEdges" class="st28" d="M2196.9 809l6.6 126.3 183.4-143.8-190 17.5z"/>
+    <path shape-rendering="crispEdges" class="st5" d="M1984.2 791.4l219.3 143.9-6.6-126.3-212.7-17.6z"/>
+    <path shape-rendering="crispEdges" class="st36" d="M1928.4 1020.2l29.9 194.6 160.6-34.8-190.5-159.8z"/>
+    <path shape-rendering="crispEdges" class="st37" d="M1325.3 1122l-112.6 73.2 90.1 151.5 22.5-224.7z"/>
+    <path shape-rendering="crispEdges" class="st38" d="M1135.4 1002.1l77.3 193.1 112.6-73.2-189.9-119.9z"/>
+    <path shape-rendering="crispEdges" class="st39" d="M1207.6 765.6L972.1 921.8l163.3 80.3 72.2-236.5z"/>
+    <path shape-rendering="crispEdges" class="st38" d="M1557.8 1171.8l-232.5-49.8-22.5 224.7 255-174.9z"/>
+    <path shape-rendering="crispEdges" class="st40" d="M1135.4 1002.1l-163.3-80.3 55 212.3 108.3-132z"/>
+    <path shape-rendering="crispEdges" class="st41" d="M949 596.7l-201.8-175-41.1 175H949z"/>
+    <path shape-rendering="crispEdges" class="st15" d="M1562.5-39l168.9-44.9-603.9-5.8 435 50.7z"/>
+    <path shape-rendering="crispEdges" d="M1721.1 177.7l10.3-261.6L1562.5-39l158.6 216.7z" fill="#57c6ad"/>
+    <path shape-rendering="crispEdges" class="st43" d="M2211.4 573.5l106.3 56.2 102.6-214.9-208.9 158.7z"/>
+    <path shape-rendering="crispEdges" class="st25" d="M2196.9 809l120.8-179.3-106.3-56.2-14.5 235.5z"/>
+    <path shape-rendering="crispEdges" d="M2181.7 426.9l29.7 146.6 208.9-158.7-238.6 12.1z" fill="#5acbae"/>
+    <path shape-rendering="crispEdges" class="st8" d="M1151.3 423.9l-207.2-76.2 4.9 249 202.3-172.8z"/>
+    <path shape-rendering="crispEdges" d="M1326.8 20.6L1127.5-89.7l67.2 283.3 132.1-173z" fill="#51bba9"/>
+    <path shape-rendering="crispEdges" class="st46" d="M1779 1211l-68.3 127.8 247.6-124-179.3-3.8z"/>
+    <path shape-rendering="crispEdges" class="st23" d="M1557.8 1171.8l152.9 167L1779 1211l-221.2-39.2z"/>
+    <path shape-rendering="crispEdges" class="st1" d="M1151.3 423.9L992.8 186.2l-48.7 161.5 207.2 76.2z"/>
+    <path shape-rendering="crispEdges" class="st47" d="M1557.8 1171.8l9.7 199.1 143.2-32.1-152.9-167z"/>
+    <path shape-rendering="crispEdges" class="st48" d="M2203.5 935.3l-84.6 244.7 232.4-173.7-147.8-71z"/>
+    <path shape-rendering="crispEdges" class="st49" d="M1928.4 1020.2l190.5 159.8 84.6-244.7-275.1 84.9z"/>
+    <path shape-rendering="crispEdges" class="st50" d="M1710.7 1338.8l315.5 90.5-67.9-214.5-247.6 124z"/>
+    <path shape-rendering="crispEdges" class="st29" d="M1947 194.5l61.9-235.4-277.5-43L1947 194.5z"/>
+    <path shape-rendering="crispEdges" class="st51" d="M2181.7 426.9L2308 166l-199.8 37.7 73.5 223.2z"/>
+    <path shape-rendering="crispEdges" class="st52" d="M1212.7 1195.2l-185.6-61.1 200.9 192.5-15.3-131.4z"/>
+    <path shape-rendering="crispEdges" class="st53" d="M1135.4 1002.1l-108.3 132 185.6 61.1-77.3-193.1z"/>
+    <path shape-rendering="crispEdges" class="st40" d="M1557.8 1171.8l-255 174.9 264.7 24.2-9.7-199.1z"/>
+    <path shape-rendering="crispEdges" class="st32" d="M2196.9 809l190-17.5-69.2-161.8L2196.9 809z"/>
+    <path shape-rendering="crispEdges" d="M1212.7 1195.2l15.3 131.4 74.8 20.1-90.1-151.5z" fill="#34909d"/>
+    <path shape-rendering="crispEdges" d="M2108.2 203.7L2308 166 2148.9-68.8l-40.7 272.5z" fill="#5ed4b0"/>
+    <path shape-rendering="crispEdges" class="st56" d="M2386.9 791.5l151.2-35.1-220.4-126.7 69.2 161.8z"/>
+    <path shape-rendering="crispEdges" class="st51" d="M2181.7 426.9l238.6-12.1L2308 166l-126.3 260.9z"/>
+    <path shape-rendering="crispEdges" class="st57" d="M2203.5 935.3l147.8 71 35.6-214.8-183.4 143.8z"/>
+    <path shape-rendering="crispEdges" class="st5" d="M1194.7 193.6l-67.2-283.3-134.7 275.9 201.9 7.4z"/>
+    <path shape-rendering="crispEdges" class="st12" d="M1562.5-39l-435-50.7 199.3 110.3L1562.5-39z"/>
+    <path shape-rendering="crispEdges" class="st51" d="M2108.2 203.7l40.7-272.5-140 27.9 99.3 244.6z"/>
+    <path shape-rendering="crispEdges" class="st58" d="M2008.9-40.9l140-27.9-417.5-15.1 277.5 43z"/>
+    <path shape-rendering="crispEdges" class="st1" d="M992.8 186.2l-243.6-15.6 194.9 177.1 48.7-161.5z"/>
+    <path shape-rendering="crispEdges" class="st59" d="M1127.5-89.7L979.3-51.5l13.5 237.7 134.7-275.9z"/>
+    <path shape-rendering="crispEdges" class="st7" d="M944.1 347.7l-196.9 74 201.8 175-4.9-249z"/>
+    <path shape-rendering="crispEdges" class="st23" d="M706.2 786L949 596.7H706.1l.1 189.3z"/>
+    <path shape-rendering="crispEdges" class="st22" d="M706.2 786l278.5-78.2L949 596.7 706.2 786z"/>
+    <path shape-rendering="crispEdges" class="st30" d="M972.1 921.8l12.6-214L706.2 786l265.9 135.8z"/>
+    <path shape-rendering="crispEdges" class="st48" d="M992.8 186.2L979.3-51.5 729.2 25.2l263.6 161z"/>
+    <path shape-rendering="crispEdges" class="st60" d="M972.1 921.8L706.2 786 700 928.4l272.1-6.6z"/>
+    <path shape-rendering="crispEdges" d="M1958.3 1214.8l67.9 214.5 131.3-40.6-199.2-173.9z" fill="#41a2a2"/>
+    <path shape-rendering="crispEdges" d="M1567.5 1370.9l42.9 206.5 100.3-238.6-143.2 32.1z" fill="#38949e"/>
+    <path shape-rendering="crispEdges" class="st63" d="M1302.8 1346.7l86.3 240 178.4-215.8-264.7-24.2z"/>
+    <path shape-rendering="crispEdges" class="st64" d="M2118.9 1180l-160.6 34.8 199.2 173.9-38.6-208.7z"/>
+    <path shape-rendering="crispEdges" d="M2420.3 414.8L2533 548.3l34-138-146.7 4.5z" fill="#5dd2b0"/>
+    <path shape-rendering="crispEdges" class="st29" d="M2317.7 629.7l215.3-81.4-112.7-133.5-102.6 214.9z"/>
+    <path shape-rendering="crispEdges" class="st24" d="M2351.3 1006.3l39.6 126.4 111.6 23.4-151.2-149.8z"/>
+    <path shape-rendering="crispEdges" class="st47" d="M1710.7 1338.8l81.8 183.8 233.7-93.3-315.5-90.5z"/>
+    <path shape-rendering="crispEdges" d="M1228 1326.6l-68.2 237.3 143-217.2-74.8-20.1z" fill="#308b9c"/>
+    <path shape-rendering="crispEdges" class="st2" d="M2386.9 791.5l-35.6 214.8 254.4 6.9-218.8-221.7z"/>
+    <path shape-rendering="crispEdges" class="st1" d="M2118.9 1180l272-47.3-39.6-126.4-232.4 173.7z"/>
+    <path shape-rendering="crispEdges" class="st43" d="M2317.7 629.7l220.4 126.7-5.1-208.1-215.3 81.4z"/>
+    <path shape-rendering="crispEdges" d="M2118.9 1180l38.6 208.7 148.7-4.4-187.3-204.3z" fill="#44a7a4"/>
+    <path shape-rendering="crispEdges" class="st47" d="M1792.5 1522.6l207.7 16.3 26-109.6-233.7 93.3z"/>
+    <path shape-rendering="crispEdges" class="st52" d="M972.1 921.8L700 928.4l67.3 236.1 204.8-242.7z"/>
+    <path shape-rendering="crispEdges" class="st50" d="M706.1 596.7l-76.8-181.5-83.9 109.1 160.7 72.4z"/>
+    <path shape-rendering="crispEdges" class="st52" d="M1027.1 1134.1l-55-212.3-204.8 242.7 259.8-30.4z"/>
+    <path shape-rendering="crispEdges" class="st68" d="M747.2 421.7l2-251.1-119.9 244.6 117.9 6.5z"/>
+    <path shape-rendering="crispEdges" d="M944.1 347.7L749.2 170.6l-2 251.1 196.9-74z" fill="#48aba5"/>
+    <path shape-rendering="crispEdges" class="st53" d="M1710.7 1338.8l-100.3 238.6 182.1-54.8-81.8-183.8z"/>
+    <path shape-rendering="crispEdges" class="st70" d="M2308 166l68.5-140.3-227.6-94.5L2308 166z"/>
+    <path shape-rendering="crispEdges" class="st71" d="M2420.3 414.8l146.7-4.5 22.1-279.2-168.8 283.7z"/>
+    <path shape-rendering="crispEdges" d="M2308 166l112.3 248.8 168.8-283.7L2308 166z" fill="#61d9b2"/>
+    <path shape-rendering="crispEdges" class="st58" d="M2538.1 756.4l193.1-216.6-198.2 8.5 5.1 208.1z"/>
+    <path shape-rendering="crispEdges" class="st17" d="M747.2 421.7l-117.9-6.5 76.8 181.5 41.1-175z"/>
+    <path shape-rendering="crispEdges" class="st30" d="M546.3 711.4l159.8-114.7-160.7-72.4.9 187.1z"/>
+    <path shape-rendering="crispEdges" d="M1567.5 1370.9l-178.4 215.8 221.3-9.3-42.9-206.5z" fill="#338e9d"/>
+    <path shape-rendering="crispEdges" class="st74" d="M1027.1 1134.1l-259.8 30.4 151.3 202.6 108.5-233z"/>
+    <path shape-rendering="crispEdges" class="st75" d="M1228 1326.6l-200.9-192.5-108.5 233 309.4-40.5z"/>
+    <path shape-rendering="crispEdges" class="st39" d="M2026.2 1429.3l-26 109.6 209.3 17.2-183.3-126.8z"/>
+    <path shape-rendering="crispEdges" class="st37" d="M1610.4 1577.4l205.5 156.4-23.4-211.2-182.1 54.8z"/>
+    <path shape-rendering="crispEdges" d="M1228 1326.6l-309.4 40.5 241.2 196.8 68.2-237.3z" fill="#2d879b"/>
+    <path shape-rendering="crispEdges" class="st75" d="M700 928.4l-74.4-7 .5 261.7L700 928.4z"/>
+    <path shape-rendering="crispEdges" class="st77" d="M706.2 786l-80.6 135.4 74.4 7 6.2-142.4z"/>
+    <path shape-rendering="crispEdges" class="st78" d="M2118.9 1180l187.3 204.3 84.7-251.6-272 47.3z"/>
+    <path shape-rendering="crispEdges" class="st46" d="M2026.2 1429.3l183.3 126.8-52-167.4-131.3 40.6z"/>
+    <path shape-rendering="crispEdges" d="M2390.9 1132.7l-84.7 251.6 196.3-228.2-111.6-23.4z" fill="#4ab0a6"/>
+    <path shape-rendering="crispEdges" class="st5" d="M2351.3 1006.3l151.2 149.8 103.2-142.9-254.4-6.9z"/>
+    <path shape-rendering="crispEdges" d="M1302.8 1346.7l-143 217.2 229.3 22.8-86.3-240z" fill="#2e899b"/>
+    <path shape-rendering="crispEdges" class="st11" d="M749.2 170.6l-20-145.4-148.9 180.3 168.9-34.9z"/>
+    <path shape-rendering="crispEdges" d="M992.8 186.2l-263.6-161 20 145.4 243.6 15.6z" fill="#4bb0a7"/>
+    <path shape-rendering="crispEdges" d="M706.2 786l-.1-189.3-159.8 114.7L706.2 786z" fill="#3b98a0"/>
+    <path shape-rendering="crispEdges" class="st36" d="M749.2 170.6l-168.9 34.9 49 209.7 119.9-244.6z"/>
+    <path shape-rendering="crispEdges" class="st37" d="M706.2 786l-159.9-74.6 79.3 210L706.2 786z"/>
+    <path shape-rendering="crispEdges" class="st26" d="M2538.1 756.4l67.6 256.8 135.2-248.7-202.8-8.1z"/>
+    <path shape-rendering="crispEdges" class="st15" d="M2386.9 791.5l218.8 221.7-67.6-256.8-151.2 35.1z"/>
+    <path shape-rendering="crispEdges" class="st83" d="M2308 166l281.1-34.9-212.6-105.4L2308 166z"/>
+    <path shape-rendering="crispEdges" class="st84" d="M2533 548.3l198.2-8.5L2567 410.3l-34 138z"/>
+    <path shape-rendering="crispEdges" class="st85" d="M629.3 415.2l-49-209.7-225.5 137.8 274.5 71.9z"/>
+    <path shape-rendering="crispEdges" class="st41" d="M2306.2 1384.3l-96.7 171.8 130.6-54.5-33.9-117.3z"/>
+    <path shape-rendering="crispEdges" class="st41" d="M2157.5 1388.7l52 167.4 96.7-171.8-148.7 4.4z"/>
+    <path shape-rendering="crispEdges" class="st38" d="M1792.5 1522.6l23.4 211.2 184.3-194.9-207.7-16.3z"/>
+    <path shape-rendering="crispEdges" class="st75" d="M1389.1 1586.7l-8.5 152.8 229.8-162.1-221.3 9.3z"/>
+    <path shape-rendering="crispEdges" class="st71" d="M2567 410.3l164.2 129.5 8.7-209-172.9 79.5z"/>
+    <path shape-rendering="crispEdges" class="st74" d="M700 928.4l-73.9 254.7 141.2-18.6L700 928.4z"/>
+    <path shape-rendering="crispEdges" class="st37" d="M546.3 711.4L382.6 587.8l-33.1 145.4 196.8-21.8z"/>
+    <path shape-rendering="crispEdges" class="st86" d="M767.3 1164.5l-141.2 18.6 104.1 229.3 37.1-247.9zM918.6 1367.1l-151.3-202.6-37.1 247.9 188.4-45.3z"/>
+    <path shape-rendering="crispEdges" d="M1159.8 1563.9l-144.6 19.7 175.9 167.7-31.3-187.4z" fill="#2a8399"/>
+    <path shape-rendering="crispEdges" d="M918.6 1367.1l96.6 216.5 144.6-19.7-241.2-196.8z" fill="#298299"/>
+    <path shape-rendering="crispEdges" class="st89" d="M2000.2 1538.9l-184.3 194.9 109 69.1 75.3-264z"/>
+    <path shape-rendering="crispEdges" d="M1159.8 1563.9l31.3 187.4 198-164.6-229.3-22.8z" fill="#2c869a"/>
+    <path shape-rendering="crispEdges" class="st91" d="M2589.1 131.1L2518-79.6 2376.5 25.7l212.6 105.4zM2567 410.3l172.9-79.5-150.8-199.7-22.1 279.2z"/>
+    <path shape-rendering="crispEdges" d="M2376.5 25.7L2518-79.6l-369.1 10.8 227.6 94.5z" fill="#61d8b1"/>
+    <path shape-rendering="crispEdges" class="st84" d="M2148.9-68.8L2518-79.6l-786.6-4.3 417.5 15.1z"/>
+    <path shape-rendering="crispEdges" class="st35" d="M1731.4-83.9l786.6 4.3-1390.5-10.1 603.9 5.8z"/>
+    <path shape-rendering="crispEdges" d="M2538.1 756.4l202.8 8.1-9.7-224.7-193.1 216.6z" fill="#5bccae"/>
+    <path shape-rendering="crispEdges" d="M1610.4 1577.4l-229.8 162.1 241.6 27.4-11.8-189.5z" fill="#338e9c"/>
+    <path shape-rendering="crispEdges" class="st7" d="M2306.2 1384.3l33.9 117.3 177.3-101.1-211.2-16.2z"/>
+    <path shape-rendering="crispEdges" d="M2000.2 1538.9l-75.3 264 179-31.4-103.7-232.6z" fill="#3c99a0"/>
+    <path shape-rendering="crispEdges" class="st96" d="M2502.5 1156.1l-196.3 228.2 211.2 16.2-14.9-244.4z"/>
+    <path shape-rendering="crispEdges" d="M1610.4 1577.4l11.8 189.5 193.7-33.1-205.5-156.4z" fill="#35919e"/>
+    <path shape-rendering="crispEdges" class="st98" d="M2589.1 131.1l150.8 199.7-25.5-213.6-125.3 13.9z"/>
+    <path shape-rendering="crispEdges" class="st33" d="M2740.9 764.5l192.5-138.7-202.2-86 9.7 224.7z"/>
+    <path shape-rendering="crispEdges" class="st99" d="M918.6 1367.1l-188.4 45.3 29.4 169.3 159-214.6z"/>
+    <path shape-rendering="crispEdges" class="st18" d="M2605.7 1013.2l118.6 2.7 16.6-251.4-135.2 248.7z"/>
+    <path shape-rendering="crispEdges" class="st57" d="M2502.5 1156.1l264.4 11.3-161.2-154.2-103.2 142.9z"/>
+    <path shape-rendering="crispEdges" class="st1" d="M2502.5 1156.1l14.9 244.4 232-12-246.9-232.4z"/>
+    <path shape-rendering="crispEdges" class="st100" d="M1389.1 1586.7l-198 164.6 189.5-11.8 8.5-152.8z"/>
+    <path shape-rendering="crispEdges" class="st99" d="M918.6 1367.1l-159 214.6 255.6 1.9-96.6-216.5z"/>
+    <path shape-rendering="crispEdges" class="st74" d="M1380.6 1739.5l-189.5 11.8 431.1 15.6-241.6-27.4z"/>
+    <path shape-rendering="crispEdges" class="st98" d="M2589.1 131.1l125.3-13.9 17.1-128.4-142.4 142.3z"/>
+    <path shape-rendering="crispEdges" d="M545.4 524.3l-162.8 63.5 163.7 123.6-.9-187.1z" fill="#3a98a0"/>
+    <path shape-rendering="crispEdges" class="st46" d="M629.3 415.2l-274.5-71.9 190.6 181 83.9-109.1z"/>
+    <path shape-rendering="crispEdges" class="st102" d="M625.6 921.4l-79.3-210-120.5 229.2 199.8-19.2z"/>
+    <path shape-rendering="crispEdges" class="st103" d="M626.1 1183.1L425.8 940.6 384.7 1129l241.4 54.1z"/>
+    <path shape-rendering="crispEdges" class="st104" d="M625.6 921.4l-199.8 19.2 200.3 242.5-.5-261.7z"/>
+    <path shape-rendering="crispEdges" class="st39" d="M2209.5 1556.1l-209.3-17.2 103.7 232.6 105.6-215.4z"/>
+    <path shape-rendering="crispEdges" class="st53" d="M1622.2 1766.9l302.7 36-109-69.1-193.7 33.1z"/>
+    <path shape-rendering="crispEdges" class="st63" d="M1191.1 1751.3l733.8 51.6-302.7-36-431.1-15.6z"/>
+    <path shape-rendering="crispEdges" class="st50" d="M2376 1760.7l-166.5-204.6-105.6 215.4 272.1-10.8z"/>
+    <path shape-rendering="crispEdges" class="st105" d="M2340.1 1501.6l-130.6 54.5 166.5 204.6-35.9-259.1z"/>
+    <path shape-rendering="crispEdges" class="st102" d="M546.3 711.4l-196.8 21.8 76.3 207.4 120.5-229.2z"/>
+    <path shape-rendering="crispEdges" d="M545.4 524.3l-190.6-181 27.8 244.5 162.8-63.5z" fill="#3d9ba0"/>
+    <path shape-rendering="crispEdges" class="st8" d="M729.2 25.2L504.6-83.4l75.7 288.9L729.2 25.2z"/>
+    <path shape-rendering="crispEdges" d="M382.6 587.8l-27.8-244.5-202.1 180.3 229.9 64.2z" fill="#3a989f"/>
+    <path shape-rendering="crispEdges" class="st12" d="M2605.7 1013.2l161.2 154.2-42.6-151.5-118.6-2.7z"/>
+    <path shape-rendering="crispEdges" d="M2724.3 1015.9l42.6 151.5 225.1-1.7-267.7-149.8z" fill="#52bdaa"/>
+    <path shape-rendering="crispEdges" class="st21" d="M2740.9 764.5l-16.6 251.4 221.9-197-205.3-54.4z"/>
+    <path shape-rendering="crispEdges" d="M2589.1 131.1l142.4-142.3L2518-79.6l71.1 210.7z" fill="#64dfb3"/>
+    <path shape-rendering="crispEdges" class="st83" d="M2739.9 330.8l-8.7 209 173.2-204.9-164.5-4.1z"/>
+    <path shape-rendering="crispEdges" class="st70" d="M2731.2 539.8l202.2 86-29-290.9-173.2 204.9z"/>
+    <path shape-rendering="crispEdges" class="st110" d="M1015.2 1583.6l-255.6-1.9 27.9 120.6 227.7-118.7z"/>
+    <path shape-rendering="crispEdges" d="M626.1 1183.1l-52.5 219 156.6 10.3-104.1-229.3z" fill="#267f98"/>
+    <path shape-rendering="crispEdges" class="st112" d="M303.8 1804.2l667.9-58-348.5 12.5-319.4 45.5z"/>
+    <path shape-rendering="crispEdges" d="M1015.2 1583.6l-43.5 162.6 219.4 5.1-175.9-167.7z" fill="#288299"/>
+    <path shape-rendering="crispEdges" d="M730.2 1412.4l-156.6-10.3 186 179.6-29.4-169.3z" fill="#217c97"/>
+    <path shape-rendering="crispEdges" class="st74" d="M349.5 733.2l-129.6-5.8-47 200.5 176.6-194.7z"/>
+    <path shape-rendering="crispEdges" class="st68" d="M580.3 205.5L504.6-83.4 393.5 130.8l186.8 74.7z"/>
+    <path shape-rendering="crispEdges" d="M979.3-51.5L504.6-83.4 729.2 25.2l250.1-76.7z" fill="#49aea6"/>
+    <path shape-rendering="crispEdges" d="M1127.5-89.7l-622.9 6.3 474.7 31.9 148.2-38.2z" fill="#4bb2a7"/>
+    <path shape-rendering="crispEdges" class="st31" d="M580.3 205.5l-186.8-74.7-38.7 212.5 225.5-137.8z"/>
+    <path shape-rendering="crispEdges" class="st99" d="M626.1 1183.1L384.7 1129l-3.4 246.9 244.8-192.8z"/>
+    <path shape-rendering="crispEdges" d="M2714.4 117.2l25.5 213.6 164.5 4.1-190-217.7z" fill="#65e0b3"/>
+    <path shape-rendering="crispEdges" d="M2714.4 117.2l190 217.7 92.5-139.2-282.5-78.5z" fill="#66e2b4"/>
+    <path shape-rendering="crispEdges" class="st96" d="M2517.4 1400.5l97.6 111.6 134.4-123.6-232 12z"/>
+    <path shape-rendering="crispEdges" class="st68" d="M2340.1 1501.6l274.9 10.5-97.6-111.6-177.3 101.1z"/>
+    <path shape-rendering="crispEdges" class="st7" d="M504.6-83.4l-75.5 25.5-35.6 188.7L504.6-83.4z"/>
+    <path shape-rendering="crispEdges" class="st29" d="M2740.9 764.5l205.3 54.4-12.8-193.1-192.5 138.7z"/>
+    <path shape-rendering="crispEdges" class="st59" d="M2502.5 1156.1l246.9 232.4 17.5-221.1-264.4-11.3z"/>
+    <path shape-rendering="crispEdges" class="st99" d="M1015.2 1583.6l-227.7 118.7 184.2 43.9 43.5-162.6z"/>
+    <path shape-rendering="crispEdges" d="M573.6 1402.1L550 1618.5l209.6-36.8-186-179.6z" fill="#1d7795"/>
+    <path shape-rendering="crispEdges" class="st24" d="M2766.9 1167.4l-17.5 221.1 195 14.2-177.5-235.3z"/>
+    <path shape-rendering="crispEdges" class="st64" d="M2615 1512.1l-239 248.6 146.8 31.4 92.2-280z"/>
+    <path shape-rendering="crispEdges" class="st85" d="M2340.1 1501.6l35.9 259.1 239-248.6-274.9-10.5z"/>
+    <path shape-rendering="crispEdges" class="st22" d="M1924.9 1802.9l597.9-10.8-418.9-20.6-179 31.4z"/>
+    <path shape-rendering="crispEdges" class="st104" d="M425.8 940.6l-76.3-207.4-176.6 194.7 252.9 12.7z"/>
+    <path shape-rendering="crispEdges" class="st52" d="M382.6 587.8L219.9 727.4l129.6 5.8 33.1-145.4z"/>
+    <path shape-rendering="crispEdges" class="st41" d="M393.5 130.8L226.8 201l128 142.3 38.7-212.5z"/>
+    <path shape-rendering="crispEdges" class="st85" d="M429.1-57.9L202.6-12l190.9 142.8 35.6-188.7z"/>
+    <path shape-rendering="crispEdges" class="st22" d="M354.8 343.3L226.8 201l-49.9 127.5 177.9 14.8z"/>
+    <path shape-rendering="crispEdges" class="st110" d="M626.1 1183.1l-244.8 192.8 192.3 26.2 52.5-219z"/>
+    <path shape-rendering="crispEdges" d="M425.8 940.6l-252.9-12.7L384.7 1129l41.1-188.4z" fill="#2b849a"/>
+    <path shape-rendering="crispEdges" d="M573.6 1402.1l-192.3-26.2 26.6 222.8 165.7-196.6z" fill="#1b7695"/>
+    <path shape-rendering="crispEdges" class="st35" d="M2946.2 818.9l68.2 130-81-323.1 12.8 193.1z"/>
+    <path shape-rendering="crispEdges" class="st56" d="M2724.3 1015.9l290.1-67-68.2-130-221.9 197z"/>
+    <path shape-rendering="crispEdges" d="M2933.4 625.8l81 323.1-17.5-753.2-63.5 430.1z" fill="#5ed2b0"/>
+    <path shape-rendering="crispEdges" class="st123" d="M2714.4 117.2l282.5 78.5L2929.7 0l-215.3 117.2z"/>
+    <path shape-rendering="crispEdges" d="M2933.4 625.8l63.5-430.1-92.5 139.2 29 290.9z" fill="#62dbb2"/>
+    <path shape-rendering="crispEdges" class="st52" d="M-30 776.5l182.7-252.9-163.4-14L-30 776.5z"/>
+    <path shape-rendering="crispEdges" d="M382.6 587.8l-229.9-64.2 67.2 203.8 162.7-139.6z" fill="#36919e"/>
+    <path shape-rendering="crispEdges" class="st47" d="M354.8 343.3l-177.9-14.8-24.2 195.1 202.1-180.3z"/>
+    <path shape-rendering="crispEdges" class="st123" d="M2731.5-11.2L2929.7 0 2518-79.6l213.5 68.4z"/>
+    <path shape-rendering="crispEdges" class="st123" d="M2714.4 117.2L2929.7 0l-198.2-11.2-17.1 128.4z"/>
+    <path shape-rendering="crispEdges" class="st112" d="M759.6 1581.7L550 1618.5l73.2 140.2 136.4-177z"/>
+    <path shape-rendering="crispEdges" d="M384.7 1129L172.9 927.9l-31.4 192.8 243.2 8.3z" fill="#268098"/>
+    <path shape-rendering="crispEdges" class="st32" d="M2724.3 1015.9l267.7 149.8 22.4-216.8-290.1 67z"/>
+    <path shape-rendering="crispEdges" class="st36" d="M2615 1512.1l-92.2 280 200.3 28.9-108.1-308.9z"/>
+    <path shape-rendering="crispEdges" class="st11" d="M2749.4 1388.5L2615 1512.1l180.1 76.9-45.7-200.5z"/>
+    <path shape-rendering="crispEdges" class="st105" d="M2103.9 1771.5l418.9 20.6-146.8-31.4-272.1 10.8z"/>
+    <path shape-rendering="crispEdges" class="st127" d="M787.5 1702.3l-164.3 56.4 348.5-12.5-184.2-43.9z"/>
+    <path shape-rendering="crispEdges" class="st128" d="M759.6 1581.7l-136.4 177 164.3-56.4-27.9-120.6z"/>
+    <path shape-rendering="crispEdges" class="st129" d="M573.6 1402.1l-165.7 196.6 142.1 19.8 23.6-216.4z"/>
+    <path shape-rendering="crispEdges" d="M1191.1 1751.3l-219.4-5.1-667.9 58 887.3-52.9z" fill="#227c97"/>
+    <path shape-rendering="crispEdges" class="st22" d="M176.9 328.5L226.8 201l-203.1-7.1 153.2 134.6z"/>
+    <path shape-rendering="crispEdges" class="st13" d="M226.8 201L202.6-12 23.7 193.9l203.1 7.1z"/>
+    <path shape-rendering="crispEdges" class="st41" d="M393.5 130.8L202.6-12l24.2 213 166.7-70.2z"/>
+    <path shape-rendering="crispEdges" class="st20" d="M504.6-83.4l-559.8 5.5 484.3 20 75.5-25.5z"/>
+    <path shape-rendering="crispEdges" class="st49" d="M2749.4 1388.5l45.7 200.5 149.3-186.3-195-14.2z"/>
+    <path shape-rendering="crispEdges" d="M381.3 1375.9l3.4-246.9L165 1346.3l216.3 29.6z" fill="#1f7996"/>
+    <path shape-rendering="crispEdges" d="M384.7 1129l-243.2-8.3 23.5 225.6L384.7 1129z" fill="#207b96"/>
+    <path shape-rendering="crispEdges" d="M219.9 727.4l-67.2-203.8L-30 776.5l249.9-49.1z" fill="#328d9c"/>
+    <path shape-rendering="crispEdges" d="M550 1618.5l-142.1-19.8-104.1 205.5L550 1618.5z" fill="#157394"/>
+    <path shape-rendering="crispEdges" class="st5" d="M2766.9 1167.4l177.5 235.3 47.6-237-225.1 1.7z"/>
+    <path shape-rendering="crispEdges" d="M381.3 1375.9L165 1346.3l28.9 248 187.4-218.4z" fill="#147294"/>
+    <path shape-rendering="crispEdges" class="st100" d="M172.9 927.9l47-200.5L-30 776.5l202.9 151.4z"/>
+    <path shape-rendering="crispEdges" class="st89" d="M176.9 328.5l-208.1 79 183.9 116.1 24.2-195.1z"/>
+    <path shape-rendering="crispEdges" class="st103" d="M-51.5 968l224.4-40.1L-30 776.5-51.5 968z"/>
+    <path shape-rendering="crispEdges" class="st39" d="M176.9 328.5L23.7 193.9l-54.9 213.6 208.1-79z"/>
+    <path shape-rendering="crispEdges" d="M141.5 1120.7l31.4-192.8L-51.5 968l193 152.7z" fill="#278198"/>
+    <path shape-rendering="crispEdges" class="st78" d="M2795.1 1589l-72 232 235.1-22.2-163.1-209.8z"/>
+    <path shape-rendering="crispEdges" class="st8" d="M2615 1512.1l108.1 308.9 72-232-180.1-76.9z"/>
+    <path shape-rendering="crispEdges" class="st20" d="M1924.9 1802.9l798.2 18.1-200.3-28.9-597.9 10.8z"/>
+    <path shape-rendering="crispEdges" class="st77" d="M-10.7 509.6l-20.5-102.1 1.2 369 19.3-266.9z"/>
+    <path shape-rendering="crispEdges" class="st60" d="M152.7 523.6L-31.2 407.5l20.5 102.1 163.4 14z"/>
+    <path shape-rendering="crispEdges" class="st110" d="M141.5 1120.7L-51.5 968l16.6 257.3 176.4-104.6z"/>
+    <path shape-rendering="crispEdges" class="st75" d="M-31.2 407.5L-51.5 968-30 776.5l-1.2-369z"/>
+    <path shape-rendering="crispEdges" class="st48" d="M2944.4 1402.7l84.8 160.1-37.2-397.1-47.6 237z"/>
+    <path shape-rendering="crispEdges" class="st11" d="M2795.1 1589l234.1-26.2-84.8-160.1-149.3 186.3z"/>
+    <path shape-rendering="crispEdges" class="st5" d="M2992 1165.7l37.2 397.1-14.8-613.9-22.4 216.8z"/>
+    <path shape-rendering="crispEdges" class="st27" d="M3014.4 948.9l14.8 613.9-32.3-1367.1 17.5 753.2z"/>
+    <path shape-rendering="crispEdges" d="M381.3 1375.9l-187.4 218.4 214 4.4-26.6-222.8z" fill="#127193"/>
+    <path shape-rendering="crispEdges" class="st112" d="M141.5 1120.7l-176.4 104.6 199.9 121-23.5-225.6z"/>
+    <path shape-rendering="crispEdges" d="M407.9 1598.7l-214-4.4 109.9 209.9 104.1-205.5z" fill="#107093"/>
+    <path shape-rendering="crispEdges" class="st129" d="M165 1346.3l-199.9-121-63.9 154.3 263.8-33.3z"/>
+    <path shape-rendering="crispEdges" d="M1191.1 1751.3l-887.3 52.9 1621.1-1.3-733.8-51.6z" fill="#2a8499"/>
+    <path shape-rendering="crispEdges" d="M550 1618.5l-246.2 185.7 319.4-45.5-73.2-140.2z" fill="#187494"/>
+    <path shape-rendering="crispEdges" d="M165 1346.3l-263.8 33.3-1.8 171.2L165 1346.3z" fill="#137193"/>
+    <path shape-rendering="crispEdges" class="st127" d="M1924.9 1802.9l-1621.1 1.3-155.3 10.9 1776.4-12.2z"/>
+    <path shape-rendering="crispEdges" class="st78" d="M2795.1 1589l163.1 209.8 71-236-234.1 26.2z"/>
+    <path shape-rendering="crispEdges" class="st13" d="M23.7 193.9L-55.2-77.9l24 485.4 54.9-213.6z"/>
+    <path shape-rendering="crispEdges" class="st13" d="M202.6-12L-55.2-77.9l78.9 271.8L202.6-12zM429.1-57.9l-484.3-20L202.6-12l226.5-45.9z"/>
+    <path shape-rendering="crispEdges" class="st36" d="M1127.5-89.7L-55.2-77.9l559.8-5.5 622.9-6.3z"/>
+    <path shape-rendering="crispEdges" class="st89" d="M-31.2 407.5l-24-485.4L-51.5 968l20.3-560.5z"/>
+    <path shape-rendering="crispEdges" class="st128" d="M-51.5 968l-47.3 411.6 63.9-154.3L-51.5 968z"/>
+    <path shape-rendering="crispEdges" class="st74" d="M-55.2-77.9l-43.6 1457.5L-51.5 968-55.2-77.9z"/>
+    <path shape-rendering="crispEdges" d="M193.9 1594.3l-28.9-248-265.6 204.5 294.5 43.5z" fill="#0d6e92"/>
+    <path shape-rendering="crispEdges" d="M193.9 1594.3l-45.4 220.8 155.3-10.9-109.9-209.9z" fill="#0c6e92"/>
+    <path shape-rendering="crispEdges" class="st102" d="M1924.9 1802.9l-1776.4 12.2 2574.6 5.9-798.2-18.1z"/>
+    <path shape-rendering="crispEdges" class="st144" d="M193.9 1594.3l-294.5-43.5L26 1755.7l167.9-161.4zM193.9 1594.3L26 1755.7l122.5 59.4 45.4-220.8z"/>
 </svg>

@@ -1,17 +1,26 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { SET_USER, GET_USER, LOG_OUT, FAILED_FETCH } from '../types';
+import {
+  SET_USER,
+  GET_USER,
+  LOG_OUT,
+  // LOGIN_FAILURE,
+  // LOGIN_SUCCESS,
+} from '../types';
 
 const setUser = (user) => ({
   type: SET_USER,
   payload: user,
 });
 
-const loginSuccess = (user) => setUser(user);
+// const loginSuccess = (user) => ({
+//   type: LOGIN_SUCCESS,
+//   payload: user,
+// });
 
-const loginFailure = (error) => ({
-  type: FAILED_FETCH,
-  error,
-});
+// const loginFailure = (error) => ({
+//   type: LOGIN_FAILURE,
+//   error,
+// });
 
 const logInUser = createAsyncThunk(GET_USER, async () => {
   const response = await fetch('/api/users/get-user');
