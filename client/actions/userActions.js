@@ -1,11 +1,20 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   SET_USER,
   GET_USER,
   LOG_OUT,
-  // LOGIN_FAILURE,
-  // LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOGIN_SUCCESS,
 } from '../types';
+
+const getUser = () => async (dispatch) => {
+  const response = await fetch('/api/users/get-user');
+  if (!response.ok) return;
+  const user = await response.json();
+  dispatch({
+    type: SET_USER,
+    payload: user,
+  });
+};
 
 const setUser = (user) => ({
   type: SET_USER,
@@ -22,11 +31,21 @@ const setUser = (user) => ({
 //   error,
 // });
 
-const logInUser = createAsyncThunk(GET_USER, async () => {
+const logInUser = () => async (dispatch) => {
   const response = await fetch('/api/users/get-user');
-  const user = await response.json();
-  return user;
-});
+  if (!response.ok) {
+    dispatch({
+      type: LOGIN_FAILURE,
+      payload: 'User credentials are bad',
+    });
+  } else {
+    const user = await response.json();
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: user,
+    });
+  }
+};
 
 const logOut = () => ({
   type: LOG_OUT,
