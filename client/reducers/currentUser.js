@@ -21,7 +21,7 @@ const currentUser = (state = initialState, { type, payload }) => {
         user: {},
         loggedIn: false,
       };
-    case 'FAILED_FETCH':
+    case 'LOGIN_FAILURE':
       return {
         ...state,
         error: payload,

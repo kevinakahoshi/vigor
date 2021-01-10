@@ -61,9 +61,7 @@ const SignUpInfo = () => {
 
   return (
     <Box className={styles.infoBox}>
-      <Box className={styles.infoLogoWrapper}>
-        <VigorLogo classes={styles.logo} finalOpacity={1} />
-      </Box>
+      <VigorLogo classes={styles.logo} finalOpacity={1} />
       <Typography className={styles.signUpText} variant="h3">
         Sign Up
       </Typography>
