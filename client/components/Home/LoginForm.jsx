@@ -6,18 +6,16 @@ import {
   makeStyles,
   TextField,
 } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { useDispatch } from 'react-redux';
-
-// Redux Actions
+// Redux
+import store from '../../store';
 import actions from '../../actions/index';
 
 // Theme Specific
 import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
 import VigorPrimaryProgressButton from '../Miscellaneous/VigorPrimaryProgressButton';
-
-// Fetch
-// import loginUser from '../../utilities/fetch/loginUser';
+import ErrorMessage from '../Miscellaneous/ErrorMessage';
 
 const formStyles = makeStyles((theme) => ({
   buttonWrapper: {
@@ -45,11 +43,11 @@ const LoginForm = ({ setOpen }) => {
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
+  const { error } = useSelector((state) => state.currentUser);
   const styles = formStyles();
 
   const handleChange = (event) => {
     event.persist();
-
     switch (event.target.name) {
       case 'email':
         setEmail(() => event.target.value);
@@ -62,76 +60,59 @@ const LoginForm = ({ setOpen }) => {
     }
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-    };
-
-    const response = await fetch('/api/users/login', options);
+    dispatch(actions.userActions.logInUser({ email, password }));
     setLoading(() => false);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error: ${response.status}`);
-    } else {
-      const user = await response.json();
-      dispatch(actions.userActions.setUser(user));
-      setOpen(() => false);
-    }
   };
 
   return (
-    <form
-      onChange={handleChange}
-      onSubmit={handleSubmit}
-      className={styles.form}
-    >
-      <FormGroup className={styles.formGroup}>
-        <FormControl>
-          <TextField
-            aria-describedby="Email Address"
-            autoComplete="username"
-            className={styles.textField}
-            color="primary"
-            fullWidth
-            id="email-textfield"
-            margin="dense"
-            name="email"
-            placeholder="Email"
-            variant="outlined"
-          />
-          <TextField
-            aria-describedby="Password"
-            autoComplete="new-password"
-            className={styles.textField}
-            color="primary"
-            fullWidth
-            id="password-textField"
-            margin="dense"
-            name="password"
-            placeholder="Password"
-            type="password"
-            variant="outlined"
-          />
-          <Box className={styles.buttonWrapper}>
-            {loading ? (
-              <VigorPrimaryProgressButton />
-            ) : (
-              <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
-            )}
-          </Box>
-        </FormControl>
-      </FormGroup>
-    </form>
+    <>
+      {error && <ErrorMessage message={error} />}
+      <form
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+        className={styles.form}
+      >
+        <FormGroup className={styles.formGroup}>
+          <FormControl>
+            <TextField
+              aria-describedby="Email Address"
+              autoComplete="username"
+              className={styles.textField}
+              color="primary"
+              fullWidth
+              id="email-textfield"
+              margin="dense"
+              name="email"
+              placeholder="Email"
+              variant="outlined"
+            />
+            <TextField
+              aria-describedby="Password"
+              autoComplete="new-password"
+              className={styles.textField}
+              color="primary"
+              fullWidth
+              id="password-textField"
+              margin="dense"
+              name="password"
+              placeholder="Password"
+              type="password"
+              variant="outlined"
+            />
+            <Box className={styles.buttonWrapper}>
+              {loading ? (
+                <VigorPrimaryProgressButton />
+              ) : (
+                <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
+              )}
+            </Box>
+          </FormControl>
+        </FormGroup>
+      </form>
+    </>
   );
 };
 

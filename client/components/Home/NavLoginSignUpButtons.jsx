@@ -29,13 +29,13 @@ const NavLoginSignUpButtons = () => {
   const styles = buttonWrapper();
 
   const handleClick = async () => {
-    const response = await fetch('/api/users/get-user');
-    const user = await response.json();
-    if (user) {
-      dispatch(actions.userActions.setUser(user));
-    } else {
-      setOpen(true);
-    }
+    // const response = await fetch('/api/users/get-user');
+    // const user = await response.json();
+    // if (user) {
+    //   dispatch(actions.userActions.setUser(user));
+    // } else {
+    setOpen(true);
+    // }
   };
 
   return (

@@ -12,8 +12,6 @@ const currentUser = (state = initialState, { type, payload }) => {
     case 'GET_USER':
       return {
         ...state,
-        user: payload,
-        loggedIn: true,
       };
     case 'LOG_OUT':
       return {
