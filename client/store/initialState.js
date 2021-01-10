@@ -4,4 +4,7 @@ export default {
     user: {},
     error: null,
   },
+  loadingState: {
+    isLoading: false,
+  },
 };

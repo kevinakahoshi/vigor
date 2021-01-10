@@ -27,7 +27,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    dispatch(userActions.logInUser());
+    dispatch(userActions.getUser());
     // onLoad();
   }, []);
 
