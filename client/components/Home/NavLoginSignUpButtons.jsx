@@ -25,18 +25,9 @@ const NavLoginSignUpButtons = () => {
   const [open, setOpen] = useState(false);
   const modalRef = createRef();
 
-  const dispatch = useDispatch();
   const styles = buttonWrapper();
 
-  const handleClick = async () => {
-    // const response = await fetch('/api/users/get-user');
-    // const user = await response.json();
-    // if (user) {
-    //   dispatch(actions.userActions.setUser(user));
-    // } else {
-    setOpen(true);
-    // }
-  };
+  const handleClick = () => setOpen(true);
 
   return (
     <Box className={styles.buttonWrapper}>
