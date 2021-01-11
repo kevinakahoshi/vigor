@@ -1,6 +1,9 @@
 import React from 'react';
 import { makeStyles, Modal } from '@material-ui/core';
 
+import { useDispatch, useSelector } from 'react-redux';
+import actions from '../../actions';
+
 const modalStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
@@ -16,8 +19,15 @@ const modalStyles = makeStyles((theme) => ({
 
 const LoginModal = ({ children, open, setOpen }) => {
   const styles = modalStyles();
+  const dispatch = useDispatch();
+  const error = useSelector((state) => state.currentUser.error);
 
-  const onClose = () => setOpen(() => false);
+  const onClose = () => {
+    setOpen(() => false);
+    if (error) {
+      dispatch(actions.userActions.clearError());
+    }
+  };
 
   return (
     <Modal className={styles.modal} open={open} onClose={onClose}>

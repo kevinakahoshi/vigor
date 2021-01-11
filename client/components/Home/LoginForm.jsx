@@ -9,7 +9,6 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 // Redux
-import store from '../../store';
 import actions from '../../actions/index';
 
 // Theme Specific

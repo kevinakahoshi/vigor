@@ -1,4 +1,10 @@
-import { SET_USER, GET_USER, LOG_OUT, LOGIN_FAILURE } from '../types';
+import {
+  SET_USER,
+  GET_USER,
+  LOG_OUT,
+  LOGIN_FAILURE,
+  CLEAR_ERROR,
+} from '../types';
 
 import loadingActions from './loadingActions';
 
@@ -55,9 +61,14 @@ const logOut = () => ({
   type: LOG_OUT,
 });
 
+const clearError = () => ({
+  type: CLEAR_ERROR,
+});
+
 export default {
   getUser,
   setUser,
   logInUser,
   logOut,
+  clearError,
 };
