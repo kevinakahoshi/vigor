@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, Modal } from '@material-ui/core';
 
 import { useDispatch, useSelector } from 'react-redux';
-import actions from '../../actions';
+import actions from '../../../actions';
 
 const modalStyles = makeStyles((theme) => ({
   modal: {

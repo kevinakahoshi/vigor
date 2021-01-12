@@ -2,8 +2,8 @@ import React from 'react';
 import { Container, makeStyles } from '@material-ui/core';
 
 // Components
-import HomeNavBar from '../components/Home/HomeNavBar';
-import IntroText from '../components/Home/IntroText';
+import NavBar from '../components/Home/Nav/NavBar';
+import HeroText from '../components/Home/HeroText/HeroText';
 
 const homeStyles = makeStyles((theme) => ({
   root: {
@@ -17,9 +17,9 @@ const Home = () => {
 
   return (
     <>
-      <HomeNavBar />
+      <NavBar />
       <Container className={styles.root} maxWidth="sm">
-        <IntroText />
+        <HeroText />
       </Container>
     </>
   );

@@ -9,9 +9,9 @@ import {
 import { Link } from 'react-router-dom';
 
 // Theme Specific
-import VigorLinkButtonGrey from '../../theme/custom-styles/greyLinkButtonStyles';
-import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
-import VigorPrimaryProgressButton from '../Miscellaneous/VigorPrimaryProgressButton';
+import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
+import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
+import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
 
 const formStyles = makeStyles((theme) => ({
   formGroup: {

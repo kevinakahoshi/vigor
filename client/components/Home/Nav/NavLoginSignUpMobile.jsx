@@ -3,7 +3,7 @@ import { Box, makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 // Components
-import VigorSecondaryButton from '../../theme/custom-styles/secondaryButtonStyles';
+import VigorSecondaryButton from '../../../theme/custom-styles/secondaryButtonStyles';
 
 const buttonWrapper = makeStyles((theme) => ({
   buttonWrapper: {
@@ -18,7 +18,7 @@ const buttonWrapper = makeStyles((theme) => ({
   },
 }));
 
-const NavLoginSignUpButtons = () => {
+const NavLoginSignUpMobile = () => {
   const styles = buttonWrapper();
 
   return (
@@ -33,4 +33,4 @@ const NavLoginSignUpButtons = () => {
   );
 };
 
-export default NavLoginSignUpButtons;
+export default NavLoginSignUpMobile;

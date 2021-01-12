@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, makeStyles, Typography } from '@material-ui/core';
 
 // Components
-import SignUpValidationCircle from './SignUpValidationCircle';
+import SignUpValidationCircle from '../ValidationCircle/SignUpValidationCircle';
 
 const requirementStyles = makeStyles((theme) => ({
   requirement: {
