@@ -36,34 +36,29 @@ const formStyles = makeStyles((theme) => ({
   },
 }));
 
-const LoginForm = ({ setOpen }) => {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [loading, setLoading] = useState(false);
+const LoginForm = () => {
+  const [loginCredentials, setLoginCredentials] = useState({
+    email: '',
+    password: '',
+  });
 
   const dispatch = useDispatch();
   const { error } = useSelector((state) => state.currentUser);
+  const { isLoading } = useSelector((state) => state.loadingState);
   const styles = formStyles();
 
   const handleChange = (event) => {
     event.persist();
-    switch (event.target.name) {
-      case 'email':
-        setEmail(() => event.target.value);
-        break;
-      case 'password':
-        setPassword(() => event.target.value);
-        break;
-      default:
-        break;
-    }
+    const { name, value } = event.target;
+    setLoginCredentials((creds) => ({
+      ...creds,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setLoading(true);
-    dispatch(actions.userActions.logInUser({ email, password }));
-    setLoading(() => false);
+    dispatch(actions.userActions.logInUser(loginCredentials));
   };
 
   return (
@@ -102,7 +97,7 @@ const LoginForm = ({ setOpen }) => {
               variant="outlined"
             />
             <Box className={styles.buttonWrapper}>
-              {loading ? (
+              {isLoading ? (
                 <VigorPrimaryProgressButton />
               ) : (
                 <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
