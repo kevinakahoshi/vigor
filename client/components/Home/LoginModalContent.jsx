@@ -26,7 +26,7 @@ const modalContent = makeStyles((theme) => ({
   },
 }));
 
-const LoginModalContent = ({ setOpen }) => {
+const LoginModalContent = () => {
   const styles = modalContent();
 
   return (
@@ -35,11 +35,9 @@ const LoginModalContent = ({ setOpen }) => {
       <Typography className={styles.text} variant="h3">
         Login
       </Typography>
-      <LoginForm setOpen={setOpen} />
+      <LoginForm />
     </Paper>
   );
 };
 
-export default forwardRef(({ setOpen }, ref) => (
-  <LoginModalContent setOpen={setOpen} innerRef={ref} />
-));
+export default forwardRef((props, ref) => <LoginModalContent innerRef={ref} />);

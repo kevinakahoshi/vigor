@@ -27,7 +27,7 @@ const NavLoginSignUpButtons = () => {
 
   const styles = buttonWrapper();
 
-  const handleClick = () => setOpen(true);
+  const handleClick = () => setOpen(() => true);
 
   return (
     <Box className={styles.buttonWrapper}>

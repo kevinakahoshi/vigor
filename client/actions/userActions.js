@@ -46,9 +46,10 @@ const logInUser = ({ email, password }) => async (dispatch, getState) => {
     }),
   };
 
+  const response = await fetch('/api/users/login', options);
+
   dispatch(isNotLoading());
 
-  const response = await fetch('/api/users/login', options);
   if (!response.ok) {
     dispatch(loginFailure('Email or password is incorrect'));
   } else {
