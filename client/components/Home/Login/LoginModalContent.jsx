@@ -3,7 +3,7 @@ import { makeStyles, Paper, Typography } from '@material-ui/core';
 
 // Components
 import LoginForm from './LoginForm';
-import VigorLogo from '../Miscellaneous/VigorLogo';
+import VigorLogo from '../../Miscellaneous/Logo/VigorLogo';
 
 const modalContent = makeStyles((theme) => ({
   paper: {

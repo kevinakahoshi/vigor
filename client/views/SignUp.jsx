@@ -2,8 +2,8 @@ import React from 'react';
 import { Box, Container, Grid, makeStyles } from '@material-ui/core';
 
 // Components
-import SignUpInfo from '../components/SignUp/SignUpInfo';
-import SignUpForm from '../components/SignUp/SignUpForm';
+import SignUpInfo from '../components/SignUp/Info/SignUpInfo';
+import SignUpForm from '../components/SignUp/Form/SignUpForm';
 
 const pageStyles = makeStyles((theme) => ({
   box: {

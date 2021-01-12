@@ -2,8 +2,8 @@ import React from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 
 // Components
-import NavLoginSignUpButtons from './NavLoginSignUpButtons';
-import VigorLogoWhite from '../Miscellaneous/VigorLogoWhite';
+import NavLoginSignUpDesktop from './NavLoginSignUpDesktop';
+import VigorLogoWhite from '../../Miscellaneous/Logo/VigorLogoWhite';
 
 const navStyles = makeStyles((theme) => ({
   navBar: {
@@ -34,17 +34,17 @@ const navStyles = makeStyles((theme) => ({
   },
 }));
 
-const HomeNavBar = () => {
+const NavBar = () => {
   const styles = navStyles();
 
   return (
     <Box className={styles.navBar}>
       <VigorLogoWhite classes={styles.vigorLogo} finalOpacity={1} />
       <Box className={styles.buttonWrapper}>
-        <NavLoginSignUpButtons />
+        <NavLoginSignUpDesktop />
       </Box>
     </Box>
   );
 };
 
-export default HomeNavBar;
+export default NavBar;

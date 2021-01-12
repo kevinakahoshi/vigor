@@ -2,16 +2,11 @@ import React, { createRef, useState } from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
-
-// Redux Actions
-import actions from '../../actions/index';
-
 // Components
-import LoginModal from './LoginModal';
-import LoginModalContent from './LoginModalContent';
-import VigorLinkButtonWhite from '../../theme/custom-styles/whiteLinkButtonStyles';
-import VigorSecondaryButton from '../../theme/custom-styles/secondaryButtonStyles';
+import LoginModal from '../Login/LoginModal';
+import LoginModalContent from '../Login/LoginModalContent';
+import VigorLinkButtonWhite from '../../../theme/custom-styles/whiteLinkButtonStyles';
+import VigorSecondaryButton from '../../../theme/custom-styles/secondaryButtonStyles';
 
 const buttonWrapper = makeStyles(() => ({
   buttonWrapper: {
@@ -21,7 +16,7 @@ const buttonWrapper = makeStyles(() => ({
   },
 }));
 
-const NavLoginSignUpButtons = () => {
+const NavLoginSignUpDesktop = () => {
   const [open, setOpen] = useState(false);
   const modalRef = createRef();
 
@@ -44,4 +39,4 @@ const NavLoginSignUpButtons = () => {
   );
 };
 
-export default NavLoginSignUpButtons;
+export default NavLoginSignUpDesktop;

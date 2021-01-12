@@ -9,12 +9,12 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 
 // Redux
-import actions from '../../actions/index';
+import actions from '../../../actions/index';
 
 // Theme Specific
-import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
-import VigorPrimaryProgressButton from '../Miscellaneous/VigorPrimaryProgressButton';
-import ErrorMessage from '../Miscellaneous/ErrorMessage';
+import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
+import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
+import ErrorMessage from '../../Miscellaneous/ErrorMessage/ErrorMessage';
 
 const formStyles = makeStyles((theme) => ({
   buttonWrapper: {

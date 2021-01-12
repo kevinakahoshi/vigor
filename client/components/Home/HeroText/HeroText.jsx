@@ -2,9 +2,9 @@ import React from 'react';
 import { Box, Grid, makeStyles, Typography } from '@material-ui/core';
 
 // Components
-import IntroLoginSignUpButtons from './IntroLoginSignUpButtons';
-import VigorLogoWhite from '../Miscellaneous/VigorLogoWhite';
-import WordCarousel from './WordCarousel';
+import NavLoginSignUpMobile from '../Nav/NavLoginSignUpMobile';
+import VigorLogoWhite from '../../Miscellaneous/Logo/VigorLogoWhite';
+import WordCarousel from '../WordCarousel/WordCarousel';
 
 // Utilities
 // import imagePath from '../../utilities/imagePath';
@@ -48,7 +48,7 @@ const textStyles = makeStyles((theme) => ({
   },
 }));
 
-const IntroText = () => {
+const HeroText = () => {
   const styles = textStyles();
 
   return (
@@ -63,10 +63,10 @@ const IntroText = () => {
         <VigorLogoWhite finalOpacity={0.25} classes={styles.vigorLogo} />
       </Box>
       <Box className={styles.loginSignup}>
-        <IntroLoginSignUpButtons />
+        <NavLoginSignUpMobile />
       </Box>
     </Grid>
   );
 };
 
-export default IntroText;
+export default HeroText;

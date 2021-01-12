@@ -2,7 +2,7 @@ import React from 'react';
 import { CircularProgress, makeStyles } from '@material-ui/core';
 
 // Components
-import VigorPrimaryButton from '../../theme/custom-styles/primaryButtonStyles';
+import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 
 const progressStyles = makeStyles((theme) => ({
   button: {

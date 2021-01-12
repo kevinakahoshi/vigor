@@ -2,10 +2,10 @@ import React from 'react';
 import { Box, Grid, makeStyles, Typography } from '@material-ui/core';
 
 // Components
-// import ErrorMessage from '../Miscellaneous/ErrorMessage';
-import SignUpFeatures from './SignUpFeatures';
-import SignUpRequirements from './SignUpRequirements';
-import VigorLogo from '../Miscellaneous/VigorLogo';
+// import ErrorMessage from '../Miscellaneous/ErrorMessage/ErrorMessage';
+import SignUpFeatures from '../Features/SignUpFeatures';
+import SignUpRequirements from '../Requirements/SignUpRequirements';
+import VigorLogo from '../../Miscellaneous/Logo/VigorLogo';
 
 const signUpStyles = makeStyles((theme) => ({
   infoBox: {
