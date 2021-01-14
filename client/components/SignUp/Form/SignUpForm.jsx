@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   FormControl,
@@ -7,6 +7,9 @@ import {
   TextField,
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+
+// Utilities
+import emailRegex from '../../../utilities/regex/email';
 
 // Theme Specific
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
@@ -48,7 +51,58 @@ const formStyles = makeStyles((theme) => ({
 
 const SignUpForm = () => {
   const [showProgress, setShowProgress] = useState(false);
+  const [signUpCredentials, setSignUpCredentials] = useState({
+    firstName: null,
+    lastName: null,
+    email: null,
+    password: null,
+    reEnteredPassword: null,
+  });
+  const [validationChecks, setValidationChecks] = useState({
+    firstNameValidation: false,
+    lastNameValidation: false,
+    emailValidation: false,
+    passwordMatch: false,
+    passwordValidated: false,
+  });
   const styles = formStyles();
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setSignUpCredentials((previousState) => ({
+      ...previousState,
+      [name]: value,
+    }));
+  };
+
+  useEffect(() => {
+    const validationChecksCopy = { ...validationChecks };
+    const {
+      firstName,
+      lastName,
+      email,
+      password,
+      reEnteredPassword,
+    } = signUpCredentials;
+    const {
+      firstNameValidation,
+      lastNameValidation,
+      emailValidation,
+      passwordMatch,
+      passwordValidated,
+    } = validationChecks;
+
+    if (!emailRegex.test(email) && emailValidation) {
+      validationChecksCopy.emailValidation = false;
+    } else if (emailRegex.test(email) && !emailValidation) {
+      validationChecksCopy.emailValidation = true;
+    }
+
+    return () => setValidationChecks(() => validationChecksCopy);
+  }, [signUpCredentials]);
+
+  console.log(validationChecks.emailValidation);
 
   return (
     <>
@@ -59,6 +113,7 @@ const SignUpForm = () => {
             event.preventDefault();
             setShowProgress(!showProgress);
           }}
+          onChange={handleChange}
         >
           <FormControl className={styles.formControl}>
             <TextField
