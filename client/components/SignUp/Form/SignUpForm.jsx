@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router-dom';
 
 // Utilities
-import emailRegex from '../../../utilities/regex/email';
+import { validEmail } from '../../../utilities/regex';
 
 // Theme Specific
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
@@ -93,16 +93,14 @@ const SignUpForm = () => {
       passwordValidated,
     } = validationChecks;
 
-    if (!emailRegex.test(email) && emailValidation) {
+    if (!validEmail.test(email) && emailValidation) {
       validationChecksCopy.emailValidation = false;
-    } else if (emailRegex.test(email) && !emailValidation) {
+    } else if (validEmail.test(email) && !emailValidation) {
       validationChecksCopy.emailValidation = true;
     }
 
     return () => setValidationChecks(() => validationChecksCopy);
   }, [signUpCredentials]);
-
-  console.log(validationChecks.emailValidation);
 
   return (
     <>
