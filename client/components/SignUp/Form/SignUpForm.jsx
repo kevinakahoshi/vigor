@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import {
   Box,
   FormControl,
@@ -9,7 +9,7 @@ import {
 import { Link } from 'react-router-dom';
 
 // Utilities
-import { validEmail } from '../../../utilities/regex';
+import { validEmail, validName } from '../../../utilities/regex';
 
 // Theme Specific
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
@@ -52,11 +52,11 @@ const formStyles = makeStyles((theme) => ({
 const SignUpForm = () => {
   const [showProgress, setShowProgress] = useState(false);
   const [signUpCredentials, setSignUpCredentials] = useState({
-    firstName: null,
-    lastName: null,
-    email: null,
-    password: null,
-    reEnteredPassword: null,
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    reEnteredPassword: '',
   });
   const [validationChecks, setValidationChecks] = useState({
     firstNameValidation: false,
@@ -70,14 +70,26 @@ const SignUpForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
+    if (value.indexOf('  ') !== -1 || value.indexOf('--') !== -1) return;
+
     setSignUpCredentials((previousState) => ({
       ...previousState,
       [name]: value,
     }));
   };
 
+  const checkNames = useMemo(
+    () => (name) => {
+      if (!validName.test(name)) return false;
+      if (name.length < 1) return false;
+      return true;
+    },
+    []
+  );
+
   useEffect(() => {
     const validationChecksCopy = { ...validationChecks };
+
     const {
       firstName,
       lastName,
@@ -93,29 +105,46 @@ const SignUpForm = () => {
       passwordValidated,
     } = validationChecks;
 
+    if (!checkNames(firstName) && firstNameValidation) {
+      validationChecksCopy.firstNameValidation = false;
+    } else if (checkNames(firstName) && !firstNameValidation) {
+      validationChecksCopy.firstNameValidation = true;
+    }
+
+    if (!checkNames(lastName) && lastNameValidation) {
+      validationChecksCopy.lastNameValidation = false;
+    } else if (checkNames(lastName) && !lastNameValidation) {
+      validationChecksCopy.lastNameValidation = true;
+    }
+
     if (!validEmail.test(email) && emailValidation) {
       validationChecksCopy.emailValidation = false;
     } else if (validEmail.test(email) && !emailValidation) {
       validationChecksCopy.emailValidation = true;
     }
 
-    return () => setValidationChecks(() => validationChecksCopy);
+    setValidationChecks(() => validationChecksCopy);
   }, [signUpCredentials]);
+
+  console.log(validationChecks.emailValidation);
 
   return (
     <>
       <FormGroup className={styles.formGroup}>
         <form
           className={styles.form}
+          onChange={handleChange}
           onSubmit={(event) => {
             event.preventDefault();
             setShowProgress(!showProgress);
           }}
-          onChange={handleChange}
         >
           <FormControl className={styles.formControl}>
             <TextField
-              error={false}
+              error={
+                Boolean(signUpCredentials.firstName.length) &&
+                !validationChecks.firstNameValidation
+              }
               aria-describedby="First Name"
               className={styles.textField}
               color="primary"
@@ -127,7 +156,10 @@ const SignUpForm = () => {
               variant="outlined"
             />
             <TextField
-              error={false}
+              error={
+                Boolean(signUpCredentials.lastName.length) &&
+                !validationChecks.lastNameValidation
+              }
               aria-describedby="Last Name"
               className={styles.textField}
               color="primary"
@@ -139,7 +171,7 @@ const SignUpForm = () => {
               variant="outlined"
             />
             <TextField
-              error={false}
+              error={!validationChecks.emailValidation}
               aria-describedby="Email Address"
               className={styles.textField}
               color="primary"
