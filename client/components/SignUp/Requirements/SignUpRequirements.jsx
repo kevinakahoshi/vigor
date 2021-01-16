@@ -30,19 +30,20 @@ const requirements = [
   'Password Match',
 ];
 
-const SignUpRequirements = () => {
+const SignUpRequirements = ({ passwordReqCircles }) => {
   const styles = requirementStyles();
 
   // TODO: Manage the validation through global state
-  const valid = false;
 
-  return requirements.map((text) => (
+  return Object.keys(passwordReqCircles).map((passwordRequirement, index) => (
     <Box
-      className={`${styles.requirement} ${valid ? 'valid' : 'invalid'}`}
-      key={text}
+      className={`${styles.requirement} ${
+        passwordReqCircles[passwordRequirement] ? 'valid' : 'invalid'
+      }`}
+      key={passwordRequirement}
     >
-      <SignUpValidationCircle valid={valid} />
-      <Typography className={styles.text}>{text}</Typography>
+      <SignUpValidationCircle valid={passwordReqCircles[passwordRequirement]} />
+      <Typography className={styles.text}>{requirements[index]}</Typography>
     </Box>
   ));
 };

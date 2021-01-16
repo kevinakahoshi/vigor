@@ -56,7 +56,7 @@ const signUpStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignUpInfo = () => {
+const SignUpInfo = ({ passwordReqCircles }) => {
   const styles = signUpStyles();
 
   return (
@@ -73,7 +73,7 @@ const SignUpInfo = () => {
           </ul>
         </Grid>
         <Grid className={styles.infoValidation} item sm={6} xs={12}>
-          <SignUpRequirements />
+          <SignUpRequirements passwordReqCircles={passwordReqCircles} />
         </Grid>
       </Grid>
     </Box>
