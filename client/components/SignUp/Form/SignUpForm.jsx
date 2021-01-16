@@ -9,7 +9,13 @@ import {
 import { Link } from 'react-router-dom';
 
 // Utilities
-import { validEmail, validName } from '../../../utilities/regex';
+import {
+  validEmail,
+  validName,
+  includesLetters,
+  includesNumbers,
+  includesSpecialCharacters,
+} from '../../../utilities/regex';
 
 // Theme Specific
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
@@ -49,8 +55,10 @@ const formStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignUpForm = () => {
+const SignUpForm = ({ setPasswordReqCircles }) => {
   const [showProgress, setShowProgress] = useState(false);
+  const styles = formStyles();
+
   const [signUpCredentials, setSignUpCredentials] = useState({
     firstName: '',
     lastName: '',
@@ -58,6 +66,7 @@ const SignUpForm = () => {
     password: '',
     reEnteredPassword: '',
   });
+
   const [validationChecks, setValidationChecks] = useState({
     firstNameValidation: false,
     lastNameValidation: false,
@@ -65,7 +74,6 @@ const SignUpForm = () => {
     passwordMatch: false,
     passwordValidated: false,
   });
-  const styles = formStyles();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -97,6 +105,7 @@ const SignUpForm = () => {
       password,
       reEnteredPassword,
     } = signUpCredentials;
+
     const {
       firstNameValidation,
       lastNameValidation,
@@ -126,109 +135,108 @@ const SignUpForm = () => {
     setValidationChecks(() => validationChecksCopy);
   }, [signUpCredentials]);
 
-  console.log(validationChecks.emailValidation);
-
   return (
-    <>
-      <FormGroup className={styles.formGroup}>
-        <form
-          className={styles.form}
-          onChange={handleChange}
-          onSubmit={(event) => {
-            event.preventDefault();
-            setShowProgress(!showProgress);
-          }}
-        >
-          <FormControl className={styles.formControl}>
-            <TextField
-              error={
-                Boolean(signUpCredentials.firstName.length) &&
-                !validationChecks.firstNameValidation
-              }
-              aria-describedby="First Name"
-              className={styles.textField}
-              color="primary"
-              fullWidth
-              id="first-name-textfield"
-              margin="dense"
-              name="firstName"
-              placeholder="First Name"
-              variant="outlined"
-            />
-            <TextField
-              error={
-                Boolean(signUpCredentials.lastName.length) &&
-                !validationChecks.lastNameValidation
-              }
-              aria-describedby="Last Name"
-              className={styles.textField}
-              color="primary"
-              fullWidth
-              id="last-name-textfield"
-              margin="dense"
-              name="lastName"
-              placeholder="Last Name"
-              variant="outlined"
-            />
-            <TextField
-              error={!validationChecks.emailValidation}
-              aria-describedby="Email Address"
-              className={styles.textField}
-              color="primary"
-              fullWidth
-              id="email-textfield"
-              margin="dense"
-              name="email"
-              placeholder="Email"
-              variant="outlined"
-            />
-            <TextField
-              error={false}
-              aria-describedby="Password"
-              autoComplete="off"
-              className={styles.textField}
-              color="primary"
-              fullWidth
-              id="password-textField"
-              margin="dense"
-              name="password"
-              placeholder="Password"
-              type="password"
-              variant="outlined"
-            />
-            <TextField
-              error={false}
-              aria-describedby="Re-Enter Password"
-              autoComplete="off"
-              className={styles.textField}
-              color="primary"
-              fullWidth
-              id="re-enter-password-textField"
-              margin="dense"
-              name="reenterPassword"
-              placeholder="Re-Enter Password"
-              type="password"
-              variant="outlined"
-            />
-            <Box className={styles.buttonWrapper}>
-              {showProgress ? (
-                <VigorPrimaryProgressButton />
-              ) : (
-                <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
-              )}
-            </Box>
-          </FormControl>
-        </form>
-        <VigorLinkButtonGrey
-          className={styles.backButton}
-          component={Link}
-          to="/"
-          size="large"
-        >
-          Back
-        </VigorLinkButtonGrey>
-      </FormGroup>
-    </>
+    <FormGroup className={styles.formGroup}>
+      <form
+        className={styles.form}
+        onChange={handleChange}
+        onSubmit={(event) => {
+          event.preventDefault();
+          setShowProgress(!showProgress);
+        }}
+      >
+        <FormControl className={styles.formControl}>
+          <TextField
+            error={
+              Boolean(signUpCredentials.firstName.length) &&
+              !validationChecks.firstNameValidation
+            }
+            aria-describedby="First Name"
+            className={styles.textField}
+            color="primary"
+            fullWidth
+            id="first-name-textfield"
+            margin="dense"
+            name="firstName"
+            placeholder="First Name"
+            variant="outlined"
+          />
+          <TextField
+            error={
+              Boolean(signUpCredentials.lastName.length) &&
+              !validationChecks.lastNameValidation
+            }
+            aria-describedby="Last Name"
+            className={styles.textField}
+            color="primary"
+            fullWidth
+            id="last-name-textfield"
+            margin="dense"
+            name="lastName"
+            placeholder="Last Name"
+            variant="outlined"
+          />
+          <TextField
+            error={
+              Boolean(signUpCredentials.email.length) &&
+              !validationChecks.emailValidation
+            }
+            aria-describedby="Email Address"
+            className={styles.textField}
+            color="primary"
+            fullWidth
+            id="email-textfield"
+            margin="dense"
+            name="email"
+            placeholder="Email"
+            variant="outlined"
+          />
+          <TextField
+            error={false}
+            aria-describedby="Password"
+            autoComplete="off"
+            className={styles.textField}
+            color="primary"
+            fullWidth
+            id="password-textField"
+            margin="dense"
+            name="password"
+            placeholder="Password"
+            type="password"
+            variant="outlined"
+          />
+          <TextField
+            error={false}
+            aria-describedby="Re-Enter Password"
+            autoComplete="off"
+            className={styles.textField}
+            color="primary"
+            fullWidth
+            id="re-enter-password-textField"
+            margin="dense"
+            name="reenterPassword"
+            placeholder="Re-Enter Password"
+            type="password"
+            variant="outlined"
+          />
+          <Box className={styles.buttonWrapper}>
+            {showProgress ? (
+              <VigorPrimaryProgressButton />
+            ) : (
+              <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
+            )}
+          </Box>
+        </FormControl>
+      </form>
+      <VigorLinkButtonGrey
+        className={styles.backButton}
+        component={Link}
+        to="/"
+        size="large"
+      >
+        Back
+      </VigorLinkButtonGrey>
+    </FormGroup>
   );
 };
 

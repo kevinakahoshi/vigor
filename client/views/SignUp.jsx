@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Container, Grid, makeStyles } from '@material-ui/core';
 
 // Components
@@ -51,16 +51,23 @@ const pageStyles = makeStyles((theme) => ({
 
 const Login = () => {
   const styles = pageStyles();
+  const [passwordReqCircles, setPasswordReqCircles] = useState({
+    characters: false,
+    letter: false,
+    number: false,
+    special: false,
+    match: false,
+  });
 
   return (
     <Box className={styles.box}>
       <Container className={styles.container} maxWidth="md">
         <Grid className={styles.wrapper} spacing={3} container>
           <Grid className={styles.info} item sm={6} xs={12}>
-            <SignUpInfo />
+            <SignUpInfo passwordReqCircles={passwordReqCircles} />
           </Grid>
           <Grid className={styles.formWrapper} item sm={6} xs={12}>
-            <SignUpForm />
+            <SignUpForm setPasswordReqCircles={setPasswordReqCircles} />
           </Grid>
         </Grid>
       </Container>
