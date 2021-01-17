@@ -132,6 +132,14 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       validationChecksCopy.emailValidation = true;
     }
 
+    setPasswordReqCircles(() => ({
+      characters: password.length > 7,
+      letter: includesLetters.test(password),
+      number: includesNumbers.test(password),
+      special: includesSpecialCharacters.test(password),
+      match: password.length && password === reEnteredPassword,
+    }));
+
     setValidationChecks(() => validationChecksCopy);
   }, [signUpCredentials]);
 
@@ -214,7 +222,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             fullWidth
             id="re-enter-password-textField"
             margin="dense"
-            name="reenterPassword"
+            name="reEnteredPassword"
             placeholder="Re-Enter Password"
             type="password"
             variant="outlined"
