@@ -50,8 +50,8 @@ const LoginForm = () => {
   const handleChange = (event) => {
     event.persist();
     const { name, value } = event.target;
-    setLoginCredentials((creds) => ({
-      ...creds,
+    setLoginCredentials((preExistingLoginCredentials) => ({
+      ...preExistingLoginCredentials,
       [name]: value,
     }));
   };
