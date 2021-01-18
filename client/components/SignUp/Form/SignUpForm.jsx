@@ -68,12 +68,21 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
   });
 
   const [validationChecks, setValidationChecks] = useState({
-    firstNameValidation: false,
-    lastNameValidation: false,
-    emailValidation: false,
-    passwordMatch: false,
-    passwordValidated: false,
+    firstNameValidation: true,
+    lastNameValidation: true,
+    emailValidation: true,
+    passwordMatch: true,
+    passwordValidated: true,
   });
+
+  const checkNames = useMemo(
+    () => (name) => {
+      if (!validName.test(name)) return false;
+      if (name.length < 1) return false;
+      return true;
+    },
+    []
+  );
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -88,18 +97,9 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  };
 
-  const checkNames = useMemo(
-    () => (name) => {
-      if (!validName.test(name)) return false;
-      if (name.length < 1) return false;
-      return true;
-    },
-    []
-  );
+    const validationChecksCopy = { ...validationChecks };
 
-  useEffect(() => {
     const {
       firstName,
       lastName,
@@ -107,8 +107,6 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       password,
       reEnteredPassword,
     } = signUpCredentials;
-
-    const validationChecksCopy = { ...validationChecks };
 
     const {
       firstNameValidation,
@@ -136,6 +134,12 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       validationChecksCopy.emailValidation = true;
     }
 
+    setValidationChecks(() => validationChecksCopy);
+  };
+
+  useEffect(() => {
+    const { password, reEnteredPassword } = signUpCredentials;
+
     setPasswordReqCircles(() => ({
       characters: password.length > 7,
       letter: includesLetters.test(password),
@@ -143,26 +147,18 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       special: includesSpecialCharacters.test(password),
       match: password.length && password === reEnteredPassword,
     }));
-
-    setValidationChecks(() => validationChecksCopy);
-  }, [signUpCredentials]);
+  }, [signUpCredentials.password]);
 
   return (
     <FormGroup className={styles.formGroup}>
       <form
         className={styles.form}
         onChange={handleChange}
-        onSubmit={(event) => {
-          event.preventDefault();
-          setShowProgress(!showProgress);
-        }}
+        onSubmit={handleSubmit}
       >
         <FormControl className={styles.formControl}>
           <TextField
-            error={
-              Boolean(signUpCredentials.firstName.length) &&
-              !validationChecks.firstNameValidation
-            }
+            error={!validationChecks.firstNameValidation}
             aria-describedby="First Name"
             className={styles.textField}
             color="primary"
@@ -175,10 +171,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             value={signUpCredentials.firstName}
           />
           <TextField
-            error={
-              Boolean(signUpCredentials.lastName.length) &&
-              !validationChecks.lastNameValidation
-            }
+            error={!validationChecks.lastNameValidation}
             aria-describedby="Last Name"
             className={styles.textField}
             color="primary"
@@ -191,10 +184,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             value={signUpCredentials.lastName}
           />
           <TextField
-            error={
-              Boolean(signUpCredentials.email.length) &&
-              !validationChecks.emailValidation
-            }
+            error={!validationChecks.emailValidation}
             aria-describedby="Email Address"
             className={styles.textField}
             color="primary"
@@ -219,6 +209,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             placeholder="Password"
             type="password"
             variant="outlined"
+            value={signUpCredentials.password}
           />
           <TextField
             error={false}
@@ -233,6 +224,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             placeholder="Re-Enter Password"
             type="password"
             variant="outlined"
+            value={signUpCredentials.reEnteredPassword}
           />
           <Box className={styles.buttonWrapper}>
             {showProgress ? (
