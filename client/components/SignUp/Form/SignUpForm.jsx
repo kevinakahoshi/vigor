@@ -86,6 +86,10 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
     }));
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   const checkNames = useMemo(
     () => (name) => {
       if (!validName.test(name)) return false;
@@ -96,8 +100,6 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
   );
 
   useEffect(() => {
-    const validationChecksCopy = { ...validationChecks };
-
     const {
       firstName,
       lastName,
@@ -105,6 +107,8 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       password,
       reEnteredPassword,
     } = signUpCredentials;
+
+    const validationChecksCopy = { ...validationChecks };
 
     const {
       firstNameValidation,
@@ -168,6 +172,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             name="firstName"
             placeholder="First Name"
             variant="outlined"
+            value={signUpCredentials.firstName}
           />
           <TextField
             error={
@@ -183,6 +188,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             name="lastName"
             placeholder="Last Name"
             variant="outlined"
+            value={signUpCredentials.lastName}
           />
           <TextField
             error={
@@ -198,6 +204,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             name="email"
             placeholder="Email"
             variant="outlined"
+            value={signUpCredentials.email}
           />
           <TextField
             error={false}
