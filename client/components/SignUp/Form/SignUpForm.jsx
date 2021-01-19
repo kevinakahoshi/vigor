@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import {
   validEmail,
   validName,
+  validPassword,
   includesLetters,
   includesNumbers,
   includesSpecialCharacters,
@@ -134,7 +135,37 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       validationChecksCopy.emailValidation = true;
     }
 
+    if (!validPassword.test(password) && passwordValidated) {
+      validationChecksCopy.passwordValidated = false;
+    } else if (validPassword.test(password) && !passwordValidated) {
+      validationChecksCopy.passwordValidated = true;
+    }
+
+    if (
+      password &&
+      reEnteredPassword &&
+      password !== reEnteredPassword &&
+      passwordMatch
+    ) {
+      validationChecksCopy.passwordMatch = false;
+    } else if ((!password || !reEnteredPassword) && passwordMatch) {
+      validationChecksCopy.passwordMatch = false;
+    } else if (
+      password &&
+      reEnteredPassword &&
+      password === reEnteredPassword &&
+      !passwordMatch
+    ) {
+      validationChecksCopy.passwordMatch = true;
+    }
+
     setValidationChecks(() => validationChecksCopy);
+
+    if (Object.values(validationChecksCopy).includes(false)) {
+      // TODO: Handle errors here
+    } else {
+      // Dispatch action to create account
+    }
   };
 
   useEffect(() => {
@@ -197,7 +228,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             value={signUpCredentials.email}
           />
           <TextField
-            error={false}
+            error={!validationChecks.passwordValidated}
             aria-describedby="Password"
             autoComplete="off"
             className={styles.textField}
@@ -207,12 +238,12 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             margin="dense"
             name="password"
             placeholder="Password"
-            type="password"
+            type="new-password"
             variant="outlined"
             value={signUpCredentials.password}
           />
           <TextField
-            error={false}
+            error={!validationChecks.passwordMatch}
             aria-describedby="Re-Enter Password"
             autoComplete="off"
             className={styles.textField}
@@ -222,7 +253,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             margin="dense"
             name="reEnteredPassword"
             placeholder="Re-Enter Password"
-            type="password"
+            type="new-password"
             variant="outlined"
             value={signUpCredentials.reEnteredPassword}
           />
