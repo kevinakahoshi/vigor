@@ -178,7 +178,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       special: includesSpecialCharacters.test(password),
       match: password.length && password === reEnteredPassword,
     }));
-  }, [signUpCredentials.password]);
+  }, [signUpCredentials.password, signUpCredentials.reEnteredPassword]);
 
   return (
     <FormGroup className={styles.formGroup}>
@@ -238,7 +238,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             margin="dense"
             name="password"
             placeholder="Password"
-            type="new-password"
+            type="password"
             variant="outlined"
             value={signUpCredentials.password}
           />
@@ -253,7 +253,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             margin="dense"
             name="reEnteredPassword"
             placeholder="Re-Enter Password"
-            type="new-password"
+            type="password"
             variant="outlined"
             value={signUpCredentials.reEnteredPassword}
           />
