@@ -32,7 +32,7 @@ const loginFailure = (error) => ({
   payload: error,
 });
 
-const logInUser = ({ email, password }) => async (dispatch, getState) => {
+const logInUser = ({ email, password }) => async (dispatch) => {
   dispatch(isLoading());
 
   const options = {
