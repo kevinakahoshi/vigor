@@ -1,6 +1,7 @@
 import React, { createRef, useState } from 'react';
 import { Box, makeStyles } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // Components
 import LoginModal from '../Login/LoginModal';
@@ -19,10 +20,18 @@ const buttonWrapper = makeStyles(() => ({
 const NavLoginSignUpDesktop = () => {
   const [open, setOpen] = useState(false);
   const modalRef = createRef();
-
   const styles = buttonWrapper();
 
-  const handleClick = () => setOpen(() => true);
+  const userSession = useSelector((state) => state.currentUser.loggedIn);
+  const history = useHistory();
+
+  const handleClick = () => {
+    if (userSession) {
+      history.push('/login');
+    } else {
+      setOpen(() => true);
+    }
+  };
 
   return (
     <Box className={styles.buttonWrapper}>

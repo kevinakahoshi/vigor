@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 
-import actions from '../actions';
+import { userActions } from '../actions';
 
 // Views
 import Home from '../views/Home';
@@ -13,22 +13,11 @@ import SignUp from '../views/SignUp';
 // Theme
 import VigorTheme from '../theme/VigorTheme';
 
-const { userActions } = actions;
-
 const App = () => {
   const dispatch = useDispatch();
 
-  const onLoad = async () => {
-    const response = await fetch('/api/users/get-user');
-    const user = await response.json();
-    if (user) {
-      dispatch(userActions.setUser(user));
-    }
-  };
-
   useEffect(() => {
     dispatch(userActions.getUser());
-    // onLoad();
   }, []);
 
   return (
