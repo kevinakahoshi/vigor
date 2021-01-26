@@ -6,10 +6,10 @@ import {
   makeStyles,
   TextField,
 } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
 
 // Redux
-import actions from '../../../actions/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { userActions } from '../../../actions';
 
 // Theme Specific
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
@@ -58,7 +58,7 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(actions.userActions.logInUser(loginCredentials));
+    dispatch(userActions.logInUser(loginCredentials));
   };
 
   return (
