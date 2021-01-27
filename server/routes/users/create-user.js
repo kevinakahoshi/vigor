@@ -13,10 +13,10 @@ router.post('/', (request, response, next) => {
   columns.forEach((columnName) => {
     if (
       request.body[columnName] === undefined ||
-      request.body[columns] === null ||
-      !request.body[columns]
+      request.body[columnName] === null ||
+      !request.body[columnName]
     ) {
-      response.status(400).json('Missing signup details');
+      response.json('Missing signup details');
     }
   });
 

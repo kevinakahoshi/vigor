@@ -8,6 +8,10 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
+// Redux
+import { useDispatch } from 'react-redux';
+import { userActions } from '../../../actions';
+
 // Utilities
 import {
   validEmail,
@@ -59,6 +63,7 @@ const formStyles = makeStyles((theme) => ({
 const SignUpForm = ({ setPasswordReqCircles }) => {
   const [showProgress, setShowProgress] = useState(false);
   const styles = formStyles();
+  const dispatch = useDispatch();
 
   const [signUpCredentials, setSignUpCredentials] = useState({
     firstName: '',
@@ -164,7 +169,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
     if (Object.values(validationChecksCopy).includes(false)) {
       // TODO: Handle errors here
     } else {
-      // Dispatch action to create account
+      dispatch(userActions.signUpUser(signUpCredentials));
     }
   };
 
