@@ -5,6 +5,7 @@ import {
   LOGIN_FAILURE,
   CLEAR_ERROR,
 } from '../types';
+import { API_GET_USER, API_LOGIN } from '../utilities/fetch/paths';
 
 import loadingActions from './loadingActions';
 
@@ -16,7 +17,7 @@ const setUser = (user) => ({
 });
 
 const getUser = () => async (dispatch) => {
-  const response = await fetch('/api/users/get-user');
+  const response = await fetch(API_GET_USER);
   if (!response.ok) {
     dispatch({
       type: GET_USER,
@@ -46,7 +47,7 @@ const logInUser = ({ email, password }) => async (dispatch) => {
     }),
   };
 
-  const response = await fetch('/api/users/login', options);
+  const response = await fetch(API_LOGIN, options);
 
   dispatch(isNotLoading());
 
@@ -56,6 +57,35 @@ const logInUser = ({ email, password }) => async (dispatch) => {
     const user = await response.json();
     dispatch(setUser(user));
   }
+};
+
+const signUpUser = ({
+  firstName,
+  lastName,
+  email,
+  password,
+  reEnteredPassword,
+}) => async (dispatch) => {
+  if (password !== reEnteredPassword) {
+    // Do something
+  }
+
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      firstName,
+      lastName,
+      email,
+      password,
+    }),
+  };
+
+  const response = await fetch('/api/users/create-user', options);
+  const data = await response.json();
+  console.log(data);
 };
 
 const logOut = () => ({
@@ -71,5 +101,6 @@ export default {
   setUser,
   logInUser,
   logOut,
+  signUpUser,
   clearError,
 };
