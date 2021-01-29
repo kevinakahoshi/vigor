@@ -39,7 +39,9 @@ const NavBar = () => {
 
   return (
     <Box className={styles.navBar}>
-      <VigorLogoWhite classes={styles.vigorLogo} finalOpacity={1} />
+      <Box>
+        <VigorLogoWhite classes={styles.vigorLogo} finalOpacity={1} />
+      </Box>
       <Box className={styles.buttonWrapper}>
         <NavLoginSignUpDesktop />
       </Box>
