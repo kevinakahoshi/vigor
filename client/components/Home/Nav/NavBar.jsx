@@ -20,9 +20,12 @@ const navStyles = makeStyles((theme) => ({
     },
   },
   vigorLogo: {
-    width: 'auto',
+    position: 'absolute',
     height: '100%',
-    minHeight: '42px',
+  },
+  vigorLogoWrapper: {
+    display: 'flex',
+    position: 'relative',
   },
   buttonWrapper: {
     [theme.breakpoints.up('sm')]: {
@@ -39,7 +42,9 @@ const NavBar = () => {
 
   return (
     <Box className={styles.navBar}>
-      <VigorLogoWhite classes={styles.vigorLogo} finalOpacity={1} />
+      <Box className={styles.vigorLogoWrapper}>
+        <VigorLogoWhite classes={styles.vigorLogo} finalOpacity={1} />
+      </Box>
       <Box className={styles.buttonWrapper}>
         <NavLoginSignUpDesktop />
       </Box>

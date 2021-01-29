@@ -1,1 +1,8 @@
-@import '../fonts/Dosis.ttf';
+@font-face {
+  font-family: 'Dosis', sans-serif;
+  src: url('../fonts/Dosis.ttf');
+}
+
+* {
+  font-family: 'Dosis';
+}
