@@ -4,7 +4,9 @@ import {
   FormControl,
   FormGroup,
   makeStyles,
+  Snackbar,
   TextField,
+  Typography,
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
@@ -186,100 +188,103 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
   }, [signUpCredentials.password, signUpCredentials.reEnteredPassword]);
 
   return (
-    <FormGroup className={styles.formGroup}>
-      <form
-        className={styles.form}
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-      >
-        <FormControl className={styles.formControl}>
-          <TextField
-            error={!validationChecks.firstNameValidation}
-            aria-describedby="First Name"
-            className={styles.textField}
-            color="primary"
-            fullWidth
-            id="first-name-textfield"
-            margin="dense"
-            name="firstName"
-            placeholder="First Name"
-            variant="outlined"
-            value={signUpCredentials.firstName}
-          />
-          <TextField
-            error={!validationChecks.lastNameValidation}
-            aria-describedby="Last Name"
-            className={styles.textField}
-            color="primary"
-            fullWidth
-            id="last-name-textfield"
-            margin="dense"
-            name="lastName"
-            placeholder="Last Name"
-            variant="outlined"
-            value={signUpCredentials.lastName}
-          />
-          <TextField
-            error={!validationChecks.emailValidation}
-            aria-describedby="Email Address"
-            className={styles.textField}
-            color="primary"
-            fullWidth
-            id="email-textfield"
-            margin="dense"
-            name="email"
-            placeholder="Email"
-            variant="outlined"
-            value={signUpCredentials.email}
-          />
-          <TextField
-            error={!validationChecks.passwordValidated}
-            aria-describedby="Password"
-            autoComplete="off"
-            className={styles.textField}
-            color="primary"
-            fullWidth
-            id="password-textField"
-            margin="dense"
-            name="password"
-            placeholder="Password"
-            type="password"
-            variant="outlined"
-            value={signUpCredentials.password}
-          />
-          <TextField
-            error={!validationChecks.passwordMatch}
-            aria-describedby="Re-Enter Password"
-            autoComplete="off"
-            className={styles.textField}
-            color="primary"
-            fullWidth
-            id="re-enter-password-textField"
-            margin="dense"
-            name="reEnteredPassword"
-            placeholder="Re-Enter Password"
-            type="password"
-            variant="outlined"
-            value={signUpCredentials.reEnteredPassword}
-          />
-          <Box className={styles.buttonWrapper}>
-            {showProgress ? (
-              <VigorPrimaryProgressButton />
-            ) : (
-              <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
-            )}
-          </Box>
-        </FormControl>
-      </form>
-      <VigorLinkButtonGrey
-        className={styles.backButton}
-        component={Link}
-        to="/"
-        size="large"
-      >
-        Back
-      </VigorLinkButtonGrey>
-    </FormGroup>
+    <>
+      <FormGroup className={styles.formGroup}>
+        <form
+          className={styles.form}
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        >
+          <FormControl className={styles.formControl}>
+            <TextField
+              error={!validationChecks.firstNameValidation}
+              aria-describedby="First Name"
+              className={styles.textField}
+              color="primary"
+              fullWidth
+              id="first-name-textfield"
+              margin="dense"
+              name="firstName"
+              placeholder="First Name"
+              variant="outlined"
+              value={signUpCredentials.firstName}
+            />
+            <TextField
+              error={!validationChecks.lastNameValidation}
+              aria-describedby="Last Name"
+              className={styles.textField}
+              color="primary"
+              fullWidth
+              id="last-name-textfield"
+              margin="dense"
+              name="lastName"
+              placeholder="Last Name"
+              variant="outlined"
+              value={signUpCredentials.lastName}
+            />
+            <TextField
+              error={!validationChecks.emailValidation}
+              aria-describedby="Email Address"
+              className={styles.textField}
+              color="primary"
+              fullWidth
+              id="email-textfield"
+              margin="dense"
+              name="email"
+              placeholder="Email"
+              variant="outlined"
+              value={signUpCredentials.email}
+            />
+            <TextField
+              error={!validationChecks.passwordValidated}
+              aria-describedby="Password"
+              autoComplete="off"
+              className={styles.textField}
+              color="primary"
+              fullWidth
+              id="password-textField"
+              margin="dense"
+              name="password"
+              placeholder="Password"
+              type="password"
+              variant="outlined"
+              value={signUpCredentials.password}
+            />
+            <TextField
+              error={!validationChecks.passwordMatch}
+              aria-describedby="Re-Enter Password"
+              autoComplete="off"
+              className={styles.textField}
+              color="primary"
+              fullWidth
+              id="re-enter-password-textField"
+              margin="dense"
+              name="reEnteredPassword"
+              placeholder="Re-Enter Password"
+              type="password"
+              variant="outlined"
+              value={signUpCredentials.reEnteredPassword}
+            />
+            <Box className={styles.buttonWrapper}>
+              {showProgress ? (
+                <VigorPrimaryProgressButton />
+              ) : (
+                <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
+              )}
+            </Box>
+          </FormControl>
+        </form>
+        <VigorLinkButtonGrey
+          className={styles.backButton}
+          component={Link}
+          to="/"
+          size="large"
+        >
+          Back
+        </VigorLinkButtonGrey>
+      </FormGroup>
+      <Snackbar open message="Account Created Successfully" />
+    </>
   );
 };
 
