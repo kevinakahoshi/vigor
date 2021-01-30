@@ -2,9 +2,8 @@ import {
   SET_USER,
   GET_USER,
   LOG_OUT,
-  LOGIN_FAILURE,
-  SIGN_UP_FAILURE,
-  CLEAR_MESSAGE,
+  SET_USER_MESSAGE,
+  CLEAR_USER_MESSAGE,
 } from '../types';
 import { API_GET_USER, API_LOGIN } from '../utilities/fetch/paths';
 
@@ -30,12 +29,12 @@ const getUser = () => async (dispatch) => {
 };
 
 const loginFailure = (error) => ({
-  type: LOGIN_FAILURE,
+  type: SET_USER_MESSAGE,
   payload: error,
 });
 
 const signUpFailure = (error) => ({
-  type: SIGN_UP_FAILURE,
+  type: SET_USER_MESSAGE,
   payload: error,
 });
 
@@ -93,8 +92,9 @@ const signUpUser = ({
 
   if (response.ok) {
     const data = await response.json();
-    // Dispatch action relating to successfully signing up
+    dispatch();
   } else {
+    dispatch(signUpFailure('Something went wrong, please try again'));
     // Dispatch action relating to error signing up
   }
 };
@@ -104,7 +104,7 @@ const logOut = () => ({
 });
 
 const clearError = () => ({
-  type: CLEAR_MESSAGE,
+  type: CLEAR_USER_MESSAGE,
 });
 
 export default {

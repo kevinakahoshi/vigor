@@ -66,7 +66,10 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const styles = formStyles();
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.loadingState.isLoading);
+  const {
+    loadingState: { isLoading },
+    currentUser: { message },
+  } = useSelector((state) => state);
 
   const [signUpCredentials, setSignUpCredentials] = useState({
     firstName: '',
@@ -103,6 +106,9 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       [name]: value,
     }));
   };
+
+  const handleSnackBarOpen = () => setSnackbarOpen(() => true);
+  const handleSnackBarClose = () => setSnackbarOpen(() => false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -188,6 +194,12 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
       match: password.length && password === reEnteredPassword,
     }));
   }, [signUpCredentials.password, signUpCredentials.reEnteredPassword]);
+
+  useEffect(() => {
+    if (message) {
+      handleSnackBarOpen();
+    }
+  }, [message]);
 
   return (
     <>
@@ -285,7 +297,12 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
           Back
         </VigorLinkButtonGrey>
       </FormGroup>
-      <Snackbar autoHideDuration={6000} open={snackbarOpen} message="" />
+      <Snackbar
+        autoHideDuration={5000}
+        open={snackbarOpen}
+        onClose={handleSnackBarClose}
+        message={message}
+      />
     </>
   );
 };
