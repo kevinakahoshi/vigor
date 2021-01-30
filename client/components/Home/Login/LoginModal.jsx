@@ -21,7 +21,7 @@ const modalStyles = makeStyles((theme) => ({
 const LoginModal = ({ children, open, setOpen }) => {
   const styles = modalStyles();
   const dispatch = useDispatch();
-  const error = useSelector((state) => state.currentUser.error);
+  const error = useSelector((state) => state.currentUser.message);
 
   const onClose = () => {
     setOpen(() => false);
