@@ -3,6 +3,7 @@ import {
   GET_USER,
   LOG_OUT,
   LOGIN_FAILURE,
+  SIGN_UP_FAILURE,
   CLEAR_ERROR,
 } from '../types';
 import { API_GET_USER, API_LOGIN } from '../utilities/fetch/paths';
@@ -30,6 +31,11 @@ const getUser = () => async (dispatch) => {
 
 const loginFailure = (error) => ({
   type: LOGIN_FAILURE,
+  payload: error,
+});
+
+const signUpFailure = (error) => ({
+  type: SIGN_UP_FAILURE,
   payload: error,
 });
 
@@ -67,7 +73,7 @@ const signUpUser = ({
   reEnteredPassword,
 }) => async (dispatch) => {
   if (password !== reEnteredPassword) {
-    // Do something
+    dispatch(signUpFailure('Passwords do not match'));
   }
 
   const options = {
@@ -84,8 +90,13 @@ const signUpUser = ({
   };
 
   const response = await fetch('/api/users/create-user', options);
-  const data = await response.json();
-  console.log(data);
+
+  if (response.ok) {
+    const data = await response.json();
+    // Dispatch action relating to successfully signing up
+  } else {
+    // Dispatch action relating to error signing up
+  }
 };
 
 const logOut = () => ({

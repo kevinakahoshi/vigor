@@ -24,6 +24,11 @@ const currentUser = (state = initialState, { type, payload }) => {
         ...state,
         error: payload,
       };
+    case 'SIGN_UP_FAILURE':
+      return {
+        ...state,
+        error: payload,
+      };
     case 'CLEAR_ERROR':
       return {
         ...state,
