@@ -2,7 +2,7 @@ export default {
   currentUser: {
     loggedIn: false,
     user: {},
-    error: null,
+    message: null,
   },
   loadingState: {
     isLoading: false,

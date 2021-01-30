@@ -7,7 +7,7 @@ const currentUser = (state = initialState, { type, payload }) => {
         ...state,
         user: payload,
         loggedIn: true,
-        error: null,
+        message: null,
       };
     case 'GET_USER':
       return {
@@ -22,17 +22,17 @@ const currentUser = (state = initialState, { type, payload }) => {
     case 'LOGIN_FAILURE':
       return {
         ...state,
-        error: payload,
+        message: payload,
       };
     case 'SIGN_UP_FAILURE':
       return {
         ...state,
-        error: payload,
+        message: payload,
       };
-    case 'CLEAR_ERROR':
+    case 'CLEAR_MESSAGE':
       return {
         ...state,
-        error: null,
+        message: null,
       };
     default:
       return state;

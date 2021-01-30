@@ -4,7 +4,7 @@ import {
   LOG_OUT,
   LOGIN_FAILURE,
   SIGN_UP_FAILURE,
-  CLEAR_ERROR,
+  CLEAR_MESSAGE,
 } from '../types';
 import { API_GET_USER, API_LOGIN } from '../utilities/fetch/paths';
 
@@ -104,7 +104,7 @@ const logOut = () => ({
 });
 
 const clearError = () => ({
-  type: CLEAR_ERROR,
+  type: CLEAR_MESSAGE,
 });
 
 export default {

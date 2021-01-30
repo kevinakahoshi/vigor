@@ -11,7 +11,7 @@ import {
 import { Link } from 'react-router-dom';
 
 // Redux
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../../../actions';
 
 // Utilities
@@ -63,9 +63,10 @@ const formStyles = makeStyles((theme) => ({
 }));
 
 const SignUpForm = ({ setPasswordReqCircles }) => {
-  const [showProgress, setShowProgress] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
   const styles = formStyles();
   const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.loadingState.isLoading);
 
   const [signUpCredentials, setSignUpCredentials] = useState({
     firstName: '',
@@ -105,6 +106,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (isLoading) return;
 
     const validationChecksCopy = { ...validationChecks };
 
@@ -266,7 +268,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
               value={signUpCredentials.reEnteredPassword}
             />
             <Box className={styles.buttonWrapper}>
-              {showProgress ? (
+              {isLoading ? (
                 <VigorPrimaryProgressButton />
               ) : (
                 <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
@@ -283,7 +285,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
           Back
         </VigorLinkButtonGrey>
       </FormGroup>
-      <Snackbar open message="Account Created Successfully" />
+      <Snackbar autoHideDuration={6000} open={snackbarOpen} message="" />
     </>
   );
 };

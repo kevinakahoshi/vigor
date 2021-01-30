@@ -43,7 +43,7 @@ const LoginForm = () => {
   });
 
   const dispatch = useDispatch();
-  const { error } = useSelector((state) => state.currentUser);
+  const message = useSelector((state) => state.currentUser.message);
   const { isLoading } = useSelector((state) => state.loadingState);
   const styles = formStyles();
 
@@ -63,7 +63,7 @@ const LoginForm = () => {
 
   return (
     <>
-      {error && <ErrorMessage message={error} />}
+      {message && <ErrorMessage message={message} />}
       <form
         onChange={handleChange}
         onSubmit={handleSubmit}
