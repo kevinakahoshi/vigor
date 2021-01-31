@@ -3,11 +3,14 @@ import {
   Box,
   FormControl,
   FormGroup,
+  IconButton,
   makeStyles,
   Snackbar,
+  SnackbarContent,
   TextField,
   Typography,
 } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 import { Link } from 'react-router-dom';
 
 // Redux
@@ -63,7 +66,7 @@ const formStyles = makeStyles((theme) => ({
 }));
 
 const SignUpForm = ({ setPasswordReqCircles }) => {
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(true);
   const styles = formStyles();
   const dispatch = useDispatch();
   const {
@@ -198,8 +201,22 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
   useEffect(() => {
     if (message) {
       handleSnackBarOpen();
+      setTimeout(() => {
+        dispatch(userActions.clearMessage());
+      }, 5000);
     }
   }, [message]);
+
+  const closeIcon = (
+    <IconButton
+      size="small"
+      aria-label="close"
+      color="inherit"
+      onClick={handleSnackBarClose}
+    >
+      <CloseIcon />
+    </IconButton>
+  );
 
   return (
     <>
@@ -301,8 +318,9 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
         autoHideDuration={5000}
         open={snackbarOpen}
         onClose={handleSnackBarClose}
-        message={message}
-      />
+      >
+        <SnackbarContent message="asdfasf" action={closeIcon} />
+      </Snackbar>
     </>
   );
 };

@@ -103,7 +103,7 @@ const logOut = () => ({
   type: LOG_OUT,
 });
 
-const clearError = () => ({
+const clearMessage = () => ({
   type: CLEAR_USER_MESSAGE,
 });
 
@@ -113,5 +113,5 @@ export default {
   logInUser,
   logOut,
   signUpUser,
-  clearError,
+  clearMessage,
 };

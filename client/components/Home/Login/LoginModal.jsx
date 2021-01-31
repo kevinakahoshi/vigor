@@ -26,7 +26,7 @@ const LoginModal = ({ children, open, setOpen }) => {
   const onClose = () => {
     setOpen(() => false);
     if (error) {
-      dispatch(userActions.clearError());
+      dispatch(userActions.clearMessage());
     }
   };
 
