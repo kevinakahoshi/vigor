@@ -12,6 +12,11 @@ const VigorPrimaryButton = withStyles({
     '&:hover': {
       boxShadow: '0rem .25rem .5rem rgba(0, 0, 0, .25)',
     },
+    '&[disabled]': {
+      color: '#ffffff',
+      opacity: 0.5,
+      boxShadow: '0rem .25rem .5rem rgba(0, 0, 0, .25)',
+    },
   },
 })(Button);
 
