@@ -5,10 +5,10 @@ import {
   FormGroup,
   IconButton,
   makeStyles,
+  Slide,
   Snackbar,
   SnackbarContent,
   TextField,
-  Typography,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import { Link } from 'react-router-dom';
@@ -66,7 +66,7 @@ const formStyles = makeStyles((theme) => ({
 }));
 
 const SignUpForm = ({ setPasswordReqCircles }) => {
-  const [snackbarOpen, setSnackbarOpen] = useState(true);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
   const styles = formStyles();
   const dispatch = useDispatch();
   const {
@@ -111,7 +111,10 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
   };
 
   const handleSnackBarOpen = () => setSnackbarOpen(() => true);
-  const handleSnackBarClose = () => setSnackbarOpen(() => false);
+  const handleSnackBarClose = () => {
+    setSnackbarOpen(() => false);
+    dispatch(userActions.clearMessage());
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -201,9 +204,6 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
   useEffect(() => {
     if (message) {
       handleSnackBarOpen();
-      setTimeout(() => {
-        dispatch(userActions.clearMessage());
-      }, 5000);
     }
   }, [message]);
 
@@ -300,7 +300,9 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
               {isLoading ? (
                 <VigorPrimaryProgressButton />
               ) : (
-                <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
+                <VigorPrimaryButton type="submit" disabled={!!message}>
+                  Submit
+                </VigorPrimaryButton>
               )}
             </Box>
           </FormControl>
@@ -318,8 +320,9 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
         autoHideDuration={5000}
         open={snackbarOpen}
         onClose={handleSnackBarClose}
+        TransitionComponent={Slide}
       >
-        <SnackbarContent message="asdfasf" action={closeIcon} />
+        <SnackbarContent message={message} action={closeIcon} />
       </Snackbar>
     </>
   );

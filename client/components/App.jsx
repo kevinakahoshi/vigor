@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../actions';
 
 // Views
@@ -15,6 +14,13 @@ import VigorTheme from '../theme/VigorTheme';
 
 const App = () => {
   const dispatch = useDispatch();
+  const { message } = useSelector((state) => state.currentUser);
+
+  const clearMessageHandler = () => {
+    if (message) {
+      dispatch(userActions.clearMessage());
+    }
+  };
 
   useEffect(() => {
     dispatch(userActions.getUser());

@@ -38,6 +38,10 @@ const signUpFailure = (error) => ({
   payload: error,
 });
 
+const clearMessage = () => ({
+  type: CLEAR_USER_MESSAGE,
+});
+
 const logInUser = ({ email, password }) => async (dispatch) => {
   dispatch(isLoading());
 
@@ -95,16 +99,11 @@ const signUpUser = ({
     dispatch();
   } else {
     dispatch(signUpFailure('Something went wrong, please try again'));
-    // Dispatch action relating to error signing up
   }
 };
 
 const logOut = () => ({
   type: LOG_OUT,
-});
-
-const clearMessage = () => ({
-  type: CLEAR_USER_MESSAGE,
 });
 
 export default {
