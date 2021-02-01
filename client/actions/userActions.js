@@ -79,6 +79,8 @@ const signUpUser = ({
     dispatch(signUpFailure('Passwords do not match'));
   }
 
+  dispatch(isLoading());
+
   const options = {
     method: 'POST',
     headers: {
@@ -93,6 +95,8 @@ const signUpUser = ({
   };
 
   const response = await fetch('/api/users/create-user', options);
+
+  dispatch(isNotLoading());
 
   if (response.ok) {
     const data = await response.json();

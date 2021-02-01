@@ -36,8 +36,6 @@ router.post('/', (request, response, next) => {
 
   const lowerCaseEmail = email.toLowerCase();
 
-  response.status(400).json('Test error');
-
   const sqlQuery = `
     INSERT INTO users ("firstName", "lastName", "email", "password")
     values ($1, $2, $3, $4)
