@@ -12,7 +12,7 @@ import {
   TextField,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -74,6 +74,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
     loadingState: { isLoading },
     currentUser: { message },
   } = useSelector((state) => state);
+  const location = useLocation();
 
   const [signUpCredentials, setSignUpCredentials] = useState({
     firstName: '',
@@ -208,6 +209,8 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
     }
   }, [message]);
 
+  useEffect(() => () => dispatch(userActions.clearMessage()), [location]);
+
   const closeIcon = (
     <IconButton
       size="small"
@@ -299,7 +302,7 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
             />
             <Box className={styles.buttonWrapper}>
               {isLoading ? (
-                <VigorPrimaryProgressButton />
+                <VigorPrimaryProgressButton /> // TODO: Compare performance difference with just swapping text for circular progress
               ) : (
                 <VigorPrimaryButton type="submit" disabled={!!message}>
                   Submit

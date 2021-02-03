@@ -36,6 +36,7 @@ router.post('/', (request, response, next) => {
 
   const lowerCaseEmail = email.toLowerCase();
 
+  // TODO: Remove Timeout when done testing errors
   setTimeout(() => response.status(400).json('Test error'), 5000);
 
   // const sqlQuery = `
