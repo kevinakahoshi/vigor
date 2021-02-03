@@ -36,22 +36,24 @@ router.post('/', (request, response, next) => {
 
   const lowerCaseEmail = email.toLowerCase();
 
-  const sqlQuery = `
-    INSERT INTO users ("firstName", "lastName", "email", "password")
-    values ($1, $2, $3, $4)
-  `;
-  const saltRounds = 12;
+  setTimeout(() => response.status(400).json('Test error'), 5000);
 
-  bcrypt.hash(password, saltRounds, (error, hash) => {
-    const params = [firstName, lastName, lowerCaseEmail, hash];
-    db.query(sqlQuery, params).then((result) => {
-      console.log(result);
-      return response.status(201).json('New User Created Successfully');
-    });
-    if (error) {
-      next(error);
-    }
-  });
+  // const sqlQuery = `
+  //   INSERT INTO users ("firstName", "lastName", "email", "password")
+  //   values ($1, $2, $3, $4)
+  // `;
+  // const saltRounds = 12;
+
+  // bcrypt.hash(password, saltRounds, (error, hash) => {
+  //   const params = [firstName, lastName, lowerCaseEmail, hash];
+  //   db.query(sqlQuery, params).then((result) => {
+  //     console.log(result);
+  //     return response.status(201).json('New User Created Successfully');
+  //   });
+  //   if (error) {
+  //     next(error);
+  //   }
+  // });
 });
 
 module.exports = router;
