@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom';
+import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { userActions } from '../actions';
 
 // Views
@@ -14,27 +14,23 @@ import VigorTheme from '../theme/VigorTheme';
 
 const App = () => {
   const dispatch = useDispatch();
-  const { message } = useSelector((state) => state.currentUser);
-
-  const clearMessageHandler = () => {
-    if (message) {
-      dispatch(userActions.clearMessage());
-    }
-  };
+  // const location = useLocation();
 
   useEffect(() => {
     dispatch(userActions.getUser());
   }, []);
 
+  // useEffect(() => {
+  //   dispatch(userActions.clearMessage());
+  // }, [location]);
+
   return (
     <VigorTheme>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/sign-up" component={SignUp} />
-        </Switch>
-      </BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/sign-up" component={SignUp} />
+      </Switch>
     </VigorTheme>
   );
 };

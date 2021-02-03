@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   FormControl,
   FormGroup,
+  IconButton,
   makeStyles,
+  Slide,
+  Snackbar,
+  SnackbarContent,
   TextField,
 } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,7 +19,6 @@ import { userActions } from '../../../actions';
 // Theme Specific
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
-import ErrorMessage from '../../Miscellaneous/ErrorMessage/ErrorMessage';
 
 const formStyles = makeStyles((theme) => ({
   buttonWrapper: {
@@ -37,14 +41,17 @@ const formStyles = makeStyles((theme) => ({
 }));
 
 const LoginForm = () => {
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [loginCredentials, setLoginCredentials] = useState({
     email: '',
     password: '',
   });
 
   const dispatch = useDispatch();
-  const message = useSelector((state) => state.currentUser.message);
-  const { isLoading } = useSelector((state) => state.loadingState);
+  const {
+    loadingState: { isLoading },
+    currentUser: { message },
+  } = useSelector((state) => state);
   const styles = formStyles();
 
   const handleChange = (event) => {
@@ -58,12 +65,35 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (isLoading) return;
     dispatch(userActions.logInUser(loginCredentials));
   };
 
+  const handleSnackBarOpen = () => setSnackbarOpen(() => true);
+  const handleSnackBarClose = () => {
+    setSnackbarOpen(() => false);
+    dispatch(userActions.clearMessage());
+  };
+
+  useEffect(() => {
+    if (message) {
+      handleSnackBarOpen();
+    }
+  }, [message]);
+
+  const closeIcon = (
+    <IconButton
+      size="small"
+      aria-label="close"
+      color="inherit"
+      onClick={handleSnackBarClose}
+    >
+      <CloseIcon />
+    </IconButton>
+  );
+
   return (
     <>
-      {message && <ErrorMessage message={message} />}
       <form
         onChange={handleChange}
         onSubmit={handleSubmit}
@@ -100,12 +130,22 @@ const LoginForm = () => {
               {isLoading ? (
                 <VigorPrimaryProgressButton />
               ) : (
-                <VigorPrimaryButton type="submit">Submit</VigorPrimaryButton>
+                <VigorPrimaryButton type="submit" disabled={!!message}>
+                  Submit
+                </VigorPrimaryButton>
               )}
             </Box>
           </FormControl>
         </FormGroup>
       </form>
+      <Snackbar
+        autoHideDuration={5000}
+        open={snackbarOpen}
+        onClose={handleSnackBarClose}
+        TransitionComponent={Slide}
+      >
+        <SnackbarContent message={message} action={closeIcon} />
+      </Snackbar>
     </>
   );
 };
