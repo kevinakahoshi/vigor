@@ -28,6 +28,11 @@ const getUser = () => async (dispatch) => {
   }
 };
 
+const setUserMessage = (message) => ({
+  type: SET_USER_MESSAGE,
+  payload: message,
+});
+
 const loginFailure = (error) => ({
   type: SET_USER_MESSAGE,
   payload: error,
@@ -61,10 +66,11 @@ const logInUser = ({ email, password }) => async (dispatch) => {
   dispatch(isNotLoading());
 
   if (!response.ok) {
-    dispatch(loginFailure('Email or password is incorrect'));
+    dispatch(setUserMessage('Email or password is incorrect'));
   } else {
     const user = await response.json();
     dispatch(setUser(user));
+    dispatch(setUserMessage('Logged in successfully'));
   }
 };
 
@@ -76,7 +82,7 @@ const signUpUser = ({
   reEnteredPassword,
 }) => async (dispatch) => {
   if (password !== reEnteredPassword) {
-    dispatch(signUpFailure('Passwords do not match'));
+    dispatch(setUserMessage('Passwords do not match'));
   }
 
   dispatch(isLoading());
@@ -102,7 +108,7 @@ const signUpUser = ({
     const data = await response.json();
     dispatch();
   } else {
-    dispatch(signUpFailure('Something went wrong, please try again'));
+    dispatch(setUserMessage('Something went wrong, please try again'));
   }
 };
 

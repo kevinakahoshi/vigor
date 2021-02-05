@@ -11,6 +11,7 @@ import {
   TextField,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
+import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,6 +20,7 @@ import { userActions } from '../../../actions';
 // Theme Specific
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
+import Alert from '../../Miscellaneous/Alert/Alert';
 
 const formStyles = makeStyles((theme) => ({
   buttonWrapper: {
@@ -38,10 +40,16 @@ const formStyles = makeStyles((theme) => ({
       textAlign: 'center',
     },
   },
+  snackBar: {
+    '&[data-success="true"]': {
+      backgroundImage: 'linear-gradient(45deg, #4BBCC0, #8AFFC7)',
+    },
+    '&[data-success="false"]': {},
+  },
 }));
 
 const LoginForm = () => {
-  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(true);
   const [loginCredentials, setLoginCredentials] = useState({
     email: '',
     password: '',
@@ -50,7 +58,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const {
     loadingState: { isLoading },
-    currentUser: { message },
+    currentUser: { loggedIn, message },
   } = useSelector((state) => state);
   const styles = formStyles();
 
@@ -138,14 +146,30 @@ const LoginForm = () => {
           </FormControl>
         </FormGroup>
       </form>
-      <Snackbar
+      <Alert
+        handleClose={handleSnackBarClose}
+        open={snackbarOpen}
+        // message={message}
+        message="Logged in successfully"
+        // type={loggedIn ? 'success' : 'error'}
+        type="success"
+      />
+      {/* <Snackbar
         autoHideDuration={5000}
         open={snackbarOpen}
         onClose={handleSnackBarClose}
         TransitionComponent={Slide}
       >
-        <SnackbarContent message={message} action={closeIcon} />
-      </Snackbar>
+        <SnackbarContent
+          message={message}
+          action={closeIcon}
+          classes={{
+            root: styles.snackBar,
+          }}
+          // data-success={loggedIn}
+          data-success
+        />
+      </Snackbar> */}
     </>
   );
 };
