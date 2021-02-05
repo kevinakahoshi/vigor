@@ -11,7 +11,6 @@ import {
   TextField,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
-import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
