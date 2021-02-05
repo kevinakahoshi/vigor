@@ -49,7 +49,7 @@ const formStyles = makeStyles((theme) => ({
 }));
 
 const LoginForm = () => {
-  const [snackbarOpen, setSnackbarOpen] = useState(true);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [loginCredentials, setLoginCredentials] = useState({
     email: '',
     password: '',
@@ -149,27 +149,9 @@ const LoginForm = () => {
       <Alert
         handleClose={handleSnackBarClose}
         open={snackbarOpen}
-        // message={message}
-        message="Logged in successfully"
-        // type={loggedIn ? 'success' : 'error'}
-        type="success"
+        message={message}
+        type={loggedIn ? 'success' : 'error'}
       />
-      {/* <Snackbar
-        autoHideDuration={5000}
-        open={snackbarOpen}
-        onClose={handleSnackBarClose}
-        TransitionComponent={Slide}
-      >
-        <SnackbarContent
-          message={message}
-          action={closeIcon}
-          classes={{
-            root: styles.snackBar,
-          }}
-          // data-success={loggedIn}
-          data-success
-        />
-      </Snackbar> */}
     </>
   );
 };

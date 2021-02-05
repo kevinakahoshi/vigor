@@ -10,7 +10,7 @@ import CloseIcon from '@material-ui/icons/Close';
 
 const errorStyles = makeStyles((theme) => ({
   error: {
-    background: 'red',
+    background: 'linear-gradient(45deg, #e05c5c, #ffcc58)',
   },
   normal: {},
   success: {
