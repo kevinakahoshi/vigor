@@ -23,7 +23,7 @@ const Alert = ({
   handleClose,
   open,
   message,
-  type,
+  type = 'normal',
 }) => {
   const styles = errorStyles();
 
@@ -40,7 +40,7 @@ const Alert = ({
 
   return (
     <Snackbar
-      // autoHideDuration={autoHideDuration}
+      autoHideDuration={autoHideDuration}
       onClose={handleClose}
       open={open}
       TransitionComponent={Slide}
