@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 
-const errorStyles = makeStyles((theme) => ({
+const errorStyles = makeStyles(() => ({
   error: {
     background: 'linear-gradient(45deg, #e05c5c, #ffcc58)',
   },

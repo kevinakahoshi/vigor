@@ -4,7 +4,7 @@ import { CircularProgress, makeStyles } from '@material-ui/core';
 // Components
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 
-const progressStyles = makeStyles((theme) => ({
+const progressStyles = makeStyles(() => ({
   button: {
     opacity: '0.75',
     pointerEvents: 'none',

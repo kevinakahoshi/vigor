@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Grid, makeStyles, Typography } from '@material-ui/core';
 
 // Components
-// import ErrorMessage from '../Miscellaneous/ErrorMessage/ErrorMessage';
 import SignUpFeatures from '../Features/SignUpFeatures';
 import SignUpRequirements from '../Requirements/SignUpRequirements';
 import VigorLogo from '../../Miscellaneous/Logo/VigorLogo';
@@ -65,7 +64,6 @@ const SignUpInfo = ({ passwordReqCircles }) => {
       <Typography className={styles.signUpText} variant="h3">
         Sign Up
       </Typography>
-      {/* <ErrorMessage message="Hello Please" /> */}
       <Grid className={styles.infoSubBox} container>
         <Grid className={styles.infoFeatures} item sm={6} xs={12}>
           <ul className={styles.unorderedList}>
