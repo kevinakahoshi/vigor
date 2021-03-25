@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-// eslint-disable-next-line no-unused-vars
-const componentTransitions = makeStyles((theme) => ({
+const componentTransitions = makeStyles(() => ({
   'fade-enter': {
     opacity: 0,
   },
