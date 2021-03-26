@@ -33,16 +33,6 @@ const setUserMessage = (message) => ({
   payload: message,
 });
 
-const loginFailure = (error) => ({
-  type: SET_USER_MESSAGE,
-  payload: error,
-});
-
-const signUpFailure = (error) => ({
-  type: SET_USER_MESSAGE,
-  payload: error,
-});
-
 const clearMessage = () => ({
   type: CLEAR_USER_MESSAGE,
 });
@@ -106,7 +96,7 @@ const signUpUser = ({
 
   if (response.ok) {
     const data = await response.json();
-    dispatch();
+    dispatch(setUserMessage(data));
   } else {
     dispatch(setUserMessage('Something went wrong, please try again'));
   }
