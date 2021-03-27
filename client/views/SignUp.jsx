@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Box, Container, Grid, makeStyles } from '@material-ui/core';
 
 // Components
-import SignUpInfo from '../components/SignUp/Info/SignUpInfo';
+// import SignUpInfo from '../components/SignUp/Info/SignUpInfo';
 import SignUpForm from '../components/SignUp/Form/SignUpForm';
+import Stepper from '../components/SignUp/Stepper/Stepper';
 
 const pageStyles = makeStyles((theme) => ({
   box: {
@@ -50,7 +51,7 @@ const pageStyles = makeStyles((theme) => ({
 }));
 
 const Login = () => {
-  const styles = pageStyles();
+  const { box, container, wrapper, info, formWrapper } = pageStyles();
   const [passwordReqCircles, setPasswordReqCircles] = useState({
     characters: false,
     letter: false,
@@ -60,13 +61,14 @@ const Login = () => {
   });
 
   return (
-    <Box className={styles.box}>
-      <Container className={styles.container} maxWidth="md">
-        <Grid className={styles.wrapper} spacing={3} container>
-          <Grid className={styles.info} item sm={6} xs={12}>
-            <SignUpInfo passwordReqCircles={passwordReqCircles} />
+    <Box className={box}>
+      <Container className={container} maxWidth="md">
+        <Grid className={wrapper} spacing={3} container>
+          <Grid className={info} item sm={6} xs={12}>
+            {/* <SignUpInfo passwordReqCircles={passwordReqCircles} /> */}
+            <Stepper />
           </Grid>
-          <Grid className={styles.formWrapper} item sm={6} xs={12}>
+          <Grid className={formWrapper} item sm={6} xs={12}>
             <SignUpForm setPasswordReqCircles={setPasswordReqCircles} />
           </Grid>
         </Grid>
