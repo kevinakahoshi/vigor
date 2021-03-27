@@ -1,12 +1,11 @@
 import React from 'react';
 import {
-  IconButton,
   makeStyles,
   Slide,
   Snackbar,
   SnackbarContent,
 } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIconButton from './CloseIcon';
 
 const errorStyles = makeStyles(() => ({
   error: {
@@ -23,20 +22,10 @@ const Alert = ({
   handleClose,
   open,
   message,
-  type = 'normal',
+  loggedIn,
 }) => {
   const styles = errorStyles();
-
-  const closeIcon = (
-    <IconButton
-      size="small"
-      aria-label="close"
-      color="inherit"
-      onClick={handleClose}
-    >
-      <CloseIcon />
-    </IconButton>
-  );
+  const snackbarStyle = (loggedIn ? 'success' : 'error') || 'normal';
 
   return (
     <Snackbar
@@ -46,9 +35,9 @@ const Alert = ({
       TransitionComponent={Slide}
     >
       <SnackbarContent
-        action={closeIcon}
+        action={<CloseIconButton handleClose={handleClose} />}
         classes={{
-          root: styles[type],
+          root: styles[snackbarStyle],
         }}
         message={message}
       />

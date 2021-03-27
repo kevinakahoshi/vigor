@@ -3,11 +3,7 @@ import {
   Box,
   FormControl,
   FormGroup,
-  IconButton,
   makeStyles,
-  Slide,
-  Snackbar,
-  SnackbarContent,
   TextField,
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
@@ -21,7 +17,7 @@ import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles
 import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
 import Alert from '../../Miscellaneous/Alert/Alert';
 
-const formStyles = makeStyles((theme) => ({
+const formStyles = makeStyles(() => ({
   buttonWrapper: {
     marginTop: '8px',
     '& button': {
@@ -88,17 +84,6 @@ const LoginForm = () => {
     }
   }, [message]);
 
-  const closeIcon = (
-    <IconButton
-      size="small"
-      aria-label="close"
-      color="inherit"
-      onClick={handleSnackBarClose}
-    >
-      <CloseIcon />
-    </IconButton>
-  );
-
   return (
     <>
       <form
@@ -149,7 +134,7 @@ const LoginForm = () => {
         handleClose={handleSnackBarClose}
         open={snackbarOpen}
         message={message}
-        type={loggedIn ? 'success' : 'error'}
+        loggedIn={loggedIn}
       />
     </>
   );
