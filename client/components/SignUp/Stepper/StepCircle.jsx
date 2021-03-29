@@ -14,8 +14,7 @@ const useQontoStepIconStyles = makeStyles({
     color: '#784af4',
   },
   circle: {
-    width: 8,
-    height: 8,
+    padding: '.5rem',
     borderRadius: '50%',
     backgroundColor: 'currentColor',
   },
