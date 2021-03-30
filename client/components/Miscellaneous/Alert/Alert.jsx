@@ -5,6 +5,7 @@ import {
   Snackbar,
   SnackbarContent,
 } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import CloseIconButton from './CloseIcon';
 
 const errorStyles = makeStyles(() => ({
@@ -18,14 +19,22 @@ const errorStyles = makeStyles(() => ({
 }));
 
 const Alert = ({
-  autoHideDuration = 5000,
+  autoHideDuration = 3000,
   handleClose,
   open,
   message,
   loggedIn,
 }) => {
+  const history = useHistory();
   const styles = errorStyles();
   const snackbarStyle = (loggedIn ? 'success' : 'error') || 'normal';
+
+  const closeIconButton = <CloseIconButton handleClose={handleClose} />;
+
+  const handleExit = () => {
+    if (!loggedIn) return;
+    history.push('/login');
+  };
 
   return (
     <Snackbar
@@ -33,9 +42,11 @@ const Alert = ({
       onClose={handleClose}
       open={open}
       TransitionComponent={Slide}
+      disableWindowBlurListener
+      onExited={handleExit}
     >
       <SnackbarContent
-        action={<CloseIconButton handleClose={handleClose} />}
+        action={closeIconButton}
         classes={{
           root: styles[snackbarStyle],
         }}
