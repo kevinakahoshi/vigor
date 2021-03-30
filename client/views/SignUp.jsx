@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { Box, Container, Grid, makeStyles } from '@material-ui/core';
 
 // Components
-// import SignUpInfo from '../components/SignUp/Info/SignUpInfo';
-import SignUpForm from '../components/SignUp/Form/SignUpForm';
-import Stepper from '../components/SignUp/Stepper/Stepper';
+import SignUpInfo from '../components/SignUp/Info/SignUpInfo';
+import SignUpFormStepper from '../components/SignUp/Form/SignUpFormStepper';
+// import SignUpForm from '../components/SignUp/Form/SignUpForm';
+// import VerticalLinearStepper from '../components/SignUp/Stepper/VerticalLinearStepper';
 
 const pageStyles = makeStyles((theme) => ({
   box: {
@@ -65,11 +66,11 @@ const Login = () => {
       <Container className={container} maxWidth="md">
         <Grid className={wrapper} spacing={3} container>
           <Grid className={info} item sm={6} xs={12}>
-            {/* <SignUpInfo passwordReqCircles={passwordReqCircles} /> */}
-            <Stepper />
+            <SignUpInfo passwordReqCircles={passwordReqCircles} />
           </Grid>
           <Grid className={formWrapper} item sm={6} xs={12}>
-            <SignUpForm setPasswordReqCircles={setPasswordReqCircles} />
+            {/* <SignUpForm setPasswordReqCircles={setPasswordReqCircles} /> */}
+            <SignUpFormStepper setPasswordReqCircles={setPasswordReqCircles} />
           </Grid>
         </Grid>
       </Container>

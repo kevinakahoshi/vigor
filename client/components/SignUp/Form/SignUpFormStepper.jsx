@@ -32,6 +32,7 @@ import {
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
+import VerticalLinearStepper from '../Stepper/VerticalLinearStepper';
 
 const formStyles = makeStyles((theme) => ({
   formGroup: {
@@ -66,7 +67,7 @@ const formStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignUpForm = ({ setPasswordReqCircles }) => {
+const SignUpFormStepper = ({ setPasswordReqCircles }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const {
     formGroup,
@@ -229,12 +230,79 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
     </IconButton>
   );
 
+  const fields = [
+    <TextField
+      error={!validationChecks.firstNameValidation}
+      aria-describedby="First Name"
+      className={textField}
+      color="primary"
+      fullWidth
+      id="first-name-textfield"
+      margin="dense"
+      name="firstName"
+      variant="outlined"
+      value={signUpCredentials.firstName}
+    />,
+    <TextField
+      error={!validationChecks.lastNameValidation}
+      aria-describedby="Last Name"
+      className={textField}
+      color="primary"
+      fullWidth
+      id="last-name-textfield"
+      margin="dense"
+      name="lastName"
+      variant="outlined"
+      value={signUpCredentials.lastName}
+    />,
+    <TextField
+      error={!validationChecks.emailValidation}
+      aria-describedby="Email Address"
+      className={textField}
+      color="primary"
+      fullWidth
+      id="email-textfield"
+      margin="dense"
+      name="email"
+      variant="outlined"
+      value={signUpCredentials.email}
+    />,
+    <TextField
+      error={!validationChecks.passwordValidated}
+      aria-describedby="Password"
+      autoComplete="off"
+      className={textField}
+      color="primary"
+      fullWidth
+      id="password-textField"
+      margin="dense"
+      name="password"
+      type="password"
+      variant="outlined"
+      value={signUpCredentials.password}
+    />,
+    <TextField
+      error={!validationChecks.passwordMatch}
+      aria-describedby="Re-Enter Password"
+      autoComplete="off"
+      className={textField}
+      color="primary"
+      fullWidth
+      id="re-enter-password-textField"
+      margin="dense"
+      name="reEnteredPassword"
+      type="password"
+      variant="outlined"
+      value={signUpCredentials.reEnteredPassword}
+    />,
+  ];
+
   return (
     <>
       <FormGroup className={formGroup}>
         <form className={form} onChange={handleChange} onSubmit={handleSubmit}>
           <FormControl className={formControl}>
-            <TextField
+            {/* <TextField
               error={!validationChecks.firstNameValidation}
               aria-describedby="First Name"
               className={textField}
@@ -302,6 +370,10 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
               type="password"
               variant="outlined"
               value={signUpCredentials.reEnteredPassword}
+            /> */}
+            <VerticalLinearStepper
+              fields={fields}
+              signUpCredentials={signUpCredentials}
             />
             <Box className={buttonWrapper}>
               {isLoading ? (
@@ -335,4 +407,4 @@ const SignUpForm = ({ setPasswordReqCircles }) => {
   );
 };
 
-export default SignUpForm;
+export default SignUpFormStepper;

@@ -10,8 +10,11 @@ const validationStyles = makeStyles(({ spacing }) => ({
   circle: {
     height: spacing(2),
     width: spacing(2),
-    borderWidth: '1px',
+    borderWidth: 1,
     borderRadius: spacing(1),
+    '&:not(.active):not(.valid)': {
+      opacity: 0.25,
+    },
     '&.invalid': {
       borderStyle: 'solid',
     },
@@ -22,7 +25,7 @@ const validationStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
-const SignUpValidationCircle = ({ valid }) => {
+const StepValidationCircle = ({ active, valid }) => {
   const { root, circle } = validationStyles();
 
   return (
@@ -32,4 +35,4 @@ const SignUpValidationCircle = ({ valid }) => {
   );
 };
 
-export default SignUpValidationCircle;
+export default StepValidationCircle;

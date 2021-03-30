@@ -9,6 +9,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import StepCircle from './StepCircle';
 
+import StepValidationCircle from './StepValidationCircle';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -25,42 +27,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function getSteps() {
-  return [
-    'Enter your first name',
-    'Enter your last name',
-    'Enter your email address',
-    'Enter your password',
-    'Re-enter your password',
-  ];
-}
+const getSteps = () => [
+  'Enter your first name',
+  'Enter your last name',
+  'Enter your email address',
+  'Enter your password',
+  'Re-enter your password',
+];
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return `For each ad campaign that you create, you can control how much
-              you're willing to spend on clicks and conversions, which networks
-              and geographical locations you want your ads to show on, and more.`;
-    case 1:
-      return 'An ad group contains one or more ads which target a shared set of keywords.';
-    case 2:
-      return `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`;
-    case 3:
-      return `Try out different ad text to see what brings in the most customers,
-              and learn how to enhance your ads using features like ad extensions.
-              If you run into any problems with your ads, find out how to tell if
-              they're running and how to resolve approval issues.`;
-    case 4:
-      return 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus odit aliquid nihil vitae provident voluptatibus, quo pariatur iusto nesciunt eius, cum et sequi magni suscipit quis, harum sit. Molestias, qui?';
-    default:
-      return 'Unknown step';
-  }
-}
-
-const VerticalLinearStepper = () => {
+const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
   const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const steps = getSteps();
@@ -83,13 +58,16 @@ const VerticalLinearStepper = () => {
         {steps.map((label, index) => (
           <Step key={label}>
             <StepLabel
-              StepIconComponent={StepCircle}
-              StepIconProps={{ step: index + 1 }}
+              StepIconComponent={StepValidationCircle}
+              StepIconProps={{
+                active: activeStep === index,
+                valid: Object.values(signUpCredentials)[index],
+              }}
             >
               {label}
             </StepLabel>
             <StepContent>
-              <Typography>{getStepContent(index)}</Typography>
+              {fields[index]}
               <div className={classes.actionsContainer}>
                 <div>
                   <Button
@@ -113,14 +91,6 @@ const VerticalLinearStepper = () => {
           </Step>
         ))}
       </Stepper>
-      {activeStep === steps.length && (
-        <Paper square elevation={0} className={classes.resetContainer}>
-          <Typography>All steps completed - you&apos;re finished</Typography>
-          <Button onClick={handleReset} className={classes.button}>
-            Reset
-          </Button>
-        </Paper>
-      )}
     </div>
   );
 };
