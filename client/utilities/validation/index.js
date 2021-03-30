@@ -1,3 +1,3 @@
-const checkName = (name) => {
-  console.log(name);
-};
+// const checkName = (name) => {
+//   console.log(name);
+// };
