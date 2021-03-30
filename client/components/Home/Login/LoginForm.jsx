@@ -6,7 +6,6 @@ import {
   makeStyles,
   TextField,
 } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
