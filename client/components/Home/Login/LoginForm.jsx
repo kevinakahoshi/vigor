@@ -72,10 +72,7 @@ const LoginForm = () => {
   };
 
   const handleSnackBarOpen = () => setSnackbarOpen(() => true);
-  const handleSnackBarClose = () => {
-    setSnackbarOpen(() => false);
-    dispatch(userActions.clearMessage());
-  };
+  const handleSnackBarClose = () => setSnackbarOpen(() => false);
 
   useEffect(() => {
     if (message) {

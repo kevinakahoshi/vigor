@@ -28,9 +28,12 @@ const getUser = () => async (dispatch) => {
   }
 };
 
-const setUserMessage = (message) => ({
+const setUserMessage = (message, success) => ({
   type: SET_USER_MESSAGE,
-  payload: message,
+  payload: {
+    message,
+    success,
+  },
 });
 
 const clearMessage = () => ({
@@ -56,11 +59,11 @@ const logInUser = ({ email, password }) => async (dispatch) => {
   dispatch(isNotLoading());
 
   if (!response.ok) {
-    dispatch(setUserMessage('Email or password is incorrect'));
+    dispatch(setUserMessage('Email or password is incorrect', false));
   } else {
     const user = await response.json();
     dispatch(setUser(user));
-    dispatch(setUserMessage('Logged in successfully'));
+    dispatch(setUserMessage('Logged in successfully', true));
   }
 };
 
@@ -72,7 +75,7 @@ const signUpUser = ({
   reEnteredPassword,
 }) => async (dispatch) => {
   if (password !== reEnteredPassword) {
-    dispatch(setUserMessage('Passwords do not match'));
+    dispatch(setUserMessage('Passwords do not match', false));
   }
 
   dispatch(isLoading());
@@ -96,9 +99,9 @@ const signUpUser = ({
 
   if (response.ok) {
     const data = await response.json();
-    dispatch(setUserMessage(data));
+    dispatch(setUserMessage(data, true));
   } else {
-    dispatch(setUserMessage('Something went wrong, please try again'));
+    dispatch(setUserMessage('Something went wrong, please try again', false));
   }
 };
 

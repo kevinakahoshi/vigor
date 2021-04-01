@@ -6,6 +6,12 @@ import {
   SnackbarContent,
 } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { userActions } from '../../../actions';
+
+// Custom Components
 import CloseIconButton from './CloseIcon';
 
 const errorStyles = makeStyles(() => ({
@@ -23,15 +29,18 @@ const Alert = ({
   handleClose,
   open,
   message,
-  loggedIn,
+  loggedIn = false,
 }) => {
-  const history = useHistory();
   const styles = errorStyles();
-  const snackbarStyle = (loggedIn ? 'success' : 'error') || 'normal';
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const success = useSelector((state) => state.currentUser.success);
+  const snackbarStyle = (success ? 'success' : 'error') || 'normal';
 
   const closeIconButton = <CloseIconButton handleClose={handleClose} />;
 
   const handleExit = () => {
+    dispatch(userActions.clearMessage());
     if (!loggedIn) return;
     history.push('/login');
   };

@@ -32,12 +32,14 @@ const currentUser = (state = initialState, { type, payload }) => {
     case 'SET_USER_MESSAGE':
       return {
         ...state,
-        message: payload,
+        message: payload.message,
+        success: payload.success,
       };
     case 'CLEAR_USER_MESSAGE':
       return {
         ...state,
         message: null,
+        success: null,
       };
     default:
       return state;
