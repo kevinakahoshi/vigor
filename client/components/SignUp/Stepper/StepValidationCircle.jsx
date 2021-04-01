@@ -30,7 +30,11 @@ const StepValidationCircle = ({ active, valid }) => {
 
   return (
     <Box className={root}>
-      <Box className={`${circle} ${valid ? 'valid' : 'invalid'}`} />
+      <Box
+        className={`${circle} ${valid ? 'valid' : 'invalid'} ${
+          active ? 'active' : ''
+        }`}
+      />
     </Box>
   );
 };

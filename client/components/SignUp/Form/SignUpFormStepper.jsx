@@ -33,6 +33,7 @@ import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyl
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
 import VerticalLinearStepper from '../Stepper/VerticalLinearStepper';
+import Alert from '../../Miscellaneous/Alert/Alert';
 
 const formStyles = makeStyles((theme) => ({
   formGroup: {
@@ -121,10 +122,7 @@ const SignUpFormStepper = ({ setPasswordReqCircles }) => {
   };
 
   const handleSnackBarOpen = () => setSnackbarOpen(() => true);
-  const handleSnackBarClose = () => {
-    setSnackbarOpen(() => false);
-    dispatch(userActions.clearMessage());
-  };
+  const handleSnackBarClose = () => setSnackbarOpen(() => false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -219,16 +217,19 @@ const SignUpFormStepper = ({ setPasswordReqCircles }) => {
 
   useEffect(() => () => dispatch(userActions.clearMessage()), [location]);
 
-  const closeIcon = (
-    <IconButton
-      size="small"
-      aria-label="close"
-      color="inherit"
-      onClick={handleSnackBarClose}
-    >
-      <CloseIcon />
-    </IconButton>
-  );
+  // const closeIcon = useMemo(
+  //   () => (
+  //     <IconButton
+  //       size="small"
+  //       aria-label="close"
+  //       color="inherit"
+  //       onClick={handleSnackBarClose}
+  //     >
+  //       <CloseIcon />
+  //     </IconButton>
+  //   ),
+  //   []
+  // );
 
   const fields = [
     <TextField
@@ -302,75 +303,6 @@ const SignUpFormStepper = ({ setPasswordReqCircles }) => {
       <FormGroup className={formGroup}>
         <form className={form} onChange={handleChange} onSubmit={handleSubmit}>
           <FormControl className={formControl}>
-            {/* <TextField
-              error={!validationChecks.firstNameValidation}
-              aria-describedby="First Name"
-              className={textField}
-              color="primary"
-              fullWidth
-              id="first-name-textfield"
-              margin="dense"
-              name="firstName"
-              placeholder="First Name"
-              variant="outlined"
-              value={signUpCredentials.firstName}
-            />
-            <TextField
-              error={!validationChecks.lastNameValidation}
-              aria-describedby="Last Name"
-              className={textField}
-              color="primary"
-              fullWidth
-              id="last-name-textfield"
-              margin="dense"
-              name="lastName"
-              placeholder="Last Name"
-              variant="outlined"
-              value={signUpCredentials.lastName}
-            />
-            <TextField
-              error={!validationChecks.emailValidation}
-              aria-describedby="Email Address"
-              className={textField}
-              color="primary"
-              fullWidth
-              id="email-textfield"
-              margin="dense"
-              name="email"
-              placeholder="Email"
-              variant="outlined"
-              value={signUpCredentials.email}
-            />
-            <TextField
-              error={!validationChecks.passwordValidated}
-              aria-describedby="Password"
-              autoComplete="off"
-              className={textField}
-              color="primary"
-              fullWidth
-              id="password-textField"
-              margin="dense"
-              name="password"
-              placeholder="Password"
-              type="password"
-              variant="outlined"
-              value={signUpCredentials.password}
-            />
-            <TextField
-              error={!validationChecks.passwordMatch}
-              aria-describedby="Re-Enter Password"
-              autoComplete="off"
-              className={textField}
-              color="primary"
-              fullWidth
-              id="re-enter-password-textField"
-              margin="dense"
-              name="reEnteredPassword"
-              placeholder="Re-Enter Password"
-              type="password"
-              variant="outlined"
-              value={signUpCredentials.reEnteredPassword}
-            /> */}
             <VerticalLinearStepper
               fields={fields}
               signUpCredentials={signUpCredentials}
@@ -395,14 +327,12 @@ const SignUpFormStepper = ({ setPasswordReqCircles }) => {
           Back
         </VigorLinkButtonGrey>
       </FormGroup>
-      <Snackbar
-        autoHideDuration={5000}
+      <Alert
+        handleClose={handleSnackBarClose}
         open={snackbarOpen}
-        onClose={handleSnackBarClose}
-        TransitionComponent={Slide}
-      >
-        <SnackbarContent message={message} action={closeIcon} />
-      </Snackbar>
+        message={message}
+        // loggedIn={loggedIn}
+      />
     </>
   );
 };

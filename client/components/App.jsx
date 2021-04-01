@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Switch, Route, useHistory, useLocation } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
 import { userActions } from '../actions';
@@ -14,15 +14,10 @@ import VigorTheme from '../theme/VigorTheme';
 
 const App = () => {
   const dispatch = useDispatch();
-  // const location = useLocation();
 
   useEffect(() => {
     dispatch(userActions.getUser());
   }, []);
-
-  // useEffect(() => {
-  //   dispatch(userActions.clearMessage());
-  // }, [location]);
 
   return (
     <VigorTheme>
