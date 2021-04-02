@@ -52,7 +52,7 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const {
     loadingState: { isLoading },
-    currentUser: { loggedIn, message },
+    currentUser: { message },
   } = useSelector((state) => state);
   const styles = formStyles();
 
@@ -71,12 +71,12 @@ const LoginForm = () => {
     dispatch(userActions.logInUser(loginCredentials));
   };
 
-  const handleSnackBarOpen = () => setSnackbarOpen(() => true);
-  const handleSnackBarClose = () => setSnackbarOpen(() => false);
+  const handleAlertOpen = () => setSnackbarOpen(() => true);
+  const handleAlertClose = () => setSnackbarOpen(() => false);
 
   useEffect(() => {
     if (message) {
-      handleSnackBarOpen();
+      handleAlertOpen();
     }
   }, [message]);
 
@@ -126,12 +126,7 @@ const LoginForm = () => {
           </FormControl>
         </FormGroup>
       </form>
-      <Alert
-        handleClose={handleSnackBarClose}
-        open={snackbarOpen}
-        message={message}
-        loggedIn={loggedIn}
-      />
+      <Alert handleClose={handleAlertClose} open={snackbarOpen} />
     </>
   );
 };

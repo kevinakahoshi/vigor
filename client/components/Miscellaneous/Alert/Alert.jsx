@@ -5,7 +5,6 @@ import {
   Snackbar,
   SnackbarContent,
 } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,22 +22,16 @@ const Alert = ({
   autoHideDuration = 3000,
   handleClose,
   open,
-  message,
-  loggedIn = false,
+  handleExit = null,
 }) => {
   const styles = errorStyles();
-  const history = useHistory();
+  const { message, success } = useSelector((state) => state.currentUser);
   const dispatch = useDispatch();
-  const success = useSelector((state) => state.currentUser.success);
   const snackbarStyle = success ? 'success' : 'error';
+  const exitedHandler =
+    handleExit || (() => dispatch(userActions.clearMessage()));
 
   const closeIconButton = <CloseIconButton handleClose={handleClose} />;
-
-  const handleExit = () => {
-    dispatch(userActions.clearMessage());
-    if (!loggedIn) return;
-    history.push('/login');
-  };
 
   return (
     <Snackbar
@@ -47,7 +40,7 @@ const Alert = ({
       open={open}
       TransitionComponent={Slide}
       disableWindowBlurListener
-      onExited={handleExit}
+      onExited={exitedHandler}
     >
       <SnackbarContent
         action={closeIconButton}
