@@ -14,14 +14,9 @@ import { userActions } from '../../../actions';
 // Custom Components
 import CloseIconButton from './CloseIcon';
 
-const errorStyles = makeStyles(() => ({
-  error: {
-    background: 'linear-gradient(45deg, #e05c5c, #ffcc58)',
-  },
-  normal: {},
-  success: {
-    backgroundImage: 'linear-gradient(45deg, #4BBCC0, #8AFFC7)',
-  },
+const errorStyles = makeStyles(({ status: { error, success } }) => ({
+  error,
+  success,
 }));
 
 const Alert = ({
@@ -35,7 +30,7 @@ const Alert = ({
   const history = useHistory();
   const dispatch = useDispatch();
   const success = useSelector((state) => state.currentUser.success);
-  const snackbarStyle = (success ? 'success' : 'error') || 'normal';
+  const snackbarStyle = success ? 'success' : 'error';
 
   const closeIconButton = <CloseIconButton handleClose={handleClose} />;
 
