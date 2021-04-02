@@ -27,6 +27,14 @@ const themeStyles = createMuiTheme({
   typography: {
     fontFamily: ['Dosis'],
   },
+  status: {
+    error: {
+      background: 'linear-gradient(45deg, #e05c5c, #ffcc58)',
+    },
+    success: {
+      background: 'linear-gradient(45deg, #4BBCC0, #8AFFC7)',
+    },
+  },
   overrides: {
     MuiCssBaseline: {
       '@global': {
