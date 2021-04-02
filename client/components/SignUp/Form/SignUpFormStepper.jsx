@@ -4,14 +4,9 @@ import {
   // CircularProgress,
   FormControl,
   FormGroup,
-  IconButton,
   makeStyles,
-  Slide,
-  Snackbar,
-  SnackbarContent,
   TextField,
 } from '@material-ui/core';
-import CloseIcon from '@material-ui/icons/Close';
 import { Link, useLocation } from 'react-router-dom';
 
 // Redux
@@ -121,8 +116,9 @@ const SignUpFormStepper = ({ setPasswordReqCircles }) => {
     }));
   };
 
-  const handleSnackBarOpen = () => setSnackbarOpen(() => true);
-  const handleSnackBarClose = () => setSnackbarOpen(() => false);
+  const handleAlertOpen = () => setSnackbarOpen(() => true);
+  const handleAlertClose = () => setSnackbarOpen(() => false);
+  const handleExit = () => dispatch(userActions.clearMessage());
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -211,25 +207,11 @@ const SignUpFormStepper = ({ setPasswordReqCircles }) => {
 
   useEffect(() => {
     if (message) {
-      handleSnackBarOpen();
+      handleAlertOpen();
     }
   }, [message]);
 
   useEffect(() => () => dispatch(userActions.clearMessage()), [location]);
-
-  // const closeIcon = useMemo(
-  //   () => (
-  //     <IconButton
-  //       size="small"
-  //       aria-label="close"
-  //       color="inherit"
-  //       onClick={handleSnackBarClose}
-  //     >
-  //       <CloseIcon />
-  //     </IconButton>
-  //   ),
-  //   []
-  // );
 
   const fields = [
     <TextField
@@ -328,10 +310,9 @@ const SignUpFormStepper = ({ setPasswordReqCircles }) => {
         </VigorLinkButtonGrey>
       </FormGroup>
       <Alert
-        handleClose={handleSnackBarClose}
+        handleClose={handleAlertClose}
         open={snackbarOpen}
-        message={message}
-        // loggedIn={loggedIn}
+        handleExit={handleExit}
       />
     </>
   );
