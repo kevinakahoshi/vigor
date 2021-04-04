@@ -4,7 +4,7 @@ import { Box, makeStyles, Typography } from '@material-ui/core';
 // Components
 import SignUpValidationCircle from '../ValidationCircle/SignUpValidationCircle';
 
-const requirementStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   requirement: {
     display: 'grid',
     gridTemplateColumns: 'auto 1fr',
@@ -31,19 +31,19 @@ const requirements = [
 ];
 
 const SignUpRequirements = ({ passwordReqCircles }) => {
-  const styles = requirementStyles();
+  const { requirement, text } = useStyles();
 
   // TODO: Manage the validation through global state
 
   return Object.keys(passwordReqCircles).map((passwordRequirement, index) => (
     <Box
-      className={`${styles.requirement} ${
+      className={`${requirement} ${
         passwordReqCircles[passwordRequirement] ? 'valid' : 'invalid'
       }`}
       key={passwordRequirement}
     >
       <SignUpValidationCircle valid={passwordReqCircles[passwordRequirement]} />
-      <Typography className={styles.text}>{requirements[index]}</Typography>
+      <Typography className={text}>{requirements[index]}</Typography>
     </Box>
   ));
 };
