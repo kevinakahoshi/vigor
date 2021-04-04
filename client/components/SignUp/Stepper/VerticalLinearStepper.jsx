@@ -12,9 +12,6 @@ import Button from '@material-ui/core/Button';
 import StepValidationCircle from './StepValidationCircle';
 
 const useStyles = makeStyles(({ spacing }) => ({
-  stepperWrapper: {
-    width: '100%',
-  },
   stepper: {
     padding: spacing(2),
   },
@@ -43,7 +40,6 @@ const getSteps = () => [
 
 const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
   const {
-    stepperWrapper,
     stepper,
     button,
     actionsContainer,
@@ -70,7 +66,7 @@ const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
   );
 
   return (
-    <div className={stepperWrapper}>
+    <>
       <Stepper
         activeStep={activeStep}
         classes={{
@@ -98,13 +94,15 @@ const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
               {fields[index]}
               <div className={actionsContainer}>
                 <div>
-                  <Button
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-                    className={button}
-                  >
-                    Back
-                  </Button>
+                  {index > 0 && (
+                    <Button
+                      disabled={activeStep === 0}
+                      onClick={handleBack}
+                      className={button}
+                    >
+                      Back
+                    </Button>
+                  )}
                   <Button
                     variant="contained"
                     color="primary"
@@ -119,7 +117,7 @@ const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
           </Step>
         ))}
       </Stepper>
-    </div>
+    </>
   );
 };
 
