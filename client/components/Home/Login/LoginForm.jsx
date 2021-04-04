@@ -34,12 +34,6 @@ const formStyles = makeStyles(() => ({
       textAlign: 'center',
     },
   },
-  snackBar: {
-    '&[data-success="true"]': {
-      backgroundImage: 'linear-gradient(45deg, #4BBCC0, #8AFFC7)',
-    },
-    '&[data-success="false"]': {},
-  },
 }));
 
 const LoginForm = () => {
@@ -48,13 +42,12 @@ const LoginForm = () => {
     email: '',
     password: '',
   });
-
   const dispatch = useDispatch();
   const {
     loadingState: { isLoading },
     currentUser: { message },
   } = useSelector((state) => state);
-  const styles = formStyles();
+  const { buttonWrapper, form, formGroup, textField } = formStyles();
 
   const handleChange = (event) => {
     event.persist();
@@ -82,17 +75,13 @@ const LoginForm = () => {
 
   return (
     <>
-      <form
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-        className={styles.form}
-      >
-        <FormGroup className={styles.formGroup}>
+      <form onChange={handleChange} onSubmit={handleSubmit} className={form}>
+        <FormGroup className={formGroup}>
           <FormControl>
             <TextField
               aria-describedby="Email Address"
               autoComplete="username"
-              className={styles.textField}
+              className={textField}
               color="primary"
               fullWidth
               id="email-textfield"
@@ -104,7 +93,7 @@ const LoginForm = () => {
             <TextField
               aria-describedby="Password"
               autoComplete="new-password"
-              className={styles.textField}
+              className={textField}
               color="primary"
               fullWidth
               id="password-textField"
@@ -114,7 +103,7 @@ const LoginForm = () => {
               type="password"
               variant="outlined"
             />
-            <Box className={styles.buttonWrapper}>
+            <Box className={buttonWrapper}>
               {isLoading ? (
                 <VigorPrimaryProgressButton />
               ) : (

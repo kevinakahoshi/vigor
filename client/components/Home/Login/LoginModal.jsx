@@ -19,7 +19,7 @@ const modalStyles = makeStyles((theme) => ({
 }));
 
 const LoginModal = ({ children, open, setOpen }) => {
-  const styles = modalStyles();
+  const { modal } = modalStyles();
   const dispatch = useDispatch();
   const error = useSelector((state) => state.currentUser.message);
 
@@ -31,7 +31,7 @@ const LoginModal = ({ children, open, setOpen }) => {
   };
 
   return (
-    <Modal className={styles.modal} open={open} onClose={onClose}>
+    <Modal className={modal} open={open} onClose={onClose}>
       {children}
     </Modal>
   );

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 // Components
 import VigorSecondaryButton from '../../../theme/custom-styles/secondaryButtonStyles';
 
-const buttonWrapper = makeStyles((theme) => ({
+const buttonWrapperStyles = makeStyles((theme) => ({
   buttonWrapper: {
     display: 'grid',
     gridGap: '1rem',
@@ -19,10 +19,10 @@ const buttonWrapper = makeStyles((theme) => ({
 }));
 
 const NavLoginSignUpMobile = () => {
-  const styles = buttonWrapper();
+  const { buttonWrapper } = buttonWrapperStyles();
 
   return (
-    <Box className={styles.buttonWrapper}>
+    <Box className={buttonWrapper}>
       <VigorSecondaryButton component={Link} to="/sign-up" size="large">
         Sign Up
       </VigorSecondaryButton>
