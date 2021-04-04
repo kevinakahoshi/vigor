@@ -1,16 +1,22 @@
 import React, { useMemo, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Stepper from '@material-ui/core/Stepper';
-import Step from '@material-ui/core/Step';
-import StepLabel from '@material-ui/core/StepLabel';
-import StepContent from '@material-ui/core/StepContent';
+import {
+  Step,
+  StepLabel,
+  StepContent,
+  Stepper,
+  StepConnector,
+} from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 import StepValidationCircle from './StepValidationCircle';
 
 const useStyles = makeStyles(({ spacing }) => ({
-  root: {
+  stepperWrapper: {
     width: '100%',
+  },
+  stepper: {
+    padding: spacing(2),
   },
   button: {
     marginTop: spacing(1),
@@ -18,6 +24,12 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
   actionsContainer: {
     marginBottom: spacing(2),
+  },
+  stepContent: {
+    marginLeft: spacing(1),
+  },
+  stepConnector: {
+    marginLeft: spacing(1),
   },
 }));
 
@@ -30,7 +42,14 @@ const getSteps = () => [
 ];
 
 const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
-  const { root, button, actionsContainer } = useStyles();
+  const {
+    stepperWrapper,
+    stepper,
+    button,
+    actionsContainer,
+    stepContent,
+    stepConnector,
+  } = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const steps = useMemo(() => getSteps(), []);
 
@@ -42,9 +61,24 @@ const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
+  const connector = (
+    <StepConnector
+      classes={{
+        root: stepConnector,
+      }}
+    />
+  );
+
   return (
-    <div className={root}>
-      <Stepper activeStep={activeStep} orientation="vertical">
+    <div className={stepperWrapper}>
+      <Stepper
+        activeStep={activeStep}
+        classes={{
+          root: stepper,
+        }}
+        orientation="vertical"
+        connector={connector}
+      >
         {steps.map((label, index) => (
           <Step key={label}>
             <StepLabel
@@ -56,7 +90,11 @@ const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
             >
               {label}
             </StepLabel>
-            <StepContent>
+            <StepContent
+              classes={{
+                root: stepContent,
+              }}
+            >
               {fields[index]}
               <div className={actionsContainer}>
                 <div>
