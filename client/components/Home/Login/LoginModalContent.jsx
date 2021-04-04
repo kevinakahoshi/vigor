@@ -27,12 +27,12 @@ const modalContent = makeStyles((theme) => ({
 }));
 
 const LoginModalContent = () => {
-  const styles = modalContent();
+  const { paper, logo, text } = modalContent();
 
   return (
-    <Paper elevation={0} className={styles.paper}>
-      <VigorLogo classes={styles.logo} finalOpacity={1} />
-      <Typography className={styles.text} variant="h3">
+    <Paper elevation={0} className={paper}>
+      <VigorLogo classes={logo} finalOpacity={1} />
+      <Typography className={text} variant="h3">
         Login
       </Typography>
       <LoginForm />

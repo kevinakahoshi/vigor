@@ -38,14 +38,14 @@ const navStyles = makeStyles((theme) => ({
 }));
 
 const NavBar = () => {
-  const styles = navStyles();
+  const { navBar, vigorLogoWrapper, vigorLogo, buttonWrapper } = navStyles();
 
   return (
-    <Box className={styles.navBar}>
-      <Box className={styles.vigorLogoWrapper}>
-        <VigorLogoWhite classes={styles.vigorLogo} finalOpacity={1} />
+    <Box className={navBar}>
+      <Box className={vigorLogoWrapper}>
+        <VigorLogoWhite classes={vigorLogo} finalOpacity={1} />
       </Box>
-      <Box className={styles.buttonWrapper}>
+      <Box className={buttonWrapper}>
         <NavLoginSignUpDesktop />
       </Box>
     </Box>

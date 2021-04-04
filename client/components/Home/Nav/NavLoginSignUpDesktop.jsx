@@ -9,7 +9,7 @@ import LoginModalContent from '../Login/LoginModalContent';
 import VigorLinkButtonWhite from '../../../theme/custom-styles/whiteLinkButtonStyles';
 import VigorSecondaryButton from '../../../theme/custom-styles/secondaryButtonStyles';
 
-const buttonWrapper = makeStyles(() => ({
+const buttonWrapperStyles = makeStyles(() => ({
   buttonWrapper: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
@@ -20,7 +20,7 @@ const buttonWrapper = makeStyles(() => ({
 const NavLoginSignUpDesktop = () => {
   const [open, setOpen] = useState(false);
   const modalRef = createRef();
-  const styles = buttonWrapper();
+  const { buttonWrapper } = buttonWrapperStyles();
 
   const userSession = useSelector((state) => state.currentUser.loggedIn);
   const history = useHistory();
@@ -34,7 +34,7 @@ const NavLoginSignUpDesktop = () => {
   };
 
   return (
-    <Box className={styles.buttonWrapper}>
+    <Box className={buttonWrapper}>
       <VigorLinkButtonWhite component={Link} to="/sign-up" size="large">
         Sign Up
       </VigorLinkButtonWhite>
