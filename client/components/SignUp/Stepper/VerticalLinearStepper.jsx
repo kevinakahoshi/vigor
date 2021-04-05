@@ -7,20 +7,20 @@ import {
   Stepper,
   StepConnector,
 } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
 
 import StepValidationCircle from './StepValidationCircle';
+import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
+import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
 
 const useStyles = makeStyles(({ spacing }) => ({
   stepper: {
     padding: spacing(2),
   },
-  button: {
-    marginTop: spacing(1),
-    marginRight: spacing(1),
-  },
+  button: {},
   actionsContainer: {
-    marginBottom: spacing(2),
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridGap: spacing(0.5),
   },
   stepContent: {
     marginLeft: spacing(1),
@@ -85,6 +85,7 @@ const VerticalLinearStepper = ({
     />
   );
 
+  // TODO: Handle the submission process and don't close the final field
   return (
     <>
       <Stepper
@@ -113,25 +114,14 @@ const VerticalLinearStepper = ({
             >
               {fields[index]}
               <div className={actionsContainer}>
-                <div>
-                  {index > 0 && (
-                    <Button
-                      disabled={activeStep === 0}
-                      onClick={handleBack}
-                      className={button}
-                    >
-                      Back
-                    </Button>
-                  )}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={button}
-                  >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                  </Button>
-                </div>
+                {index > 0 && (
+                  <VigorLinkButtonGrey onClick={handleBack}>
+                    Prev
+                  </VigorLinkButtonGrey>
+                )}
+                <VigorPrimaryButton onClick={handleNext}>
+                  {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
+                </VigorPrimaryButton>
               </div>
             </StepContent>
           </Step>
