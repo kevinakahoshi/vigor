@@ -31,6 +31,8 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   infoValidation: {
     padding: spacing(2),
     display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridGap: spacing(0.5),
   },
   logo: {
     display: 'block',
@@ -52,7 +54,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-const SignUpInfo = ({ passwordReqCircles }) => {
+const SignUpInfo = ({ passwordReqCircles, showPasswordReqs }) => {
   const {
     infoBox,
     infoSubBox,
@@ -63,6 +65,18 @@ const SignUpInfo = ({ passwordReqCircles }) => {
     unorderedList,
   } = useStyles();
 
+  const featuresOrReqs = showPasswordReqs ? (
+    <Grid className={infoValidation} item xs={12}>
+      <SignUpRequirements passwordReqCircles={passwordReqCircles} />
+    </Grid>
+  ) : (
+    <Grid className={infoFeatures} item xs={12}>
+      <ul className={unorderedList}>
+        <SignUpFeatures />
+      </ul>
+    </Grid>
+  );
+
   return (
     <Box className={infoBox}>
       <VigorLogo classes={logo} finalOpacity={1} />
@@ -70,14 +84,15 @@ const SignUpInfo = ({ passwordReqCircles }) => {
         Sign Up
       </Typography>
       <Grid className={infoSubBox} container>
-        <Grid className={infoFeatures} item sm={6} xs={12}>
+        {/* <Grid className={infoFeatures} item sm={6} xs={12}>
           <ul className={unorderedList}>
             <SignUpFeatures />
           </ul>
         </Grid>
         <Grid className={infoValidation} item sm={6} xs={12}>
           <SignUpRequirements passwordReqCircles={passwordReqCircles} />
-        </Grid>
+        </Grid> */}
+        {featuresOrReqs}
       </Grid>
     </Box>
   );

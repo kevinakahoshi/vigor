@@ -51,8 +51,9 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
 }));
 
-const Login = () => {
+const SignUp = () => {
   const { box, container, wrapper, info, formWrapper } = useStyles();
+  const [showPasswordReqs, setShowPasswordReqs] = useState(false);
   const [passwordReqCircles, setPasswordReqCircles] = useState({
     characters: false,
     letter: false,
@@ -67,11 +68,17 @@ const Login = () => {
         <Grid className={wrapper} spacing={3} container>
           <Grid className={info} item sm={6} xs={12}>
             {/* <SignUpInfo passwordReqCircles={passwordReqCircles} /> */}
-            <SignUpInfoStepper passwordReqCircles={passwordReqCircles} />
+            <SignUpInfoStepper
+              passwordReqCircles={passwordReqCircles}
+              showPasswordReqs={showPasswordReqs}
+            />
           </Grid>
           <Grid className={formWrapper} item sm={6} xs={12}>
             {/* <SignUpForm setPasswordReqCircles={setPasswordReqCircles} /> */}
-            <SignUpFormStepper setPasswordReqCircles={setPasswordReqCircles} />
+            <SignUpFormStepper
+              setPasswordReqCircles={setPasswordReqCircles}
+              setShowPasswordReqs={setShowPasswordReqs}
+            />
           </Grid>
         </Grid>
       </Container>
@@ -79,4 +86,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
