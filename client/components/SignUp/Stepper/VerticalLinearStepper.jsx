@@ -38,7 +38,11 @@ const getSteps = () => [
   'Re-enter your password',
 ];
 
-const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
+const VerticalLinearStepper = ({
+  fields,
+  signUpCredentials,
+  setShowPasswordReqs,
+}) => {
   const {
     stepper,
     button,
@@ -49,12 +53,28 @@ const VerticalLinearStepper = ({ fields, signUpCredentials }) => {
   const [activeStep, setActiveStep] = useState(0);
   const steps = useMemo(() => getSteps(), []);
 
+  const handleShowPasswordReqs = (step) => {
+    if (step > 2) {
+      setShowPasswordReqs(() => true);
+    } else {
+      setShowPasswordReqs(() => false);
+    }
+  };
+
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setActiveStep((prevActiveStep) => {
+      const nextStep = prevActiveStep + 1;
+      handleShowPasswordReqs(nextStep);
+      return nextStep;
+    });
   };
 
   const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    setActiveStep((prevActiveStep) => {
+      const nextStep = prevActiveStep - 1;
+      handleShowPasswordReqs(nextStep);
+      return nextStep;
+    });
   };
 
   const connector = (

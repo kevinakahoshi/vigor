@@ -63,7 +63,7 @@ const formStyles = makeStyles((theme) => ({
   },
 }));
 
-const SignUpFormStepper = ({ setPasswordReqCircles }) => {
+const SignUpFormStepper = ({ setPasswordReqCircles, setShowPasswordReqs }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const {
     formGroup,
@@ -288,6 +288,7 @@ const SignUpFormStepper = ({ setPasswordReqCircles }) => {
             <VerticalLinearStepper
               fields={fields}
               signUpCredentials={signUpCredentials}
+              setShowPasswordReqs={setShowPasswordReqs}
             />
             <Box className={buttonWrapper}>
               {isLoading ? (
