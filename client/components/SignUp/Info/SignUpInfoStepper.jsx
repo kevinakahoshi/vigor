@@ -18,21 +18,27 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   infoSubBox: {
     borderRadius: spacing(0.5),
     boxShadow: '0rem .25rem .5rem rgba(0, 0, 0, .25)',
-    [breakpoints.between('xs', 'sm')]: {
-      display: 'none',
-    },
+    // [breakpoints.between('xs', 'sm')]: {
+    //   display: 'none',
+    // },
   },
   infoFeatures: {
-    padding: spacing(2),
     [breakpoints.up('sm')]: {
-      display: 'block',
+      padding: spacing(2),
+    },
+    [breakpoints.down('sm')]: {
+      padding: spacing(1),
     },
   },
   infoValidation: {
-    padding: spacing(2),
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
-    gridGap: spacing(0.5),
+    [breakpoints.up('sm')]: {
+      padding: spacing(2),
+    },
+    [breakpoints.down('sm')]: {
+      padding: spacing(1),
+    },
   },
   logo: {
     display: 'block',
@@ -49,7 +55,7 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   unorderedList: {
     margin: 0,
     display: 'grid',
-    gridGap: spacing(0.5),
+    // gridGap: spacing(0.5),
     paddingInlineStart: `${spacing(3.5)}px`,
   },
 }));

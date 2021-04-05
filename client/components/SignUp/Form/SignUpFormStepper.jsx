@@ -290,7 +290,7 @@ const SignUpFormStepper = ({ setPasswordReqCircles, setShowPasswordReqs }) => {
               signUpCredentials={signUpCredentials}
               setShowPasswordReqs={setShowPasswordReqs}
             />
-            <Box className={buttonWrapper}>
+            {/* <Box className={buttonWrapper}>
               {isLoading ? (
                 <VigorPrimaryProgressButton /> // TODO: Compare performance difference with just swapping text for circular progress
               ) : (
@@ -298,7 +298,7 @@ const SignUpFormStepper = ({ setPasswordReqCircles, setShowPasswordReqs }) => {
                   Submit
                 </VigorPrimaryButton>
               )}
-            </Box>
+            </Box> */}
           </FormControl>
         </form>
         <VigorLinkButtonGrey
