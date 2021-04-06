@@ -289,6 +289,7 @@ const SignUpFormStepper = ({ setPasswordReqCircles, setShowPasswordReqs }) => {
               fields={fields}
               signUpCredentials={signUpCredentials}
               setShowPasswordReqs={setShowPasswordReqs}
+              validationChecks={validationChecks}
             />
             {/* <Box className={buttonWrapper}>
               {isLoading ? (

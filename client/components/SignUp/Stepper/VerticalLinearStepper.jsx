@@ -8,6 +8,7 @@ import {
   StepConnector,
 } from '@material-ui/core';
 
+import { useSelector } from 'react-redux';
 import StepValidationCircle from './StepValidationCircle';
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
@@ -16,7 +17,6 @@ const useStyles = makeStyles(({ spacing }) => ({
   stepper: {
     padding: spacing(2),
   },
-  button: {},
   actionsContainer: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
@@ -42,14 +42,10 @@ const VerticalLinearStepper = ({
   fields,
   signUpCredentials,
   setShowPasswordReqs,
+  validationChecks,
 }) => {
-  const {
-    stepper,
-    button,
-    actionsContainer,
-    stepContent,
-    stepConnector,
-  } = useStyles();
+  const { stepper, actionsContainer, stepContent, stepConnector } = useStyles();
+  const { message } = useSelector((state) => state.currentUser);
   const [activeStep, setActiveStep] = useState(0);
   const steps = useMemo(() => getSteps(), []);
 
@@ -85,7 +81,6 @@ const VerticalLinearStepper = ({
     />
   );
 
-  // TODO: Handle the submission process and don't close the final field
   return (
     <>
       <Stepper
@@ -102,7 +97,8 @@ const VerticalLinearStepper = ({
               StepIconComponent={StepValidationCircle}
               StepIconProps={{
                 active: activeStep === index,
-                valid: Object.values(signUpCredentials)[index],
+                valid: Boolean(Object.values(signUpCredentials)[index]),
+                error: !Object.values(validationChecks)[index],
               }}
             >
               {label}
@@ -119,9 +115,15 @@ const VerticalLinearStepper = ({
                     Prev
                   </VigorLinkButtonGrey>
                 )}
-                <VigorPrimaryButton onClick={handleNext}>
-                  {activeStep === steps.length - 1 ? 'Submit' : 'Next'}
-                </VigorPrimaryButton>
+                {index === steps.length - 1 ? (
+                  <VigorPrimaryButton type="submit" disabled={!!message}>
+                    Submit
+                  </VigorPrimaryButton>
+                ) : (
+                  <VigorPrimaryButton onClick={handleNext}>
+                    Next
+                  </VigorPrimaryButton>
+                )}
               </div>
             </StepContent>
           </Step>

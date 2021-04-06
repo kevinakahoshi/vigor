@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 
 const validationStyles = makeStyles(({ spacing }) => ({
@@ -15,7 +15,11 @@ const validationStyles = makeStyles(({ spacing }) => ({
     '&:not(.active):not(.valid)': {
       opacity: 0.25,
     },
-    '&.invalid': {
+    '&:not(.error)': {
+      borderStyle: 'solid',
+    },
+    '&.error': {
+      borderColor: 'red',
       borderStyle: 'solid',
     },
     '&.valid': {
@@ -25,16 +29,23 @@ const validationStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
-const StepValidationCircle = ({ active, valid }) => {
+const getClassNames = (circle, statuses) => {
+  const classes = [circle];
+  Object.keys(statuses).forEach((status) => {
+    if (statuses[status]) {
+      classes.push(status);
+    }
+  });
+  return classes;
+};
+
+const StepValidationCircle = ({ active, valid, error }) => {
   const { root, circle } = validationStyles();
+  const classes = getClassNames(circle, { active, valid, error });
 
   return (
     <Box className={root}>
-      <Box
-        className={`${circle} ${valid ? 'valid' : 'invalid'} ${
-          active ? 'active' : ''
-        }`}
-      />
+      <Box className={classes} />
     </Box>
   );
 };
