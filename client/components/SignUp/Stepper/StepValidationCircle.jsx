@@ -36,13 +36,13 @@ const getClassNames = (circle, statuses) => {
       classes.push(status);
     }
   });
-  return classes;
+  return classes.join(' ');
 };
 
 const StepValidationCircle = ({ active, valid, error }) => {
   const { root, circle } = validationStyles();
   const classes = getClassNames(circle, { active, valid, error });
-
+  console.log(classes);
   return (
     <Box className={root}>
       <Box className={classes} />
