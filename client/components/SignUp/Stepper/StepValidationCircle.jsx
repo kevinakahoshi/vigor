@@ -29,15 +29,12 @@ const validationStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
-const getClassNames = (circle, statuses) =>
-  Object.keys(statuses).reduce(
+const StepValidationCircle = (statuses) => {
+  const { root, circle } = validationStyles();
+  const classes = Object.keys(statuses).reduce(
     (prev, curr) => (statuses[curr] ? `${prev} ${curr}` : prev),
     circle
   );
-
-const StepValidationCircle = ({ active, valid, error }) => {
-  const { root, circle } = validationStyles();
-  const classes = getClassNames(circle, { active, valid, error });
 
   return (
     <Box className={root}>
