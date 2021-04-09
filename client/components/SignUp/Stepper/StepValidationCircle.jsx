@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { Box, makeStyles } from '@material-ui/core';
 
 const validationStyles = makeStyles(({ spacing }) => ({
@@ -12,7 +12,7 @@ const validationStyles = makeStyles(({ spacing }) => ({
     width: spacing(2),
     borderWidth: 1,
     borderRadius: spacing(1),
-    '&:not(.active):not(.valid)': {
+    '&:not(.active):not(.valid):not(.error)': {
       opacity: 0.25,
     },
     '&:not(.error)': {
