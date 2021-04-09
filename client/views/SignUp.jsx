@@ -78,6 +78,7 @@ const SignUp = () => {
             <SignUpFormStepper
               setPasswordReqCircles={setPasswordReqCircles}
               setShowPasswordReqs={setShowPasswordReqs}
+              showPasswordReqs={showPasswordReqs}
             />
           </Grid>
         </Grid>
