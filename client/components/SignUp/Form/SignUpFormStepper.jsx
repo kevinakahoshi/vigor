@@ -1,6 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import {
-  Box,
   // CircularProgress,
   FormControl,
   FormGroup,
@@ -25,8 +24,6 @@ import {
 
 // Theme Specific
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
-import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
-import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
 import VerticalLinearStepper from '../Stepper/VerticalLinearStepper';
 import Alert from '../../Miscellaneous/Alert/Alert';
 
@@ -42,12 +39,6 @@ const formStyles = makeStyles((theme) => ({
   },
   formControl: {
     width: '100%',
-  },
-  buttonWrapper: {
-    marginTop: '8px',
-    '& button': {
-      width: '100%',
-    },
   },
   textField: {
     '&:nth-child(1)': {
@@ -69,14 +60,7 @@ const SignUpFormStepper = ({
   showPasswordReqs,
 }) => {
   const [snackbarOpen, setSnackbarOpen] = useState(false);
-  const {
-    formGroup,
-    form,
-    formControl,
-    textField,
-    buttonWrapper,
-    backButton,
-  } = formStyles();
+  const { formGroup, form, formControl, textField, backButton } = formStyles();
   const dispatch = useDispatch();
   const {
     loadingState: { isLoading },
@@ -296,15 +280,6 @@ const SignUpFormStepper = ({
               showPasswordReqs={showPasswordReqs}
               validationChecks={validationChecks}
             />
-            {/* <Box className={buttonWrapper}>
-              {isLoading ? (
-                <VigorPrimaryProgressButton /> // TODO: Compare performance difference with just swapping text for circular progress
-              ) : (
-                <VigorPrimaryButton type="submit" disabled={!!message}>
-                  Submit
-                </VigorPrimaryButton>
-              )}
-            </Box> */}
           </FormControl>
         </form>
         <VigorLinkButtonGrey
