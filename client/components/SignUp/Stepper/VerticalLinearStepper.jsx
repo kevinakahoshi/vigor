@@ -24,9 +24,11 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
   stepContent: {
     marginLeft: spacing(1),
+    marginBottom: spacing(1),
   },
   stepConnector: {
     marginLeft: spacing(1),
+    display: 'none',
   },
 }));
 

@@ -38,6 +38,9 @@ const themeStyles = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
+        html: {
+          height: '100%',
+        },
         body: {
           backgroundImage:
             'url(/assets/images/brand-assets/poly-background.svg)',
@@ -45,9 +48,12 @@ const themeStyles = createMuiTheme({
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
+          height: '100%',
         },
         'div#root': {
-          height: 'var(--app-height)',
+          // height: 'var(--app-height)',
+          minHeight: '100%',
+          display: 'flex',
         },
         'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus': {
           WebkitBoxShadow: '0 0 0px 1000px #fff inset',

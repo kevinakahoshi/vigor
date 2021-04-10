@@ -5,20 +5,22 @@ import { Container, makeStyles } from '@material-ui/core';
 import NavBar from '../components/Home/Nav/NavBar';
 import HeroText from '../components/Home/HeroText/HeroText';
 
-const homeStyles = makeStyles((theme) => ({
+const homeStyles = makeStyles(() => ({
   root: {
     height: '100%',
     display: 'flex',
+    justifySelf: 'center',
+    alignSelf: 'center',
   },
 }));
 
 const Home = () => {
-  const styles = homeStyles();
+  const { root } = homeStyles();
 
   return (
     <>
       <NavBar />
-      <Container className={styles.root} maxWidth="sm">
+      <Container className={root} maxWidth="sm">
         <HeroText />
       </Container>
     </>
