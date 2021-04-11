@@ -21,12 +21,10 @@ const validationStyles = makeStyles(
       },
       '&.error': {
         borderColor: 'transparent',
-        // borderStyle: 'solid',
         ...error,
       },
       '&.valid': {
         borderColor: 'transparent',
-        // backgroundImage: 'linear-gradient(45deg, #4BBCC0, #8AFFC7)',
         ...success,
       },
     },
@@ -36,7 +34,8 @@ const validationStyles = makeStyles(
 const StepValidationCircle = (statuses) => {
   const { root, circle } = validationStyles();
   const classes = Object.keys(statuses).reduce(
-    (prev, curr) => (statuses[curr] ? `${prev} ${curr}` : prev),
+    (classList, statusClass) =>
+      statuses[statusClass] ? `${classList} ${statusClass}` : classList,
     circle
   );
 
