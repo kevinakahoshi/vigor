@@ -51,6 +51,12 @@ const VerticalLinearStepper = ({
   const { message } = useSelector((state) => state.currentUser);
   const [activeStep, setActiveStep] = useState(0);
   const steps = useMemo(() => getSteps(), []);
+  const validation = useMemo(() => Object.values(validationChecks), [
+    validationChecks,
+  ]);
+  const credentials = useMemo(() => Object.values(signUpCredentials), [
+    signUpCredentials,
+  ]);
 
   const handleShowPasswordReqs = (step) => {
     if (step > 2) {
@@ -94,12 +100,12 @@ const VerticalLinearStepper = ({
       {steps.map((label, index) => (
         <Step key={label}>
           <StepLabel
-            error={!Object.values(validationChecks)[index]}
+            error={!validation[index]}
             StepIconComponent={StepValidationCircle}
             StepIconProps={{
               active: activeStep === index,
-              valid: Boolean(Object.values(signUpCredentials)[index]),
-              error: !Object.values(validationChecks)[index],
+              valid: credentials[index] && validation[index],
+              error: !validation[index],
             }}
           >
             {label}
