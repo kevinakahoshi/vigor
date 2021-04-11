@@ -9,7 +9,11 @@ import SignUpFormStepper from '../components/SignUp/Form/SignUpFormStepper';
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   box: {
-    height: '100%',
+    minHeight: '100%',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     [breakpoints.up('sm')]: {
       paddingTop: spacing(3),
       paddingBottom: spacing(3),
@@ -21,7 +25,6 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   },
   container: {
     display: 'flex',
-    height: '100%',
   },
   wrapper: {
     background: '#ffffff',
