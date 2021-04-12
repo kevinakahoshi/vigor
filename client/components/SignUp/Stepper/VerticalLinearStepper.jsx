@@ -13,9 +13,16 @@ import StepValidationCircle from './StepValidationCircle';
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
 
-const useStyles = makeStyles(({ spacing }) => ({
+const useStyles = makeStyles(({ spacing, status: { error } }) => ({
   stepper: {
     padding: spacing(2),
+  },
+  stepLabel: {
+    '& .MuiStepLabel-label.Mui-error': {
+      ...error,
+      color: 'transparent',
+      '-webkit-background-clip': 'text',
+    },
   },
   actionsContainer: {
     display: 'grid',
@@ -47,7 +54,13 @@ const VerticalLinearStepper = ({
   showPasswordReqs,
   validationChecks,
 }) => {
-  const { stepper, actionsContainer, stepContent, stepConnector } = useStyles();
+  const {
+    stepper,
+    stepLabel,
+    actionsContainer,
+    stepContent,
+    stepConnector,
+  } = useStyles();
   const { message } = useSelector((state) => state.currentUser);
   const [activeStep, setActiveStep] = useState(0);
   const steps = useMemo(() => getSteps(), []);
@@ -100,6 +113,9 @@ const VerticalLinearStepper = ({
       {steps.map((label, index) => (
         <Step key={label}>
           <StepLabel
+            classes={{
+              root: stepLabel,
+            }}
             error={!validation[index]}
             StepIconComponent={StepValidationCircle}
             StepIconProps={{
