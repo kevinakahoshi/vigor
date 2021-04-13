@@ -8,7 +8,10 @@ import {
   StepConnector,
 } from '@material-ui/core';
 
+// Redux
 import { useSelector } from 'react-redux';
+
+// Components
 import StepValidationCircle from './StepValidationCircle';
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
@@ -21,6 +24,7 @@ const useStyles = makeStyles(({ spacing, status: { error } }) => ({
     '& .MuiStepLabel-label.Mui-error': {
       ...error,
       color: 'transparent',
+      backgroundClip: 'text',
       '-webkit-background-clip': 'text',
     },
   },
@@ -61,8 +65,8 @@ const VerticalLinearStepper = ({
     stepContent,
     stepConnector,
   } = useStyles();
-  const { message } = useSelector((state) => state.currentUser);
   const [activeStep, setActiveStep] = useState(0);
+  const { message } = useSelector((state) => state.currentUser);
   const steps = useMemo(() => getSteps(), []);
   const validation = useMemo(() => Object.values(validationChecks), [
     validationChecks,
