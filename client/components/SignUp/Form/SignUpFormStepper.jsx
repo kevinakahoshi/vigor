@@ -173,9 +173,15 @@ const SignUpFormStepper = ({
     }
 
     setValidationChecks(() => validationChecksCopy);
+    const validationChecksCopyErrors = Object.values(validationChecksCopy);
 
-    if (Object.values(validationChecksCopy).includes(false)) {
-      // TODO: Handle errors here
+    if (validationChecksCopyErrors.includes(false)) {
+      const singleError =
+        validationChecksCopyErrors.indexOf(false) ===
+        validationChecksCopyErrors.lastIndexOf(false);
+      const s = singleError ? '' : 's';
+      const errorMessage = `Error${s} with highlighted field${s}`;
+      dispatch(userActions.setUserMessage(errorMessage, false));
     } else {
       dispatch(userActions.signUpUser(signUpCredentials));
     }
