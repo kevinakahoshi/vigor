@@ -114,6 +114,7 @@ export default {
   setUser,
   logInUser,
   logOut,
+  setUserMessage,
   signUpUser,
   clearMessage,
 };
