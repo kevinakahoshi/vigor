@@ -80,8 +80,8 @@ const SignUpFormStepper = ({
     firstNameValidation: true,
     lastNameValidation: true,
     emailValidation: true,
-    passwordMatch: true,
     passwordValidated: true,
+    passwordMatch: true,
   });
 
   const checkNames = useMemo(
