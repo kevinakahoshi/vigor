@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import StepValidationCircle from './StepValidationCircle';
 import VigorPrimaryButton from '../../../theme/custom-styles/primaryButtonStyles';
 import VigorLinkButtonGrey from '../../../theme/custom-styles/greyLinkButtonStyles';
+import VigorPrimaryProgressButton from '../../Miscellaneous/Buttons/VigorPrimaryProgressButton';
 
 const useStyles = makeStyles(({ spacing, status: { error } }) => ({
   stepper: {
@@ -66,7 +67,8 @@ const VerticalLinearStepper = ({
     stepConnector,
   } = useStyles();
   const [activeStep, setActiveStep] = useState(0);
-  const { message } = useSelector((state) => state.currentUser);
+  const { message } = useSelector(({ currentUser }) => currentUser);
+  const { isLoading } = useSelector(({ loadingState }) => loadingState);
   const steps = useMemo(() => getSteps(), []);
   const validation = useMemo(() => Object.values(validationChecks), [
     validationChecks,
@@ -103,6 +105,14 @@ const VerticalLinearStepper = ({
         root: stepConnector,
       }}
     />
+  );
+
+  const submitOrLoading = isLoading ? (
+    <VigorPrimaryProgressButton />
+  ) : (
+    <VigorPrimaryButton type="submit" disabled={!!message}>
+      Submit
+    </VigorPrimaryButton>
   );
 
   return (
@@ -143,9 +153,7 @@ const VerticalLinearStepper = ({
                 </VigorLinkButtonGrey>
               )}
               {index === steps.length - 1 ? (
-                <VigorPrimaryButton type="submit" disabled={!!message}>
-                  Submit
-                </VigorPrimaryButton>
+                submitOrLoading
               ) : (
                 <VigorPrimaryButton
                   onClick={handleNext}
