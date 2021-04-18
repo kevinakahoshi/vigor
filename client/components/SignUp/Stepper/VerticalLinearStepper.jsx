@@ -115,6 +115,7 @@ const VerticalLinearStepper = ({
     </VigorPrimaryButton>
   );
 
+  // TODO: Clean up this garbage
   return (
     <Stepper
       activeStep={activeStep}

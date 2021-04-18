@@ -1,3 +1,5 @@
+import headers from './headers';
+
 const loginUser = ({ email, password }) => {
   const options = {
     method: 'POST',
@@ -16,3 +18,15 @@ const loginUser = ({ email, password }) => {
 };
 
 export default loginUser;
+
+export const fetchData = async (path, method = 'GET', body = {}) => {
+  const options = {
+    method,
+    headers,
+    body: JSON.stringify(body),
+  };
+
+  const response = await fetch(path, options);
+  const data = await response.json();
+  return data;
+};
