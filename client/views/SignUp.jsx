@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { Box, Container, Grid, makeStyles } from '@material-ui/core';
 
 // Components
-// import SignUpInfo from '../components/SignUp/Info/SignUpInfo';
 import SignUpInfoStepper from '../components/SignUp/Info/SignUpInfoStepper';
 import SignUpFormStepper from '../components/SignUp/Form/SignUpFormStepper';
-// import SignUpForm from '../components/SignUp/Form/SignUpForm';
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   box: {
@@ -70,14 +68,12 @@ const SignUp = () => {
       <Container className={container} maxWidth="md">
         <Grid className={wrapper} spacing={3} container>
           <Grid className={info} item sm={6} xs={12}>
-            {/* <SignUpInfo passwordReqCircles={passwordReqCircles} /> */}
             <SignUpInfoStepper
               passwordReqCircles={passwordReqCircles}
               showPasswordReqs={showPasswordReqs}
             />
           </Grid>
           <Grid className={formWrapper} item sm={6} xs={12}>
-            {/* <SignUpForm setPasswordReqCircles={setPasswordReqCircles} /> */}
             <SignUpFormStepper
               setPasswordReqCircles={setPasswordReqCircles}
               setShowPasswordReqs={setShowPasswordReqs}

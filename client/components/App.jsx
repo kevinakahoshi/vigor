@@ -8,6 +8,7 @@ import { userActions } from '../actions';
 // Views
 import Home from '../views/Home';
 import SignUp from '../views/SignUp';
+import Dashboard from '../views/Dashboard';
 
 // Theme
 import VigorTheme from '../theme/VigorTheme';
@@ -24,6 +25,7 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/sign-up" component={SignUp} />
+        <Route exact path="/dashboard" component={Dashboard} />
       </Switch>
     </VigorTheme>
   );
