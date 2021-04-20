@@ -9,6 +9,7 @@ import {
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { userActions } from '../../../actions';
 
 // Theme Specific
@@ -48,6 +49,7 @@ const LoginForm = () => {
     currentUser: { message },
   } = useSelector((state) => state);
   const { buttonWrapper, form, formGroup, textField } = formStyles();
+  const history = useHistory();
 
   const handleChange = (event) => {
     event.persist();
@@ -66,6 +68,7 @@ const LoginForm = () => {
 
   const handleAlertOpen = () => setSnackbarOpen(() => true);
   const handleAlertClose = () => setSnackbarOpen(() => false);
+  const handleExit = () => history.push('/dashboard');
 
   useEffect(() => {
     if (message) {
@@ -115,7 +118,11 @@ const LoginForm = () => {
           </FormControl>
         </FormGroup>
       </form>
-      <Alert handleClose={handleAlertClose} open={snackbarOpen} />
+      <Alert
+        handleClose={handleAlertClose}
+        handleExit={handleExit}
+        open={snackbarOpen}
+      />
     </>
   );
 };
