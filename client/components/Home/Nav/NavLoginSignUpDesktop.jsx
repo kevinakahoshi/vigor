@@ -22,12 +22,12 @@ const NavLoginSignUpDesktop = () => {
   const modalRef = createRef();
   const { buttonWrapper } = buttonWrapperStyles();
 
-  const userSession = useSelector((state) => state.currentUser.loggedIn);
+  const { loggedIn } = useSelector((state) => state.currentUser);
   const history = useHistory();
 
   const handleClick = () => {
-    if (userSession) {
-      history.push('/login');
+    if (loggedIn) {
+      history.push('/dashboard');
     } else {
       setOpen(() => true);
     }
