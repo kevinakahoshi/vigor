@@ -1,15 +1,22 @@
+import { makeStyles } from '@material-ui/core';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import VigorLogo from '../components/Miscellaneous/Logo/VigorLogoTest';
+
+const useStyles = makeStyles(() => ({
+  root: {
+    background: '#ffffff',
+    height: '100%',
+    width: '100%',
+  },
+}));
 
 const Dashboard = () => {
-  const {
-    loggedIn,
-    user: { firstName, lastName },
-  } = useSelector((state) => state.currentUser);
-
-  const headingText = loggedIn ? `User: ${firstName} ${lastName}` : '';
-
-  return <>{loggedIn && <h1>{headingText}</h1>}</>;
+  const { root } = useStyles();
+  return (
+    <div className={root}>
+      <VigorLogo />
+    </div>
+  );
 };
 
 export default Dashboard;
