@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { animated, useSpring } from 'react-spring';
 
-const logoWhiteStyles = makeStyles((theme) => ({
+const logoWhiteStyles = makeStyles(() => ({
   st1: {
     fill: '#f4f4f4',
   },

@@ -1,67 +1,65 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
-import { animated, useSpring } from 'react-spring';
+import React, { useState } from 'react';
+// import { makeStyles } from '@material-ui/core';
+import { animated, useSpring, config } from 'react-spring';
 
-const logoColorStyles = makeStyles(() => ({
-  cls3: {
-    fill: '#f4f4f4',
-  },
-  cls4: {
-    fill: '#ffffff',
-  },
-  cls6: {
-    fill: '#fefefe',
-  },
-  cls9: {
-    fill: '#f8f8f8',
-  },
-  cls14: {
-    fill: 'url(#linear-gradient-4)',
-    mixBlendMode: 'multiply',
-  },
-  cls16: {
-    fill: 'url(#linear-gradient-6)',
-    mixBlendMode: 'multiply',
-  },
-  cls22: {
-    fill: 'url(#linear-gradient-12)',
-    mixBlendMode: 'multiply',
-  },
-  cls23: {
-    fill: 'url(#linear-gradient-13)',
-    mixBlendMode: 'multiply',
-  },
-  cls31: {
-    fill: 'url(#linear-gradient-23)',
-    mixBlendMode: 'multiply',
-  },
-}));
+// const logoColorStyles = makeStyles(() => ({
+//   cls3: {
+//     fill: '#f4f4f4',
+//   },
+//   cls4: {
+//     fill: '#ffffff',
+//   },
+//   cls6: {
+//     fill: '#fefefe',
+//   },
+//   cls9: {
+//     fill: '#f8f8f8',
+//   },
+//   cls14: {
+//     fill: 'url(#linear-gradient-4)',
+//     mixBlendMode: 'multiply',
+//   },
+//   cls16: {
+//     fill: 'url(#linear-gradient-6)',
+//     mixBlendMode: 'multiply',
+//   },
+//   cls22: {
+//     fill: 'url(#linear-gradient-12)',
+//     mixBlendMode: 'multiply',
+//   },
+//   cls23: {
+//     fill: 'url(#linear-gradient-13)',
+//     mixBlendMode: 'multiply',
+//   },
+//   cls31: {
+//     fill: 'url(#linear-gradient-23)',
+//     mixBlendMode: 'multiply',
+//   },
+// }));
 
-const VigorLogo = ({ classes, finalOpacity }) => {
-  const styles = logoColorStyles();
+const VigorLogo = () => {
+  // const styles = logoColorStyles();
+  const [flip, set] = useState(false);
 
-  const style = useSpring({
-    config: {
-      mass: 1,
-      tension: 500,
-      friction: 50,
-    },
-    from: {
-      opacity: 0,
-    },
-    to: {
-      opacity: finalOpacity,
-    },
+  const { x } = useSpring({
+    reset: true,
+    reverse: flip,
+    from: { x: 0 },
+    x: 1,
+    delay: 200,
+    config: config.molasses,
+    onRest: () => set(!flip),
   });
 
   return (
     <animated.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1730.41 1500"
-      className={classes}
-      style={style}
-      alt="Vigor Logo"
-      title="Vigor: Fitness Tracking and Data Visualization"
+      stroke="rgb(45, 55, 71)"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeDasharray={156}
+      strokeDashoffset={x.to((xX) => (1 - xX) * 156)}
     >
       <defs>
         <linearGradient
@@ -259,12 +257,9 @@ const VigorLogo = ({ classes, finalOpacity }) => {
           y2=".18"
           xlinkHref="#linear-gradient"
         />
+        <style>{`.cls-3{fill:#f4f4f4}.cls-4{fill:#fff}.cls-6{fill:#fefefe}.cls-9{fill:#f8f8f8}.cls-14,.cls-16,.cls-22,.cls-23,.cls-31{mix-blend-mode:multiply}.cls-14{fill:url(#linear-gradient-4)}.cls-16{fill:url(#linear-gradient-6)}.cls-22{fill:url(#linear-gradient-12)}.cls-23{fill:url(#linear-gradient-13)}.cls-31{fill:url(#linear-gradient-23)}`}</style>
       </defs>
-      <g
-        style={{
-          isolation: 'isolate',
-        }}
-      >
+      <g style={{ isolation: 'isolate' }}>
         <g id="Left">
           <path
             id="_9"
@@ -275,13 +270,13 @@ const VigorLogo = ({ classes, finalOpacity }) => {
           <path
             id="_8"
             data-name="8"
-            className={styles.cls3}
+            className="cls-3"
             d="M865.21 900L692 1200h346.41l-173.2-300z"
           />
           <path
             id="_7"
             data-name="7"
-            className={styles.cls4}
+            className="cls-4"
             d="M692.21 1200l173.2-300H519l173.21 300z"
           />
           <path
@@ -293,13 +288,13 @@ const VigorLogo = ({ classes, finalOpacity }) => {
           <path
             id="_5"
             data-name="5"
-            className={styles.cls3}
+            className="cls-3"
             d="M519.21 900l173.2-300H346l173.21 300z"
           />
           <path
             id="_4"
             data-name="4"
-            className={styles.cls6}
+            className="cls-6"
             d="M519.21 300L346 600h346.41l-173.2-300z"
           />
           <path
@@ -311,13 +306,13 @@ const VigorLogo = ({ classes, finalOpacity }) => {
           <path
             id="_2"
             data-name="2"
-            className={styles.cls6}
+            className="cls-6"
             d="M346.2 0L173 300h346.41L346.2 0z"
           />
           <path
             id="_1"
             data-name="1"
-            className={styles.cls3}
+            className="cls-3"
             d="M173.21 300L346.41 0H0l173.21 300z"
           />
         </g>
@@ -331,25 +326,25 @@ const VigorLogo = ({ classes, finalOpacity }) => {
           <path
             id="_6-2"
             data-name="6"
-            className={styles.cls4}
+            className="cls-4"
             d="M1384.2 0l173.21 300H1211L1384.2 0z"
           />
           <path
             id="_5-2"
             data-name="5"
-            className={styles.cls9}
+            className="cls-9"
             d="M1384.2 600L1211 300h346.41L1384.2 600z"
           />
           <path
             id="_4-2"
             data-name="4"
-            className={styles.cls4}
+            className="cls-4"
             d="M1211.2 300l173.21 300H1038l173.2-300z"
           />
           <path
             id="_3-2"
             data-name="3"
-            className={styles.cls9}
+            className="cls-9"
             d="M1211.2 900L1038 600h346.41L1211.2 900z"
           />
           <path
@@ -361,7 +356,7 @@ const VigorLogo = ({ classes, finalOpacity }) => {
           <path
             id="_1-2"
             data-name="1"
-            className={styles.cls4}
+            className="cls-4"
             d="M1038.2 1200L865 900h346.41l-173.21 300z"
           />
         </g>
@@ -369,19 +364,19 @@ const VigorLogo = ({ classes, finalOpacity }) => {
           <path
             id="_3-3"
             data-name="3"
-            className={styles.cls9}
+            className="cls-9"
             d="M865.21 300L692 0h346.41l-173.2 300z"
           />
           <path
             id="_2-3"
             data-name="2"
-            className={styles.cls4}
+            className="cls-4"
             d="M1038.2 0l173.21 300H865L1038.2 0z"
           />
           <path
             id="_1-3"
             data-name="1"
-            className={styles.cls3}
+            className="cls-3"
             d="M1211.2 300L1038 0h346.41L1211.2 300z"
           />
         </g>
@@ -408,7 +403,7 @@ const VigorLogo = ({ classes, finalOpacity }) => {
             d="M1038.41 1200h-.21l.12-.18.09.18z"
           />
           <path
-            className={styles.cls14}
+            className="cls-14"
             d="M865.41 900l-.09.18-.11.18-.1-.18-.11-.18h.41z"
           />
           <path
@@ -418,7 +413,7 @@ const VigorLogo = ({ classes, finalOpacity }) => {
             fill="url(#linear-gradient-5)"
             d="M519.11 899.82l.1.18H519l.11-.18z"
           />
-          <path className={styles.cls16} d="M865.41 900H865l.21-.36.2.36z" />
+          <path className="cls-16" d="M865.41 900H865l.21-.36.2.36z" />
           <path
             style={{
               mixBlendMode: 'multiply',
@@ -455,11 +450,11 @@ const VigorLogo = ({ classes, finalOpacity }) => {
             d="M346.42 0l-.11.18-.11-.18h.22z"
           />
           <path
-            className={styles.cls22}
+            className="cls-22"
             d="M1384.41 0l-.09.18-.12.18-.09-.18-.12-.18h.42z"
           />
           <path
-            className={styles.cls33}
+            className="cls-23"
             d="M1211.32 299.82l.09.18h-.42l.12-.18.09-.18.12.18z"
           />
           <path
@@ -497,10 +492,7 @@ const VigorLogo = ({ classes, finalOpacity }) => {
             fill="url(#linear-gradient-18)"
             d="M1038.2 600l-.09.18-.12-.18h.21z"
           />
-          <path
-            className={styles.cls16}
-            d="M865.21 899.64l.2.36H865l.21-.36z"
-          />
+          <path className="cls-16" d="M865.21 899.64l.2.36H865l.21-.36z" />
           <path
             style={{
               mixBlendMode: 'multiply',
@@ -509,7 +501,7 @@ const VigorLogo = ({ classes, finalOpacity }) => {
             d="M1211.41 900h-.21l.12-.18.09.18z"
           />
           <path
-            className={styles.cls14}
+            className="cls-14"
             d="M865.41 900l-.09.18-.11.18-.1-.18-.11-.18h.41z"
           />
           <path
@@ -520,7 +512,7 @@ const VigorLogo = ({ classes, finalOpacity }) => {
             d="M1384.32 599.82l-.12.18h.21l-173.09 299.82-.12.18h.21l-173.09 299.82-.12.18h.21l-173.2 300L692 1200h.21l-.1-.18L519 900h.21l-.1-.18L346 600h.2l-.09-.18L173 300h.21l-.11-.18L-.01 0H346.2l.11.18L519.41 300h-.2l.11.18L692.41 600h-.2l.11.18 172.89 299.46-.21.36.11.18.1.18.11-.18.09-.18-.2-.36 172.9-299.46.09-.18h-.21l173.12-299.82.09-.18h.21l-.09-.18-.12-.18-.09.18-.12.18H865.21l-.1-.18L692 0h345.99l.12.18.09.18.12-.18.09-.18h345.58l.12.18.09.18.12-.18.09-.18h346l-173.09 299.82-.12.18h.21l-173.09 299.82z"
           />
           <path
-            className={styles.cls31}
+            className="cls-31"
             d="M1038.41 0l-.09.18-.12.18-.09-.18-.12-.18h.42z"
           />
           <path
@@ -538,11 +530,11 @@ const VigorLogo = ({ classes, finalOpacity }) => {
             d="M1038.2 0l.12.18-.12.18-.09-.18.09-.18z"
           />
           <path
-            className={styles.cls33}
+            className="cls-23"
             d="M1211.41 300h-.42l.12-.18.09-.18.12.18.09.18z"
           />
           <path
-            className={styles.cls31}
+            className="cls-31"
             d="M1038.41 0l-.09.18-.12.18-.09-.18-.12-.18h.42z"
           />
           <path
@@ -553,7 +545,7 @@ const VigorLogo = ({ classes, finalOpacity }) => {
             d="M1211.2 299.64l.12.18-.12.18-.09-.18.09-.18z"
           />
           <path
-            className={styles.cls22}
+            className="cls-22"
             d="M1384.41 0l-.09.18-.12.18-.09-.18-.12-.18h.42z"
           />
         </g>
