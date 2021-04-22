@@ -19,12 +19,12 @@ const progressStyles = makeStyles(() => ({
 }));
 
 const VigorPrimaryProgressButton = () => {
-  const styles = progressStyles();
+  const { button, spinner } = progressStyles();
 
   return (
-    <VigorPrimaryButton className={styles.button} size="large" disabled>
+    <VigorPrimaryButton className={button} size="large" disabled>
       &nbsp;
-      <CircularProgress className={styles.spinner} size={24} color="inherit" />
+      <CircularProgress className={spinner} size={24} color="inherit" />
     </VigorPrimaryButton>
   );
 };
