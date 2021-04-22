@@ -76,6 +76,14 @@ const LoginForm = () => {
     }
   }, [message]);
 
+  const submitOrLoading = isLoading ? (
+    <VigorPrimaryProgressButton />
+  ) : (
+    <VigorPrimaryButton type="submit" disabled={!!message}>
+      Submit
+    </VigorPrimaryButton>
+  );
+
   return (
     <>
       <form onChange={handleChange} onSubmit={handleSubmit} className={form}>
@@ -106,15 +114,7 @@ const LoginForm = () => {
               type="password"
               variant="outlined"
             />
-            <Box className={buttonWrapper}>
-              {isLoading ? (
-                <VigorPrimaryProgressButton />
-              ) : (
-                <VigorPrimaryButton type="submit" disabled={!!message}>
-                  Submit
-                </VigorPrimaryButton>
-              )}
-            </Box>
+            <Box className={buttonWrapper}>{submitOrLoading}</Box>
           </FormControl>
         </FormGroup>
       </form>
