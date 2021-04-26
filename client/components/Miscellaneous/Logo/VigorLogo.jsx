@@ -37,7 +37,7 @@ const logoColorStyles = makeStyles(() => ({
   },
 }));
 
-const VigorLogo = ({ classes, finalOpacity }) => {
+const VigorLogo = ({ classes, finalOpacity = 1 }) => {
   const styles = logoColorStyles();
 
   const style = useSpring({
