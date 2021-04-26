@@ -39,17 +39,20 @@ import { animated, useSpring, config } from 'react-spring';
 
 const VigorLogo = () => {
   // const styles = logoColorStyles();
-  const [flip, set] = useState(false);
+  // const [flip, set] = useState(false);
 
   const { x } = useSpring({
     reset: true,
-    reverse: flip,
+    // reverse: flip,
+    to: { x: 1 },
     from: { x: 0 },
     x: 1,
     delay: 200,
     config: config.molasses,
-    onRest: () => set(!flip),
+    // onRest: () => set(!flip),
   });
+
+  console.log(x);
 
   return (
     <animated.svg
@@ -59,7 +62,7 @@ const VigorLogo = () => {
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeDasharray={156}
-      strokeDashoffset={x.to((xX) => (1 - xX) * 156)}
+      strokeDashoffset={x.to}
     >
       <defs>
         <linearGradient
