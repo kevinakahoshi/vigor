@@ -1,4 +1,5 @@
 import {
+  SET_FETCHING,
   SET_USER,
   GET_USER,
   LOG_OUT,
@@ -10,6 +11,11 @@ import { API_GET_USER, API_LOGIN } from '../utilities/fetch/paths';
 import loadingActions from './loadingActions';
 
 const { isLoading, isNotLoading } = loadingActions;
+
+const setFetching = (status) => ({
+  type: SET_FETCHING,
+  payload: status,
+});
 
 const setUser = (user) => ({
   type: SET_USER,

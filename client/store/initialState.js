@@ -4,6 +4,7 @@ export default {
     user: {},
     message: null,
     success: null,
+    fetching: true,
   },
   loadingState: {
     isLoading: false,

@@ -12,6 +12,9 @@ const useStyles = makeStyles((theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
+    backgroundImage: 'url(/assets/images/brand-assets/poly-background.svg)',
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
   },
   appBarShift: {
     marginLeft: drawerWidth,

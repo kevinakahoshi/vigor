@@ -1,6 +1,10 @@
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core';
-import React from 'react';
-import MiniDrawer from '../components/Dashboard/Drawer';
+import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
+// Components
+import SideDrawer from '../components/Dashboard/SideDrawer';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -11,9 +15,17 @@ const useStyles = makeStyles(() => ({
 
 const Dashboard = () => {
   const { root } = useStyles();
+  const { loggedIn, fetching } = useSelector((state) => state.currentUser);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!fetching && !loggedIn) history.push('/');
+  }, [fetching]);
+
+  if (fetching) return null;
   return (
     <div className={root}>
-      <MiniDrawer />
+      <SideDrawer />
     </div>
   );
 };
