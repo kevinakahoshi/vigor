@@ -2,16 +2,23 @@ import initialState from '../store/initialState';
 
 const currentUser = (state = initialState, { type, payload }) => {
   switch (type) {
+    case 'SET_FETCHING':
+      return {
+        ...state,
+        fetching: payload,
+      };
     case 'SET_USER':
       return {
         ...state,
         user: payload,
         loggedIn: true,
         message: null,
+        fetching: false,
       };
     case 'GET_USER':
       return {
         ...state,
+        fetching: false,
       };
     case 'LOG_OUT':
       return {

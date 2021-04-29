@@ -39,30 +39,40 @@ import { animated, useSpring, config } from 'react-spring';
 
 const VigorLogo = () => {
   // const styles = logoColorStyles();
-  // const [flip, set] = useState(false);
+  const [flip, setFlip] = useState(false);
 
-  const { x } = useSpring({
-    reset: true,
-    // reverse: flip,
-    to: { x: 1 },
-    from: { x: 0 },
-    x: 1,
-    delay: 200,
-    config: config.molasses,
-    // onRest: () => set(!flip),
+  const style = useSpring({
+    config: {
+      mass: 25,
+      tension: 100,
+      friction: 100,
+    },
+    from: {
+      width: '70%',
+      margin: 'auto',
+      opacity: 0,
+      strokeDashoffset: 0,
+      strokeWidth: 10,
+    },
+    to: {
+      width: '70%',
+      margin: 'auto',
+      opacity: 1,
+      strokeDashoffset: 1000,
+      strokeWidth: 0,
+    },
   });
 
-  console.log(x);
+  console.log(style);
 
   return (
     <animated.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1730.41 1500"
-      stroke="rgb(45, 55, 71)"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeDasharray={156}
-      strokeDashoffset={x.to}
+      style={style}
+      strokeDasharray={1000}
+      stroke="black"
+      strokeWidth={10}
     >
       <defs>
         <linearGradient

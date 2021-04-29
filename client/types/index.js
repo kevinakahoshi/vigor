@@ -1,4 +1,5 @@
 // User Actions
+const SET_FETCHING = 'SET_FETCHING';
 const SET_USER = 'SET_USER';
 const GET_USER = 'GET_USER';
 const LOG_OUT = 'LOG_OUT';
@@ -10,6 +11,7 @@ const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 const SET_USER_MESSAGE = 'SET_USER_MESSAGE';
 
 export {
+  SET_FETCHING,
   SET_USER,
   GET_USER,
   LOG_OUT,
