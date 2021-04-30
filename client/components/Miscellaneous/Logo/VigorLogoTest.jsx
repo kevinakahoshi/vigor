@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // import { makeStyles } from '@material-ui/core';
-import { animated, useSpring, config } from 'react-spring';
+import { animated, useSpring } from 'react-spring';
 
 // const logoColorStyles = makeStyles(() => ({
 //   cls3: {
@@ -41,38 +41,43 @@ const VigorLogo = () => {
   // const styles = logoColorStyles();
   const [flip, setFlip] = useState(false);
 
-  const style = useSpring({
-    config: {
-      mass: 25,
-      tension: 100,
-      friction: 100,
-    },
-    from: {
-      width: '70%',
-      margin: 'auto',
-      opacity: 0,
-      strokeDashoffset: 0,
-      strokeWidth: 10,
-    },
-    to: {
-      width: '70%',
-      margin: 'auto',
-      opacity: 1,
-      strokeDashoffset: 1000,
-      strokeWidth: 0,
-    },
-  });
+  const config = {
+    mass: 5,
+    tension: 2000,
+    friction: 500,
+  };
 
-  console.log(style);
+  const svgStyles = useSpring({
+    config,
+    from: {
+      width: '25%',
+      margin: 'auto',
+      strokeDashoffset: 0,
+    },
+    to: [
+      {
+        width: '25%',
+        margin: 'auto',
+        strokeDashoffset: 1000,
+      },
+      {
+        width: '25%',
+        margin: 'auto',
+        strokeDashoffset: 0,
+        strokeWidth: 0,
+      },
+    ],
+  });
 
   return (
     <animated.svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1730.41 1500"
-      style={style}
+      style={svgStyles}
       strokeDasharray={1000}
       stroke="black"
       strokeWidth={10}
+      strokeLinejoin="bevel"
     >
       <defs>
         <linearGradient

@@ -35,7 +35,7 @@ const NavLoginSignUpDesktop = () => {
 
   return (
     <Box className={buttonWrapper}>
-      <VigorLinkButtonWhite component={Link} to="/sign-up" size="large">
+      <VigorLinkButtonWhite component={Link} to="/fetching" size="large">
         Sign Up
       </VigorLinkButtonWhite>
       <VigorSecondaryButton onClick={handleClick} size="large">
