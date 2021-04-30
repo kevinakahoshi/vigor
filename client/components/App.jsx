@@ -13,6 +13,7 @@ import Dashboard from '../views/Dashboard';
 // Theme
 import VigorTheme from '../theme/VigorTheme';
 import VigorLogo from './Miscellaneous/Logo/VigorLogoTest';
+import VigorLogoWhiteAnimated from './Miscellaneous/Logo/VigorLogoWhiteAnimated';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/sign-up" component={SignUp} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/fetching" component={VigorLogo} />
+        <Route exact path="/fetching" component={VigorLogoWhiteAnimated} />
       </Switch>
     </VigorTheme>
   );
