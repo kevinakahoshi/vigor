@@ -22,6 +22,10 @@ router.post('/', (request, response, next) => {
 
   const { firstName, lastName, email, password } = request.body;
 
+  if (request.session.user.email === email) {
+    response.status(400).json('Bad request');
+  }
+
   if (!validName.test(firstName) || !validName.test(lastName)) {
     response.status(400).json('Invalid name');
   }

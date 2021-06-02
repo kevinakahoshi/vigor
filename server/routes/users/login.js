@@ -4,9 +4,15 @@ const db = require('../../database');
 
 router.post('/', (request, response, next) => {
   const { email, password } = request.body;
+
+  if (request.session.user.email === email) {
+    response.status(400).json({
+      message: 'Bad request',
+    });
+  }
+
   const sqlQuery = 'SELECT * FROM users WHERE "email" = $1';
   const params = [email];
-
   // TODO: Remove timeout to test errors
   // setTimeout(() => {
   //   response.status(400).json('Incorrect email or password');
