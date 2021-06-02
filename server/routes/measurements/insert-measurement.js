@@ -34,6 +34,10 @@ router.post('/', (request, response, next) => {
     weight,
   } = request.body;
 
+  if (!request.session.user || request.session.user.userId !== userId) {
+    response.status(400).json('Bad request');
+  }
+
   const sqlQuery = `
     INSERT INTO measurements (arms, "bodyFat", chest, "createdAt", hips, thighs, "userId", waist, weight)
          VALUES ($1, $2, $3, CURRENT_TIMESTAMP, $4, $5, $6, $7, $8)

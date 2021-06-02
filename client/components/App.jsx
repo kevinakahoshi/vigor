@@ -23,9 +23,7 @@ const App = () => {
     dispatch(userActions.getUser());
   }, []);
 
-  // if (fetching) {
-  //   return <h1>Fetching</h1>;
-  // }
+  if (fetching) return null;
 
   return (
     <VigorTheme>
